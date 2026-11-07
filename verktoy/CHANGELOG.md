@@ -2,6 +2,14 @@
 
 Nyeste versjon øverst. Formatet er fast fordi forsiden leser det: `## <versjon> · <dato>` og så punkter som begynner med `- `.
 
+## 0.12.1 · 7. nov 2026
+- Hvert minispill viser nå en målskjerm med bilde før du begynner, så du ser hva som skal til. Trykk «🎯 Mål» for å se den igjen.
+- Trykk i minispill virker også mens en snakkeboble vises.
+- Alle sagnvesener i alle land har fått tydelig pikseltegning med kontur, lys og skygge, og de blunker og puster.
+- Tegnet på nytt: Jersey Devil, Den hodeløse rytteren, Nanurluk (kjempeisbjørnen), Akhlut, Nian, Yowien, Ghulen, Tenguen, Yuki-onna, Mamlambo og Umm al-Duwais.
+- Nanurluk står nå på isen i stedet for å sveve.
+- Teksten i vanntank-spillet ligger ikke lenger over «Start på nytt»-knappen.
+
 ## 0.12.0 · 7. nov 2026
 - 29 sagnvesener fra ekte sagn i de 11 andre landene. Du kan snakke med dem.
 - Fugler flyr i naturlige flokker, og hvalrossen har riktig størrelse.
