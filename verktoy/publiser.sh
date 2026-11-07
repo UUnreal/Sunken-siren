@@ -11,7 +11,6 @@ R=$(cd "$HERE" && node test.js); echo "$R" | grep -E '"(csp|ext|errs|xss|gameRoo
 echo "$R" | grep -q '"xss": false' && echo "$R" | grep -q '"errs": \[\]' && echo "$R" | grep -q '"ext": \[\]' || { echo "FEIL: test.js"; exit 1; }
 O=$(cd "$HERE" && timeout 250 node test-offline.js); echo "$O" | tail -2; echo "$O" | grep -q "errs \[\] csp \[\]" || { echo "FEIL: offline"; exit 1; }
 git add -A && git -c user.name="Claude" -c user.email="noreply@anthropic.com" commit -qm "$MSG" && git push -q origin main
-VER=$(grep -m1 -oP "^## \K\S+" "$HERE/CHANGELOG.md"); git tag -f "v$VER" && git push -qf origin "v$VER" || echo "(tag ble ikke pushet)"
-SHA=$(git rev-parse --short HEAD); echo "pushet $SHA (v$VER)"
+SHA=$(git rev-parse --short HEAD); echo "pushet $SHA"
 until gh api "repos/UUnreal/Sunken-siren/actions/runs?per_page=1" --jq ".workflow_runs[0]|select(.head_sha|startswith(\"$SHA\"))|select(.status==\"completed\")|.conclusion" | grep -q .; do sleep 5; done
 gh api "repos/UUnreal/Sunken-siren/actions/runs?per_page=1" --jq '.workflow_runs[0].conclusion'

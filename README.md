@@ -151,3 +151,10 @@ Skjermbildene i `verktoy/bilder/` er tatt med Playwright fra spillet med `?fast`
 - Fremgang forsvinner hvis spilleren sletter nettleserdata eller bruker privat modus. Lagringskoden er reserven.
 - `localStorage` deles mellom alle sider under `uunreal.github.io`. Andre prosjekter på samme domene må ikke bruke nøkkelen `siren`.
 - GitHub Pages lar oss ikke sette egne HTTP-headere. CSP ligger derfor som `<meta>`, og `frame-ancestors` (vern mot innramming) kan ikke settes. Spillet har ingen kontoer eller hemmeligheter, så risikoen er lav.
+
+## Versjoner og endringer
+
+- `verktoy/CHANGELOG.md` (kopieres også til roten) er fasit for versjoner. Nyeste øverst, format `## <versjon> · <dato>` og punkter med `- `.
+- `bygg.py` viser de tre nyeste versjonene i «Nytt i spillet» på forsiden og versjonen i bunnmerket.
+- Byggingen stopper hvis «Versjon x.y.z» i spillet ikke er den samme som øverst i CHANGELOG.md. Da blir ingen versjon publisert uten en endringslogg.
+- Publisering med én kommando: `bash verktoy/publiser.sh <repo-mappe> "<melding>"` bygger, tester, laster opp og venter til GitHub Pages er ferdig.
