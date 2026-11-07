@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="no"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src 'self'; connect-src 'none'; worker-src 'self'; manifest-src 'self'; form-action 'none'; base-uri 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Relic of the Sunken Siren</title>
+<meta name="description" content="Gratis gåte-eventyr i nettleseren. 100 kapitler. Ingen konto, ingen sporing, ingen reklame.">
+<meta name="theme-color" content="#0a1a2f">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="ikoner/ikon-192.png">
+<link rel="apple-touch-icon" href="ikoner/apple-touch-icon.png">
+<style>
+:root{--o1:#ffb347;--o2:#ff6a00;--b1:#5fd3ff;--lcd:#b6d96a;--lcdk:#1f2d0a}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:#e9f2ff;font:15px/1.45 "Trebuchet MS",Verdana,Tahoma,sans-serif;background:#071222;
+background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.035) 0 2px,transparent 2px 7px),radial-gradient(ellipse at 50% -10%,#1d4f86 0,#0a1a2f 55%,#050b16 100%);background-attachment:fixed}
+a{color:var(--b1)}
+.site{max-width:780px;margin:0 auto;padding:0 12px 30px}
+#intro{position:fixed;inset:0;z-index:9;background:#000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;transition:opacity .4s}
+#intro .lg{font:bold 26px Arial,sans-serif;color:#fff;letter-spacing:6px;text-shadow:0 0 18px var(--b1)}
+#intro .lb{width:220px;height:14px;border:1px solid #6af;padding:2px}
+#intro .lb i{display:block;height:100%;width:0;background:linear-gradient(#9ef,#08f);animation:ld 1.1s ease-out forwards}
+#intro small{color:#7af;font:11px Verdana}
+#intro button{background:none;border:0;color:#7af;font:11px Verdana;text-decoration:underline;cursor:pointer}
+@keyframes ld{to{width:100%}}
+header{position:relative;margin:14px 0 0;padding:22px 66px 16px;border-radius:14px 14px 0 0;background:linear-gradient(#2a6fb5,#0b3c78 50%,#082c5a 51%,#0d4a8e);border:1px solid #6fb6ff;box-shadow:0 0 0 1px #02152d,0 8px 24px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.5);overflow:hidden;text-align:center}
+header:before{content:"";position:absolute;left:-10%;right:-10%;top:0;height:48%;background:linear-gradient(rgba(255,255,255,.35),rgba(255,255,255,.05));border-radius:0 0 50% 50%/0 0 30px 30px;pointer-events:none}
+.logo{position:relative;font:900 clamp(26px,7.5vw,40px)/1 Impact,"Arial Black",sans-serif;letter-spacing:1px;margin:0;text-transform:uppercase;
+background:linear-gradient(#fff 0,#dfe9f5 45%,#8aa4c2 50%,#f4f8ff 75%,#b9c9dc);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 2px 0 #031a36) drop-shadow(0 0 10px rgba(95,211,255,.6))}
+.logo span{display:block;font-size:.6em;letter-spacing:.15em}
+.tag{position:relative;margin:8px 0 0;color:#cfe8ff;font-style:italic}
+.burst{position:absolute;right:-8px;top:-8px;width:78px;height:78px;display:flex;align-items:center;justify-content:center;text-align:center;font:900 10px/1.05 Arial,sans-serif;color:#7a0000;transform:rotate(14deg);z-index:2}
+.burst:before{content:"";position:absolute;inset:0;background:#ffe23a;clip-path:polygon(50% 0,61% 13%,77% 6%,79% 23%,95% 25%,88% 40%,100% 50%,88% 60%,95% 75%,79% 77%,77% 94%,61% 87%,50% 100%,39% 87%,23% 94%,21% 77%,5% 75%,12% 60%,0 50%,12% 40%,5% 25%,21% 23%,23% 6%,39% 13%);animation:sp 9s linear infinite;z-index:-1}
+.burst b{font-size:18px;display:block}
+@keyframes sp{to{transform:rotate(360deg)}}
+nav{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;padding:6px;background:linear-gradient(#dfe7f0,#aab8c8);border:1px solid #6fb6ff;border-top:0;border-radius:0 0 10px 10px;overflow-x:auto}
+nav a{flex:1;white-space:nowrap;text-align:center;font:bold 13px "Trebuchet MS",sans-serif;color:#0b3c78;text-decoration:none;padding:7px 8px;border-radius:14px;background:linear-gradient(#fff,#e2eaf3 50%,#cfdae7 51%,#eef3f9);border:1px solid #8aa0b8;box-shadow:inset 0 1px 0 #fff}
+@media(max-width:520px){nav{grid-template-columns:1fr 1fr}}
+nav a:hover{background:linear-gradient(#fff6d6,#ffd36a 50%,#ffbf2e 51%,#ffe08a)}
+.pn{margin:16px 0;border-radius:10px;background:linear-gradient(#f7fbff,#dfe8f2);color:#14243a;border:1px solid #8fb4d9;box-shadow:0 6px 18px rgba(0,0,0,.45);overflow:hidden}
+.pn h2{margin:0;padding:8px 12px;font:bold 16px "Trebuchet MS",sans-serif;color:#fff;background:linear-gradient(#5aa9f0,#1f6fc4 50%,#145fb3 51%,#2a7fd6);text-shadow:0 1px 0 #0a3a73;border-bottom:1px solid #0d4a8e}
+.pn h2.or{background:linear-gradient(#ffc56b,#ff8a1f 50%,#f2700a 51%,#ff9a33);text-shadow:0 1px 0 #8a3a00;border-color:#b85400}
+.pn h2.gr{background:linear-gradient(#8fe07a,#3fae2a 50%,#2f9a1c 51%,#4fc039);text-shadow:0 1px 0 #1d5a10;border-color:#2a7a18}
+.in{padding:12px 14px}
+ul{margin:4px 0;padding-left:20px}li{margin:5px 0}
+.hero{display:grid;grid-template-columns:1fr;gap:14px;align-items:center}
+@media(min-width:620px){.hero{grid-template-columns:240px 1fr}}
+.tv{position:relative;margin:0 auto;width:220px;aspect-ratio:360/344;border-radius:12px;padding:8px;background:linear-gradient(#3a3f47,#15181d);box-shadow:0 0 0 2px #000,0 8px 20px rgba(0,0,0,.5),inset 0 1px 0 #6b717a}
+.tv div{position:relative;width:100%;height:100%;border-radius:6px;overflow:hidden;background:#000}
+.tv img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .8s}
+.tv img.on{opacity:1}
+.tv div:after{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(255,255,255,.18),transparent 40%),repeating-linear-gradient(transparent 0 2px,rgba(0,0,0,.12) 2px 3px);pointer-events:none}
+.cap{text-align:center;font:11px Verdana;color:#5a6b80;margin-top:6px}
+.btn{position:relative;display:block;text-align:center;text-decoration:none;font:900 24px/1 "Arial Black",Arial,sans-serif;color:#fff;letter-spacing:1px;padding:18px 10px;border-radius:40px;cursor:pointer;
+background:linear-gradient(var(--o1),var(--o2));border:1px solid #b84a00;text-shadow:0 2px 0 #a33f00;box-shadow:0 0 0 3px rgba(255,170,60,.3),0 6px 14px rgba(255,106,0,.45),inset 0 -4px 8px rgba(160,50,0,.4);overflow:hidden;animation:gl 2.4s ease-in-out infinite}
+.btn:before{content:"";position:absolute;left:6%;right:6%;top:3px;height:48%;border-radius:40px 40px 20px 20px;background:linear-gradient(rgba(255,255,255,.75),rgba(255,255,255,.1))}
+.btn span{position:relative}
+.btn:active{transform:translateY(2px)}
+@keyframes gl{50%{box-shadow:0 0 0 6px rgba(255,170,60,.15),0 6px 22px rgba(255,106,0,.7),inset 0 -4px 8px rgba(160,50,0,.4)}}
+.sbtn{font:bold 13px "Trebuchet MS",sans-serif;color:#0b3c78;padding:7px 14px;border-radius:14px;border:1px solid #7f97b2;background:linear-gradient(#fff,#e2eaf3 50%,#cfdae7 51%,#eef3f9);cursor:pointer}
+.off{margin-top:10px;font:bold 12px Verdana;color:#5a6b80}.off.ok{color:#1d6a10}
+#inst{margin-top:8px}
+.chk{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.chk span{font:bold 12px Verdana;background:#e8ffe0;color:#1d5a10;border:1px solid #8fd07a;border-radius:10px;padding:3px 8px}
+.vs{width:100%;border-collapse:collapse;font-size:14px}
+.vs th{font:bold 13px Verdana;padding:6px;text-align:left}
+.vs th:nth-child(2){color:#9a2a2a}.vs th:nth-child(3){color:#1d6a10}
+.vs td{padding:7px 6px;border-top:1px dashed #b7c6d6;vertical-align:top}
+.vs td:nth-child(2){color:#7a4a4a;text-decoration:line-through;text-decoration-color:rgba(200,0,0,.5)}
+.vs td:nth-child(3){font-weight:bold}
+.big{font:900 20px/1.2 "Arial Black",Arial,sans-serif;color:#0b3c78;margin:0 0 8px}
+.dev{border-radius:18px;padding:14px;background:linear-gradient(#e9edf2,#b9c2cc);border:1px solid #8a96a3;box-shadow:inset 0 2px 0 #fff,inset 0 -3px 6px rgba(0,0,0,.15)}
+.lcd{position:relative;border-radius:6px;padding:10px 12px;background:var(--lcd);color:var(--lcdk);font:bold 15px/1.5 "Courier New",monospace;box-shadow:inset 0 3px 8px rgba(0,0,0,.35);border:2px solid #5d6a3c}
+.lcd:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(transparent 0 2px,rgba(0,0,0,.06) 2px 3px);border-radius:6px;pointer-events:none}
+.lr{display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.ctr{font-size:34px;letter-spacing:4px;line-height:1}
+.bar{height:16px;border:2px solid var(--lcdk);padding:1px;display:flex;gap:1px;margin:6px 0 2px}
+.bar b{width:4%;background:var(--lcdk);display:block}
+.inv{font-size:20px;letter-spacing:2px;word-break:break-all}
+.code{font:bold 18px "Courier New",monospace;background:#fff;border:1px inset #999;border-radius:4px;padding:5px 8px;display:inline-block;letter-spacing:1px;user-select:all;color:#000}
+.live{font:bold 11px Verdana;color:#2f7a1c;margin:10px 0 0}
+.blink{animation:bk 1s steps(1) infinite}@keyframes bk{50%{opacity:0}}
+.lcdb{display:flex;gap:10px;justify-content:center;margin-top:10px}
+.lcdb i{width:30px;height:30px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,#9aa6b3 60%,#6b7684);box-shadow:0 2px 3px rgba(0,0,0,.3)}
+.b80{display:flex;flex-wrap:wrap;gap:4px;justify-content:center;margin-top:18px}
+.b80 span{display:inline-flex;height:15px;font:9px/13px Verdana,sans-serif;border:1px solid #000;box-shadow:0 0 0 1px #888}
+.b80 b{background:#000;color:#fff;padding:0 3px;font-weight:normal}.b80 em{font-style:normal;padding:0 3px;color:#000}
+.foot{text-align:center;color:#7d93ad;font-size:12px;margin-top:12px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}#intro{display:none}}
+</style></head><body>
+
+<div id="intro"><div class="lg">SUNKEN SIREN</div><div class="lb"><i></i></div><small>LASTER EVENTYR...</small><button id="skip">Hopp over intro »</button></div>
+
+<div class="site">
+<header>
+<div class="burst"><div><b>100</b>KAPITLER<br>GRATIS!</div></div>
+<h1 class="logo">Relic of the<span>Sunken Siren</span></h1>
+<p class="tag">Et gåte-eventyr fra Karibia, 1934. Ikke et idle-spill.</p>
+</header>
+<nav><a href="#spill">▶ Spill</a><a href="#fremgang">💾 Fremgang</a><a href="#hvorfor">⚡ Hvorfor</a><a href="#personvern">🔒 Personvern</a></nav>
+
+<section class="pn" id="spill"><h2 class="or">▶ Start eventyret</h2><div class="in hero">
+<div><div class="tv"><div id="tv">
+<img class="on" src="bilder/port.jpg" alt="Havna i Port O'Call"><img src="bilder/taverna.jpg" alt="Tavernaen"><img src="bilder/tempel.jpg" alt="Gåte i tempelet"><img src="bilder/bibliotek.jpg" alt="Biblioteket i borgen"><img src="bilder/speilsal.jpg" alt="Speilsalen"><img src="bilder/yacht.jpg" alt="Rivalens yacht">
+</div></div><div class="cap" id="tvcap">Havna i Port O'Call</div></div>
+<div>
+<a class="btn" href="spill/"><span id="play">▶ SPILL NÅ</span></a>
+<p style="margin:12px 0 0" id="playtxt"></p>
+<div id="offline" class="off">⏳ Gjør klar for bruk uten nett...</div>
+<button class="sbtn" id="inst" hidden>📲 Installer som app</button>
+<p style="margin:8px 0 0;font-size:13px">💾 Eller last ned spillet som én fil og spill uten nett på hvilken som helst PC eller mobil, også fra en minnepinne: <a href="last-ned/sunken-siren.html" download style="color:#0a6fd6">norsk</a> · <a href="last-ned/sunken-siren.en.html" download style="color:#0a6fd6">English</a> <small>(ca. 13 MB, åpnes i nettleseren)</small></p>
+<div class="chk"><span>✔ Gratis</span><span>✔ Ingen konto</span><span>✔ Ingen sporing</span><span>✔ Ingen reklame</span><span>✔ Mobil + PC</span><span>✔ Virker uten nett</span></div>
+</div></div></section>
+
+<section class="pn" id="hvorfor"><h2>⚡ Her spiller ikke spillet seg selv</h2><div class="in">
+<p class="big">Det finnes millioner av idle-spill. Dette er ikke et av dem.</p>
+<p style="margin:0 0 10px">Her skjer ingenting før <b>du</b> tenker. Ingen tall som vokser mens du sover, ingen kister å åpne og ingen varsler som lokker deg tilbake. Bare deg, en gåte og ekte kunnskap.</p>
+<table class="vs"><tr><th></th><th>Idle-spill</th><th>Sunken Siren</th></tr>
+<tr><td>Hvem spiller?</td><td>Spillet spiller seg selv</td><td>Du løser hver eneste gåte</td></tr>
+<tr><td>Lærer du noe?</td><td>Nei</td><td>Historie, språk, matte, astronomi og logikk</td></tr>
+<tr><td>Penger?</td><td>Kjøp deg fram</td><td>Ingenting å kjøpe. Aldri.</td></tr>
+<tr><td>Varsler?</td><td>«Kom tilbake!»</td><td>Ingen. Spillet foreslår pauser.</td></tr>
+<tr><td>Står du fast?</td><td>Betal eller vent</td><td>🧭 viser alltid neste steg, gratis</td></tr>
+</table></div></section>
+
+<section class="pn" id="fremgang"><h2 class="gr">💾 Din fremgang</h2><div class="in"><div class="dev"><div class="lcd">
+<div id="none">INGEN LAGRING ENNÅ.<br>START ET SPILL, SÅ DUKKER<br>FREMGANGEN DIN OPP HER.</div>
+<div id="some" hidden>
+<div class="lr"><span>KAPITTEL</span><span class="ctr" id="ctr"></span></div>
+<div class="bar" id="bar"></div><div id="pct" style="font-size:12px"></div>
+<div class="lr"><span>STJERNER ★</span><span id="st"></span></div>
+<div class="lr"><span>JOKERE</span><span id="hl"></span></div>
+<div>SEKKEN:</div><div class="inv" id="inv"></div>
+</div></div><div class="lcdb"><i></i><i></i><i></i></div></div>
+<div id="codebox" hidden style="margin-top:12px"><b>Lagringskoden din</b> <small>(skriv den ned for å fortsette på en annen mobil eller PC)</small><br>
+<span class="code" id="code">-</span> <button class="sbtn" id="copy">Kopier</button></div>
+<p class="live"><span class="blink">●</span> LIVE: oppdateres i det du lagrer i spillet. Alt ligger bare på denne enheten.</p>
+</div></section>
+
+<section class="pn"><h2>❓ Slik spiller du</h2><div class="in"><ul>
+<li>Trykk på bakken for å gå. Velg et verb, og trykk så på en ting.</li>
+<li>Trykk på én ting i sekken og så på en annen for å kombinere.</li>
+<li>Står du fast? 🧭-knappen viser alltid neste steg.</li>
+<li>Mange gåter krever ekte kunnskap. Slå opp i bøker, på Wikipedia eller i Store norske leksikon.</li>
+<li>Virker uten nett: når du har vært her én gang, kan du spille på fly, hytta eller bussen. Installer gjerne som app.</li>
+<li>Ta pauser. Gåtene venter på deg.</li>
+</ul></div></section>
+
+<section class="pn" id="personvern"><h2 class="gr">🔒 Personvern: kort og ærlig</h2><div class="in">
+<p style="margin:0 0 8px"><b>Vi vet ikke hvem du er, og vi vil ikke vite det.</b></p>
+<ul>
+<li>🚫 <b>Ingen konto</b>, ingen innlogging, ingen e-post.</li>
+<li>🚫 <b>Ingen sporing</b>: ingen Google Analytics, ingen informasjonskapsler (cookies), ingen tellere som samler inn noe.</li>
+<li>🚫 <b>Ingen reklame</b> og ingenting å kjøpe.</li>
+<li>💾 <b>Fremgangen lagres bare på din egen enhet</b> (i nettleserens lokale lagring). Den sendes aldri noe sted, og ingen andre kan se den. Siden er teknisk låst slik at den ikke <i>kan</i> sende data.</li>
+<li>📦 For at spillet skal virke uten nett, lagrer nettleseren en kopi av spillfilene (ca. 15 MB, og ca. 11 MB per ekstra språk) på enheten. Det er bare spillet selv, ingen opplysninger om deg.</li>
+<li>🔍 Søkeknappene i spillet (Wikipedia, Store norske leksikon, Google) åpner de sidene bare når <b>du</b> trykker på dem. Da gjelder de sidenes egne regler.</li>
+<li>🌐 Nettstedet ligger på GitHub Pages. Som alle nettsider ser serveren IP-adressen din når siden lastes, for sikkerhet og drift. Vi får ikke se den. Les mer i <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer" style="color:#0a6fd6">GitHubs personvernerklæring</a>.</li>
+</ul>
+<p style="margin:8px 0 6px"><b>Vil du slette alt?</b> Trykk her, så forsvinner fremgangen fra denne enheten:</p>
+<button class="sbtn" id="del">🗑️ Slett fremgangen min</button> <small id="delmsg"></small>
+<p style="margin:10px 0 0;font-size:13px">Foreldre og lærere: spillet samler ikke inn personopplysninger.</p>
+</div></section>
+
+<div class="b80">
+<span><b>KONTO</b><em style="background:#9f9">INGEN</em></span>
+<span><b>SPORING</b><em style="background:#f99">0</em></span>
+<span><b>REKLAME</b><em style="background:#9cf">0</em></span>
+<span><b>IDLE</b><em style="background:#fc6">NEI TAKK</em></span>
+<span><b>BEST MED</b><em style="background:#ddd">LYD PÅ</em></span>
+<span><b>800×600</b><em style="background:#cf9">+ MOBIL</em></span>
+</div>
+<p class="foot">Besøksteller: vi teller ikke. ✌<br>Laget i Norge · Stemmer: Piper · Musikk: MusicGen</p>
+</div>
+<script>
+// Forsiden leser bare spillets lagring (localStorage 'siren') og viser den. Den sender ingenting.
+// All tekst settes med textContent, aldri innerHTML med lagringsdata, så en endret lagring kan ikke kjøre kode.
+const TOTAL=100,$=id=>document.getElementById(id);
+const ckL=(c,j,s)=>String.fromCharCode(65+(c*7+j*13+s*31+11)%26);
+const EM=/*ITEMS*/{};
+const IDLE='Ingen innlogging, ingen nedlasting. Trykk og spill. Ha på lyd for stemmer og musikk!';
+const int=(v,lo,hi,d)=>{v=Math.floor(Number(v));return Number.isFinite(v)?Math.min(hi,Math.max(lo,v)):d};
+function read(){let S=null;try{S=JSON.parse(localStorage.getItem('siren'))}catch(e){}
+ if(!S||typeof S!=='object'||typeof S.room!=='string'){$('none').hidden=false;$('some').hidden=true;$('codebox').hidden=true;$('play').textContent='▶ SPILL NÅ';$('playtxt').textContent=IDLE;return}
+ $('none').hidden=true;$('some').hidden=false;$('codebox').hidden=false;
+ const m=/^c(\d+)$/.exec(S.room),ch=int(Math.max(int(S.ch,1,9999,1),m?+m[1]:1),1,9999,1),hl=int(S.hl??5,0,5,5),st=int(S.st,0,99999,0);
+ $('ctr').textContent=String(ch).padStart(3,'0');
+ const done=Math.min(ch-1,TOTAL),bar=$('bar');bar.replaceChildren();for(let i=0;i<Math.round(done/TOTAL*24);i++)bar.appendChild(document.createElement('b'));
+ $('pct').textContent=done+'/'+TOTAL+' FULLFØRT ('+Math.round(done/TOTAL*100)+'%)';
+ $('st').textContent=st;$('hl').textContent=hl+'/5';
+ const inv=$('inv');inv.replaceChildren();const items=Array.isArray(S.inv)?S.inv.slice(0,60):[];
+ for(const i of items){const e=Object.prototype.hasOwnProperty.call(EM,i)?EM[i]:['📦',''],sp=document.createElement('span');sp.textContent=e[0]+' ';sp.title=e[1];inv.appendChild(sp)}
+ if(!items.length)inv.textContent='(TOM)';
+ $('code').textContent=ch>=2?'KAP'+ch+'-J'+hl+'-S'+st+ckL(ch,hl,st):'(kommer etter kapittel 1)';
+ $('play').textContent='▶ FORTSETT';$('playtxt').textContent='Du er på kapittel '+ch+'. Trykk «Fortsett» i spillet for å gå videre der du slapp.'}
+$('copy').onclick=()=>{const t=$('code').textContent;try{navigator.clipboard.writeText(t);$('copy').textContent='Kopiert!'}catch(e){}setTimeout(()=>$('copy').textContent='Kopier',1500)};
+let delArm=0;$('del').onclick=()=>{if(!delArm){delArm=1;$('del').textContent='⚠️ Sikker? Trykk igjen';setTimeout(()=>{delArm=0;$('del').textContent='🗑️ Slett fremgangen min'},4000);return}try{localStorage.removeItem('siren')}catch(e){}delArm=0;$('del').textContent='🗑️ Slett fremgangen min';$('delmsg').textContent='Slettet.';read()};
+const ims=[...document.querySelectorAll('#tv img')];let ti=0;setInterval(()=>{ims[ti].classList.remove('on');ti=(ti+1)%ims.length;ims[ti].classList.add('on');$('tvcap').textContent=ims[ti].alt},2800);
+const intro=$('intro'),hide=()=>{intro.style.opacity=0;setTimeout(()=>intro.remove(),400)};let seen=0;try{seen=sessionStorage.getItem('intro')}catch(e){}
+if(seen)intro.remove();else{try{sessionStorage.setItem('intro',1)}catch(e){}$('skip').onclick=hide;intro.onclick=hide;setTimeout(hide,1400)}
+// offline: service worker lagrer hele nettstedet lokalt etter første besøk
+const off=$('offline');
+if('serviceWorker' in navigator){
+ navigator.serviceWorker.addEventListener('message',e=>{const d=e.data||{};if(typeof d.done!=='number')return;
+  off.textContent=d.done>=d.total?'✈️ Klar! Hele spillet, på alle språk, virker nå uten nett på denne enheten.':'✈️ Klar uten nett på norsk. Laster ned de andre språkene i bakgrunnen ('+d.done+'/'+d.total+')...';off.classList.add('ok')});
+ navigator.serviceWorker.register('sw.js').then(()=>navigator.serviceWorker.ready).then(r=>{off.textContent='✈️ Klar! Spillet virker nå uten nett.';off.classList.add('ok');r.active&&r.active.postMessage('status')})
+ .catch(()=>{off.textContent='Bruk uten nett er ikke tilgjengelig i denne nettleseren (for eksempel i privat modus). Last ned spillfila under i stedet.'})}else off.hidden=true;
+let instEv=null;addEventListener('beforeinstallprompt',e=>{e.preventDefault();instEv=e;$('inst').hidden=false});
+$('inst').onclick=async()=>{if(!instEv)return;instEv.prompt();await instEv.userChoice.catch(()=>{});instEv=null;$('inst').hidden=true};
+if(/iPhone|iPad/.test(navigator.userAgent)&&!navigator.standalone){$('inst').hidden=false;$('inst').onclick=()=>{$('inst').textContent='Trykk Del ⬆️ og «Legg til på Hjem-skjerm»'}}
+read();addEventListener('storage',e=>{if(!e.key||e.key==='siren')read()});addEventListener('pageshow',read);document.addEventListener('visibilitychange',()=>{if(!document.hidden)read()});
+</script></body></html>
