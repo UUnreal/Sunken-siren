@@ -1,5 +1,7 @@
 // Offline-test: laster nettstedet, venter til alle språk er lagret, skrur av nettet og sjekker forside, spill, alle språk og nedlastet fil. Krever lokal server på 8765.
-const {chromium}=require('playwright');(async()=>{const b=await chromium.launch();const c=await b.newContext({viewport:{width:390,height:844}});const p=await c.newPage();const errs=[],csp=[];
+const {chromium}=require('playwright');(async()=>{const b=await chromium.launch();const c=await b.newContext({viewport:{width:390,height:844}});
+// spillets intro hoppes over i testene (den kjøres bare ved første besøk per økt)
+await c.addInitScript(()=>{try{sessionStorage.setItem('introSeen','1')}catch(e){}});const p=await c.newPage();const errs=[],csp=[];
 c.on('console',m=>{if(/Refused|Content.Security/.test(m.text()))csp.push(m.text().slice(0,200))});p.on('pageerror',e=>errs.push(e.message));
 await p.goto('http://localhost:8765/');await p.waitForFunction(()=>/alle språk/.test(document.getElementById('offline').textContent),null,{timeout:120000});
 console.log('forside:',await p.textContent('#offline'));

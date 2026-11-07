@@ -1,6 +1,8 @@
 // Pentest + funksjonstest for nettstedet. Start først: (cd ut && python3 -m http.server 8765), så: node test.js
 // Pentest + funksjonstest: CSP-brudd, nettverkskall, ondsinnet lagring, lagringskoder
 const {chromium}=require('playwright');(async()=>{const b=await chromium.launch();const c=await b.newContext({viewport:{width:390,height:844}});
+// spillets intro hoppes over i testene (den kjøres bare ved første besøk per økt)
+await c.addInitScript(()=>{try{sessionStorage.setItem('introSeen','1')}catch(e){}});
 const out={csp:[],ext:[],errs:[],xss:false};c.on('console',m=>{if(/Content.Security|Refused/i.test(m.text()))out.csp.push(m.text().slice(0,160))});
 c.on('request',r=>{if(!r.url().startsWith('http://localhost:8765/'))out.ext.push(r.url())});
 await c.exposeFunction('pwned',()=>{out.xss=true});
