@@ -75,7 +75,23 @@ blk = s[s.find('ITEMS='):].split('};')[0]
 items = {k: [e, n] for k, e, n in re.findall(r"(\w+):\['([^']*)','([^']*)'\]", blk)}
 f = open(os.path.join(here, 'forside.html'), encoding='utf-8').read()
 f = f.replace('/*ITEMS*/{}', json.dumps(items, ensure_ascii=False).replace('</', '<\\/'))
+# Versjon og endringer: leses fra CHANGELOG.md og vises på forsiden (de tre nyeste versjonene).
+import html
+log = open(os.path.join(here, 'CHANGELOG.md'), encoding='utf-8').read()
+ver = re.findall(r'^## (\S+) · (.+)$', log, re.M)
+if not ver: sys.exit('FEIL: fant ingen versjoner i CHANGELOG.md')
+spill_ver = re.search(r'Versjon (\d+\.\d+\.\d+)', s)
+if spill_ver and spill_ver.group(1) != ver[0][0]:
+    sys.exit('FEIL: spillet er versjon %s, men CHANGELOG.md starter med %s' % (spill_ver.group(1), ver[0][0]))
+blokker = re.split(r'^## ', log, flags=re.M)[1:4]
+endr = ''
+for b in blokker:
+    hode, *linjer = b.strip().split('\n')
+    endr += '<p class="ver">%s</p><ul>%s</ul>\n' % (html.escape(hode), ''.join('<li>%s</li>' % html.escape(l[2:]) for l in linjer if l.startswith('- ')))
+f = f.replace('<!--VERSJON-->', html.escape(ver[0][0])).replace('<!--ENDRINGER-->', endr)
 open(os.path.join(out, 'index.html'), 'w', encoding='utf-8').write(f)
+shutil.copy(os.path.join(here, 'CHANGELOG.md'), out)
+print('versjon:', ver[0][0])
 shutil.copytree(os.path.join(here, 'bilder'), os.path.join(out, 'bilder'), dirs_exist_ok=True)
 shutil.copytree(os.path.join(here, 'ikoner'), os.path.join(out, 'ikoner'), dirs_exist_ok=True)
 shutil.copy(os.path.join(here, 'manifest.webmanifest'), out)
