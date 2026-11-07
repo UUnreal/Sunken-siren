@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; font-src data:; img-src data:; media-src data: blob:; connect-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="theme-color" content="#7cc6e8">
+<title>Lesestart</title>
+<!--
+  LESESTART: barneversjonen av Relic of the Sunken Siren (5–7 år).
+  Barnet lærer bokstavlyder (I S O L E V A T) og leser og lager korte, lydrette ord.
+  Bygges av verktoy/bygg.py fra denne malen: skrift-plassholderen = Andika (SIL OFL), lyd-plassholderen = Piper-klipp.
+  Ingen nett, ingen konto, ingen sporing. Fremgang og egne lydopptak lagres bare i localStorage på enheten.
+  Pedagogikk: systematisk bokstav-lyd, én ny bokstav om gangen, feil gir ny lyd i stedet for straff,
+  blanding vises som langsom lydering + vanlig ord, økta stopper etter 10 minutter (endres i voksenpanelet).
+-->
+<style>
+@font-face{font-family:Andika;font-weight:700;src:url(data:font/woff2;base64,__FONT__) format('woff2')}
+:root{--sky1:#7cc6e8;--sky2:#d7f0fa;--sea:#2a8bb8;--sand:#f1d9a4;--sand2:#e2c182;--ink:#24343f;--card:#fffaf0;--ok:#3f9b4f;--no:#c8553d;--hi:#f4b400}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+html,body{margin:0;height:100%;background:var(--sand);color:var(--ink);font-family:Andika,"Comic Sans MS",system-ui,sans-serif;font-weight:700;overflow:hidden;user-select:none;-webkit-user-select:none}
+button{font:inherit;color:inherit;border:0;cursor:pointer}
+#app{position:fixed;inset:0;display:flex;flex-direction:column;max-width:560px;margin:0 auto;padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom)}
+#top{display:flex;align-items:center;gap:8px;padding:8px 12px;background:var(--sky1);z-index:3}
+.ib{width:52px;height:52px;border-radius:50%;background:#fff;font-size:26px;box-shadow:0 3px 0 rgba(0,0,0,.2);flex:none;position:relative}
+.ib:active{transform:translateY(2px);box-shadow:0 1px 0 rgba(0,0,0,.2)}
+#shells{flex:1;min-width:0;display:flex;gap:3px;justify-content:center}
+.sh{flex:0 1 26px;min-width:16px;height:28px;border-radius:50% 50% 40% 40%;background:rgba(255,255,255,.35);display:grid;place-items:center;font-size:18px;color:rgba(0,0,0,.25)}
+.sh.in{background:#fff3df;color:var(--ink)}.sh.ok{background:#ffd27a;color:var(--ink);box-shadow:0 0 0 2px #fff}
+#ring{position:absolute;inset:-4px;border-radius:50%;border:4px solid var(--hi);clip-path:inset(0 100% 0 0);pointer-events:none}
+#scene{position:relative;flex:0 0 34%;min-height:170px;overflow:hidden;background:linear-gradient(var(--sky1),var(--sky2) 55%)}
+#scene svg{position:absolute;inset:0;width:100%;height:100%}
+.wave{animation:wv 6s ease-in-out infinite alternate}.wave2{animation:wv 7.5s ease-in-out infinite alternate-reverse}
+@keyframes wv{to{transform:translateX(-24px)}}
+.bob{animation:bob 3.4s ease-in-out infinite;transform-origin:center;transform-box:fill-box}@keyframes bob{50%{transform:translateY(3px) rotate(-3deg)}}
+#bub{position:absolute;left:38%;right:10px;top:10px;background:#fff;border-radius:16px;padding:8px 12px;font-size:15px;line-height:1.3;box-shadow:0 2px 0 rgba(0,0,0,.15);opacity:0;transition:opacity .2s}
+#bub.on{opacity:1}#bub:after{content:"";position:absolute;left:-10px;bottom:14px;border:8px solid transparent;border-right-color:#fff;border-left:0}
+#main{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:safe center;gap:16px;padding:12px 16px 20px;background:linear-gradient(var(--sand),var(--sand2));overflow:auto}
+.big{font-size:min(30vw,150px);line-height:1;padding:10px 34px;border-radius:28px;background:var(--card);box-shadow:0 6px 0 rgba(0,0,0,.18)}
+.tiles{display:grid;gap:14px;grid-template-columns:repeat(2,minmax(110px,1fr));width:100%;max-width:380px}
+.t{min-height:110px;border-radius:24px;background:var(--card);font-size:68px;box-shadow:0 6px 0 rgba(0,0,0,.18);transition:transform .12s,opacity .3s;display:grid;place-items:center}
+.t small{font-size:.38em;opacity:.55;margin-left:4px}
+.t:active{transform:translateY(3px);box-shadow:0 3px 0 rgba(0,0,0,.18)}
+.t.ok{background:#c9efc9;animation:pop .45s}.t.no{opacity:.35;animation:shake .4s;pointer-events:none}.t.hint{animation:pulse 1s infinite}
+.t.pic{font-size:64px}
+@keyframes pop{40%{transform:scale(1.12)}}@keyframes shake{25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+@keyframes pulse{50%{box-shadow:0 0 0 8px var(--hi)}}
+.word{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.lt{min-width:64px;height:84px;padding:0 8px;border-radius:18px;background:var(--card);font-size:58px;box-shadow:0 5px 0 rgba(0,0,0,.18)}
+.lt.lit{background:#fff1c2}.slot{min-width:64px;height:84px;border-radius:18px;border:4px dashed rgba(0,0,0,.25);font-size:58px;display:grid;place-items:center}
+.slot.f{border:0;background:#c9efc9}
+.pic1{font-size:84px;line-height:1}
+.btn{padding:16px 30px;border-radius:999px;background:var(--hi);font-size:26px;box-shadow:0 5px 0 #b98300}
+.btn.s{background:#fff;box-shadow:0 5px 0 rgba(0,0,0,.18);font-size:20px;padding:12px 22px}
+.btn:active{transform:translateY(3px)}
+h1{margin:0;font-size:38px;text-align:center}.sub{margin:0;text-align:center;font-size:17px;opacity:.75;max-width:340px}
+#ver{position:absolute;bottom:6px;right:10px;font-size:12px;opacity:.5}
+#adult{position:fixed;inset:0;background:rgba(36,52,63,.55);display:none;z-index:9;padding:16px;overflow:auto}
+#adult.on{display:block}
+#adult .pn{background:#fff;border-radius:18px;max-width:520px;margin:0 auto;padding:16px 18px;font-family:system-ui,sans-serif;font-weight:400;font-size:15px;line-height:1.45}
+#adult h2{margin:.2em 0 .4em;font-size:20px}#adult h3{margin:1em 0 .3em;font-size:16px}
+#adult table{width:100%;border-collapse:collapse}#adult td{padding:5px 4px;border-bottom:1px solid #eee;vertical-align:middle}
+#adult .L{font-family:Andika,sans-serif;font-weight:700;font-size:24px;width:44px}
+#adult .bar{height:10px;border-radius:5px;background:#eee;overflow:hidden;min-width:60px}#adult .bar i{display:block;height:100%;background:var(--ok)}
+#adult button.m{background:#eef3f6;border-radius:10px;padding:8px 10px;font-weight:600;font-family:system-ui,sans-serif;margin:2px}
+#adult button.m.rec{background:#ffd6cf}
+#adult select{font-size:15px;padding:6px}
+#adult a{color:#0a6fd6}
+</style>
+</head>
+<body>
+<div id="app">
+  <div id="top">
+    <button class="ib" id="bHear" aria-label="Hør igjen">🔊</button>
+    <div id="shells" aria-label="Bokstaver du har funnet"></div>
+    <button class="ib" id="bAdult" aria-label="For voksne: hold inne i to sekunder">⚙️<span id="ring"></span></button>
+  </div>
+  <div id="scene" aria-hidden="true">
+    <svg viewBox="0 0 400 200" preserveAspectRatio="xMidYMax slice">
+      <defs>
+        <linearGradient id="gs" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3fa3cf"/><stop offset="1" stop-color="#1f6f99"/></linearGradient>
+        <radialGradient id="gsun"><stop offset="0" stop-color="#fff6c8"/><stop offset=".5" stop-color="#ffe07a"/><stop offset="1" stop-color="#ffe07a" stop-opacity="0"/></radialGradient>
+      </defs>
+      <circle cx="330" cy="40" r="34" fill="url(#gsun)"/>
+      <g fill="#fff" opacity=".85"><ellipse cx="90" cy="34" rx="34" ry="9"/><ellipse cx="110" cy="28" rx="20" ry="10"/><ellipse cx="240" cy="52" rx="26" ry="6"/></g>
+      <rect x="-30" y="118" width="460" height="50" fill="url(#gs)"/>
+      <path class="wave" d="M-30 124 q15 -5 30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 v6 h-480z" fill="#5fb8de" opacity=".7"/>
+      <path class="wave2" d="M-30 140 q20 -4 40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 v5 h-480z" fill="#9ad7ef" opacity=".5"/>
+      <!-- Sirenen på en stein -->
+      <g transform="translate(318 104)"><ellipse cx="10" cy="22" rx="34" ry="12" fill="#6b6f75"/><ellipse cx="4" cy="16" rx="24" ry="9" fill="#868b91"/>
+        <path d="M2 8 q10 6 24 2 q-6 8 4 14 q-14 -2 -22 -8z" fill="#3aa58f"/><path d="M-2 -14 q-4 12 4 22 l10 -2 q-2 -12 -4 -20z" fill="#e9b892"/>
+        <circle cx="1" cy="-20" r="7" fill="#e9b892"/><path d="M-6 -24 q8 -10 16 0 q2 14 -6 24 q2 -12 -2 -18 q-4 2 -8 -6z" fill="#c2452f"/></g>
+      <path d="M-30 150 Q100 136 220 146 T430 140 V210 H-30z" fill="#f1d9a4"/>
+      <path d="M-30 168 Q120 156 260 166 T430 160 V210 H-30z" fill="#e8ca8f" opacity=".7"/>
+      <!-- flaskeposten -->
+      <g class="bob" transform="translate(250 150) rotate(-18)"><rect x="0" y="0" width="30" height="11" rx="5" fill="#9fd9c9" opacity=".85"/><rect x="28" y="3" width="8" height="5" fill="#8a5a2b"/><rect x="5" y="3" width="16" height="5" fill="#fff8e4"/></g>
+      <!-- Professoren -->
+      <g transform="translate(70 92)">
+        <ellipse cx="22" cy="104" rx="26" ry="5" fill="rgba(0,0,0,.15)"/>
+        <rect x="10" y="64" width="9" height="38" rx="3" fill="#5a4632"/><rect x="25" y="64" width="9" height="38" rx="3" fill="#4d3b2a"/>
+        <path d="M4 26 q18 -8 36 0 l4 42 h-44z" fill="#a8865a"/><path d="M18 24 l4 16 l4 -16z" fill="#fff"/><path d="M21 28 l1 10 l1 -10z" fill="#b8392b"/>
+        <rect x="-2" y="30" width="9" height="30" rx="4" fill="#977650"/><rect x="38" y="28" width="9" height="26" rx="4" fill="#977650" transform="rotate(-24 42 30)"/>
+        <circle cx="22" cy="10" r="13" fill="#eac19a"/><path d="M10 14 q12 18 24 0 q-2 10 -12 12 q-10 -2 -12 -12z" fill="#d8d3cb"/>
+        <circle cx="17" cy="8" r="4" fill="none" stroke="#333" stroke-width="1.6"/><circle cx="27" cy="8" r="4" fill="none" stroke="#333" stroke-width="1.6"/><path d="M21 8h2" stroke="#333" stroke-width="1.4"/>
+        <circle cx="17" cy="8" r="1.3" fill="#333"/><circle cx="27" cy="8" r="1.3" fill="#333"/>
+        <path id="mouth" d="M19 17 q3 2 6 0" stroke="#7a3d2a" stroke-width="1.6" fill="none"/>
+        <ellipse cx="22" cy="-2" rx="22" ry="5" fill="#8b6a3e"/><path d="M10 -2 q0 -14 12 -14 q12 0 12 14z" fill="#9c7a48"/><rect x="10" y="-6" width="24" height="4" fill="#5a3f22"/>
+      </g>
+    </svg>
+    <div id="bub"></div>
+  </div>
+  <main id="main"></main>
+</div>
+<div id="adult" role="dialog" aria-label="For voksne"><div class="pn" id="adultPn"></div></div>
+
+<script>
+'use strict';
+// ---------- Data ----------
+const LYD = __LYD__;                       // {nøkkel: base64 mp3}. L_x = bokstavlyd, W_ord = ord, S_ord = langsom lydering, resten = fraser
+const ORDER = 'isolevat';                  // rekkefølge etter Lesesenterets eksempel (Språkløyper, UiS): nyttige bokstaver først
+const WORDS = {is:'🧊',sol:'☀️',ost:'🧀',sel:'🦭',vest:'🦺',vase:'🏺',telt:'⛺',salat:'🥗',ti:'🔟',stol:'🪑',le:'😄',lese:'📖'};
+const TXT = { // det professoren sier, vist i boblen for voksne som leser med
+  hei:'Hei! Sirenen har sendt meg et brev i en flaske, men bokstavene har falt ut i sanden. Vil du hjelpe meg?',
+  vel:'Velkommen tilbake! Skal vi finne flere bokstaver?', ny:'En ny bokstav! Hør hva den sier.',
+  finn:'Hvilken bokstav sier dette?', les:'Les ordet. Trykk på bokstavene for å høre dem. Velg bildet som passer.',
+  lag:'Lag ordet. Trykk på bokstavene i riktig rekkefølge.', igjen:'Hør en gang til.', nesten:'Nesten! Prøv en gang til.',
+  runde:'Bra jobba! Nå har vi funnet flere bokstaver.', pause:'Nå har du øvd lenge og godt. Nå tar vi en pause.',
+  ferdig:'Du har funnet alle bokstavene! Nå kan du lese brevet fra Sirenen.', brev:'Takk for hjelpen! Hilsen Sirenen.'};
+const VERSION = '0.1.0';
+
+// ---------- Lagring (bare lokalt) ----------
+const KEY = 'lesestart';
+const S = Object.assign({v:1, n:2, L:{}, W:{}, rec:{}, min:10, done:false, seen:false, newL:'is'}, load());
+function load(){ try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch(e){ return {}; } }
+function save(){ try { localStorage.setItem(KEY, JSON.stringify(S)); } catch(e){ /* full lagring: opptak kan være for store */ } }
+
+// ---------- Lyd (Web Audio, virker på iOS etter første trykk) ----------
+let ac = null, cur = null, tok = 0; const buf = {};
+function unlock(){ try { ac = ac || new (window.AudioContext || window.webkitAudioContext)(); if (ac.state !== 'running') ac.resume(); } catch(e){} }
+function ab(b64){ const s = atob(b64), u = new Uint8Array(s.length); for (let i=0;i<s.length;i++) u[i]=s.charCodeAt(i); return u.buffer; }
+function decode(a){ return new Promise((ok,no)=>{ const p = ac.decodeAudioData(a, ok, no); if (p && p.then) p.then(ok, no); }); }
+async function getBuf(k){
+  const rec = S.rec[k];
+  const id = k + (rec ? '#r' + rec.length : '');
+  if (buf[id]) return buf[id];
+  const src = rec ? rec.split(',')[1] : LYD[k];
+  if (!src || !ac) return null;
+  try { return buf[id] = await decode(ab(src)); } catch(e){ return rec ? (delete S.rec[k], getBuf(k)) : null; }
+}
+function stop(){ if (cur){ try { cur.onended = null; cur.stop(); } catch(e){} cur = null; } talk(false); }
+async function say(k){
+  stop(); const b = await getBuf(k); if (!b) return;
+  return new Promise(r => { const s = ac.createBufferSource(); s.buffer = b; s.connect(ac.destination);
+    s.onended = () => { if (cur === s){ cur = null; talk(false); } r(); }; cur = s; talk(!k.startsWith('L_')); s.start(0); });
+}
+const wait = ms => new Promise(r => setTimeout(r, ms));
+// Spiller en rekke klipp; et nytt kall avbryter det gamle.
+async function seq(...ks){ const my = ++tok; for (const k of ks){ if (my !== tok) return false; if (typeof k === 'number') await wait(k); else { bubble(k); await say(k); } } return my === tok; }
+let mouthT = 0;
+function talk(on){ clearInterval(mouthT); const m = document.getElementById('mouth'); if (!on){ m.setAttribute('d','M19 17 q3 2 6 0'); return; }
+  let o = 0; mouthT = setInterval(()=>{ o ^= 1; m.setAttribute('d', o ? 'M19 16 q3 5 6 0 q-3 1 -6 0' : 'M19 17 q3 2 6 0'); }, 140); }
+let bubT = 0;
+function bubble(k){ const b = document.getElementById('bub'); if (!TXT[k]) return; b.textContent = TXT[k]; b.classList.add('on'); clearTimeout(bubT); bubT = setTimeout(()=>b.classList.remove('on'), 6000); }
+
+// ---------- Hjelpere ----------
+const $ = s => document.querySelector(s);
+const main = $('#main');
+const el = (tag, cls, html) => { const e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; return e; };
+const shuffle = a => { for (let i=a.length-1;i>0;i--){ const j = Math.random()*(i+1)|0; [a[i],a[j]] = [a[j],a[i]]; } return a; };
+const pick = a => a[Math.random()*a.length|0];
+const avail = () => ORDER.slice(0, S.n).split('');
+const res = l => S.L[l] || (S.L[l] = []);
+const mastered = l => { const r = res(l).slice(-5); return r.length >= 5 && r.reduce((a,b)=>a+b,0) >= 4; };
+const wordsAvail = () => Object.keys(WORDS).filter(w => [...w].every(c => avail().includes(c)));
+const praise = () => pick(['r1','r2','r3','r4']);
+function mark(arr, ok){ arr.push(ok ? 1 : 0); if (arr.length > 20) arr.shift(); save(); }
+const tile = l => `${l}<small>${l.toUpperCase()}</small>`;
+
+function shells(){
+  const box = $('#shells'); box.innerHTML = '';
+  for (const l of ORDER){ const i = ORDER.indexOf(l) < S.n; box.appendChild(el('div', 'sh' + (i ? ' in' : '') + (i && mastered(l) ? ' ok' : ''), i ? l : '·')); }
+}
+
+// ---------- Tidsgrense (ingen avhengighet: økta stopper av seg selv) ----------
+let active = 0, lastT = 0;
+function tick(){ const t = Date.now(); if (lastT && !document.hidden && !$('#adult').classList.contains('on')) active += Math.min(t - lastT, 5000); lastT = t; }
+setInterval(tick, 1000);
+const timeUp = () => active >= S.min * 60000;
+
+// ---------- Skjermer ----------
+let replay = () => {};
+$('#bHear').onclick = () => { unlock(); replay(); };
+
+function startScreen(){
+  stop(); replay = () => seq(S.seen ? 'vel' : 'hei');
+  main.innerHTML = ''; shells();
+  main.append(el('h1', '', 'Lesestart'), el('p', 'sub', 'Lær bokstavlydene sammen med professoren. For barn fra 5 år.'));
+  const b = el('button', 'btn', '▶ Start'); b.setAttribute('aria-label', 'Start');
+  b.onclick = async () => { unlock(); fullscreen(); active = 0; const first = !S.seen; S.seen = true; save(); b.disabled = true;
+    if (await seq(first ? 'hei' : 'vel', 300)) round(); };
+  main.append(b, el('div', '', `<span id="ver">v${VERSION}</span>`));
+}
+function fullscreen(){ const d = document.documentElement; if (matchMedia('(pointer:coarse)').matches && d.requestFullscreen && !document.fullscreenElement) d.requestFullscreen().then(()=>screen.orientation && screen.orientation.lock && screen.orientation.lock('portrait').catch(()=>{})).catch(()=>{}); }
+
+// En runde = 6 oppgaver. Ny bokstav først hvis det er en, og ordoppgaver når nok bokstaver er lært.
+let queue = [], taskNo = 0; const told = {}; // instruksjon høres de to første gangene per økt
+const tell = t => (told[t] = (told[t] || 0) + 1) <= 2;
+function round(){
+  queue = []; const w = wordsAvail();
+  for (const l of S.newL || '') queue.push({t:'ny', l});
+  for (let i = 0; i < 6; i++){
+    if (w.length && (i === 2 || i === 4)) queue.push({t: (i === 2 ? 'les' : 'lag'), w: pick(w)});
+    else queue.push({t:'finn', l: target()});
+  }
+  next();
+}
+function target(){ // svake og nye bokstaver kommer oftere
+  const a = avail(), bag = [];
+  for (const l of a){ const n = mastered(l) ? 1 : 3; for (let i=0;i<n;i++) bag.push(l); }
+  if (a.length) for (let i=0;i<2;i++) bag.push(a[a.length-1]);
+  return pick(bag);
+}
+async function next(){
+  if (timeUp()) return pauseScreen();
+  const q = queue.shift();
+  if (!q) return endRound();
+  taskNo++; window.GAME.cur = q;
+  ({ny:taskNew, finn:taskFind, les:taskRead, lag:taskBuild})[q.t](q);
+}
+async function endRound(){
+  const nl = ORDER[S.n - 1];
+  if (S.n < ORDER.length && !S.newL && mastered(nl)){ S.newL = ORDER[S.n]; S.n++; save(); }
+  shells();
+  if (S.n === ORDER.length && !S.done && ORDER.split('').every(mastered)) return letterScreen();
+  main.innerHTML = '';
+  main.append(el('div', 'pic1', '🐚'));
+  const b = el('button', 'btn', '▶ Videre'); b.onclick = () => { unlock(); round(); };
+  main.append(b); replay = () => seq('runde'); seq('runde');
+}
+
+// Ny bokstav: vis den stort, si lyden, barnet trykker for å si den selv.
+function taskNew(q){
+  main.innerHTML = ''; const l = q.l;
+  const big = el('button', 'big', tile(l)); big.setAttribute('aria-label', 'Bokstaven ' + l);
+  main.append(big, el('p', 'sub', 'Trykk på bokstaven og si lyden sammen med professoren.'));
+  let n = 0; replay = () => seq('ny', 200, 'L_' + l, 500, 'L_' + l);
+  big.onclick = async () => { unlock(); big.classList.add('ok'); await seq('L_' + l); setTimeout(()=>big.classList.remove('ok'), 300);
+    if (++n >= 2){ S.newL = (S.newL || '').replace(l, ''); save(); shells(); await seq(praise(), 200); next(); } };
+  replay();
+}
+
+// Hør lyden, finn bokstaven.
+function taskFind(q){
+  main.innerHTML = ''; const l = q.l, a = avail(), tries = res(l).length;
+  const k = Math.min(a.length, tries < 3 ? 2 : tries < 8 ? 3 : 4);
+  const opts = shuffle([l, ...shuffle(a.filter(x => x !== l)).slice(0, k - 1)]);
+  const g = el('div', 'tiles'); let wrong = 0, done = false;
+  for (const o of opts){
+    const b = el('button', 't', tile(o)); b.setAttribute('aria-label', 'Bokstaven ' + o);
+    b.onclick = async () => { unlock(); if (done) return;
+      if (o === l){ done = true; if (!wrong) mark(res(l), true); b.classList.add('ok'); shells(); await seq('L_' + l, 150, praise(), 250); next(); }
+      else { if (!wrong++) mark(res(l), false); b.classList.add('no'); await seq('L_' + o, 350, 'igjen', 'L_' + l);
+        if (wrong >= 2) [...g.children][opts.indexOf(l)].classList.add('hint'); } };
+    g.append(b);
+  }
+  main.append(g);
+  replay = () => seq('L_' + l);
+  (tell('finn') || tries < 2) ? seq('finn', 200, 'L_' + l) : seq('L_' + l);
+}
+
+// Les ordet: bokstavene kan trykkes for lyd, barnet velger riktig bilde. Svaret vises som lydering + ord.
+function taskRead(q){
+  main.innerHTML = ''; const w = q.w;
+  const row = el('div', 'word');
+  for (const c of w){ const b = el('button', 'lt', c); b.setAttribute('aria-label', 'Lyden ' + c);
+    b.onclick = async () => { unlock(); b.classList.add('lit'); await seq('L_' + c); b.classList.remove('lit'); }; row.append(b); }
+  const others = shuffle(Object.keys(WORDS).filter(x => x !== w && x[0] !== w[0])).slice(0, 2);
+  const opts = shuffle([w, ...others]), g = el('div', 'tiles'); g.style.gridTemplateColumns = 'repeat(3,1fr)';
+  let wrong = 0, done = false;
+  for (const o of opts){
+    const b = el('button', 't pic', WORDS[o]); b.setAttribute('aria-label', 'Bilde');
+    b.onclick = async () => { unlock(); if (done) return;
+      if (o === w){ done = true; if (!wrong) mark(S.W[w] || (S.W[w] = []), true); b.classList.add('ok'); await seq('S_' + w, 150, 'W_' + w, 200, praise(), 250); next(); }
+      else { if (!wrong++) mark(S.W[w] || (S.W[w] = []), false); b.classList.add('no');
+        if (wrong >= 2){ [...g.children][opts.indexOf(w)].classList.add('hint'); seq('nesten', 200, 'S_' + w); } else seq('nesten'); } };
+    g.append(b);
+  }
+  main.append(row, g);
+  replay = () => seq('les');
+  if (tell('les')) seq('les');
+}
+
+// Lag ordet: se bildet, hør ordet, trykk bokstavene i riktig rekkefølge.
+function taskBuild(q){
+  main.innerHTML = ''; const w = q.w, letters = [...w];
+  const extra = shuffle(avail().filter(c => !w.includes(c)))[0];
+  const pool = shuffle(extra ? [...letters, extra] : [...letters]);
+  const slots = el('div', 'word'), pr = el('div', 'word'); let pos = 0, wrong = 0;
+  letters.forEach(() => slots.append(el('div', 'slot', '')));
+  pool.forEach(c => { const b = el('button', 'lt', c); b.setAttribute('aria-label', 'Lyden ' + c);
+    b.onclick = async () => { unlock();
+      if (c === letters[pos]){ slots.children[pos].textContent = c; slots.children[pos].classList.add('f'); b.style.visibility = 'hidden'; pos++;
+        if (pos === letters.length){ mark(S.W[w] || (S.W[w] = []), wrong === 0); await seq('L_' + c, 200, 'S_' + w, 150, 'W_' + w, 200, praise(), 250); next(); }
+        else seq('L_' + c); }
+      else { wrong++; b.classList.add('no'); setTimeout(()=>b.classList.remove('no'), 450); seq('L_' + c, 300, 'S_' + w); } };
+    pr.append(b); });
+  const pic = el('button', 'pic1', WORDS[w]); pic.style.background = 'none'; pic.setAttribute('aria-label', 'Hør ordet');
+  pic.onclick = () => { unlock(); seq('W_' + w); };
+  main.append(pic, slots, pr);
+  replay = () => seq('W_' + w);
+  tell('lag') ? seq('lag', 200, 'W_' + w) : seq('W_' + w);
+}
+
+function pauseScreen(){
+  main.innerHTML = '';
+  main.append(el('div', 'pic1', '🌙'), el('h1', '', 'Pause'), el('p', 'sub', 'Bra jobba! Les gjerne litt sammen med en voksen.'));
+  const b = el('button', 'btn s', '✔ Ferdig for nå'); b.onclick = () => startScreen();
+  main.append(b, el('p', 'sub', 'Voksne: hold inne ⚙️ for å fortsette.'));
+  replay = () => seq('pause'); seq('pause');
+}
+
+// Brevet fra Sirenen: barnet leser tre ord selv, så leser professoren hilsenen.
+function letterScreen(){
+  main.innerHTML = ''; S.done = true; save();
+  const card = el('div', 'big'); card.style.cssText = 'font-size:44px;padding:16px 22px;text-align:center;display:flex;flex-direction:column;gap:6px';
+  for (const w of ['sol', 'is', 'sel']){ const b = el('button', '', w); b.style.cssText = 'background:none;font-size:inherit'; // bildet vises først etter at ordet er lest
+    b.onclick = () => { unlock(); b.textContent = w + ' ' + WORDS[w]; seq('S_' + w, 100, 'W_' + w); }; card.append(b); }
+  card.append(el('div', '', '<small style="font-size:20px">Takk for hjelpen! Hilsen Sirenen 🧜‍♀️</small>'));
+  const b = el('button', 'btn', '▶ Øv mer'); b.onclick = () => { unlock(); round(); };
+  main.append(card, b); replay = () => seq('ferdig', 300, 'brev'); seq('ferdig');
+}
+
+// ---------- Voksenpanel: hold ⚙️ i 2 sekunder ----------
+let holdT = 0, holdS = 0, holdRaf = 0;
+const ring = $('#ring'), bA = $('#bAdult');
+function holdStart(e){ e.preventDefault(); holdS = Date.now(); const f = () => { const p = Math.min(1, (Date.now() - holdS) / 2000);
+  ring.style.clipPath = `inset(0 ${100 - p*100}% 0 0)`; if (p >= 1){ holdEnd(); openAdult(); } else holdRaf = requestAnimationFrame(f); }; f(); }
+function holdEnd(){ cancelAnimationFrame(holdRaf); ring.style.clipPath = 'inset(0 100% 0 0)'; }
+bA.addEventListener('pointerdown', holdStart); ['pointerup','pointerleave','pointercancel'].forEach(t => bA.addEventListener(t, holdEnd));
+bA.addEventListener('contextmenu', e => e.preventDefault());
+
+let mr = null, resetArm = false;
+function openAdult(){ stop(); tok++; $('#adult').classList.add('on'); drawAdult(); }
+function closeAdult(){ if (mr && mr.state === 'recording') mr.stop(); $('#adult').classList.remove('on'); }
+function drawAdult(){
+  const p = $('#adultPn'); const pct = l => { const r = res(l).slice(-5); return r.length ? Math.round(r.reduce((a,b)=>a+b,0) / 5 * 100) : 0; };
+  let rows = '';
+  for (const l of ORDER){ const i = ORDER.indexOf(l) < S.n;
+    rows += `<tr><td class="L">${l}</td><td>${i ? (mastered(l) ? 'Kan den' : 'Øver') : 'Ikke ennå'}</td><td><div class="bar"><i style="width:${pct(l)}%"></i></div></td>
+      <td style="white-space:nowrap"><button class="m" data-p="${l}" aria-label="Spill av ${l}">▶</button><button class="m${mr && mr.l===l ? ' rec' : ''}" data-r="${l}">${mr && mr.l===l ? '⏹ Stopp' : '🎙'}</button>${S.rec['L_'+l] ? `<button class="m" data-x="${l}" aria-label="Bruk standardlyd">↺</button>` : ''}</td></tr>`; }
+  const wk = Object.keys(S.W).length;
+  p.innerHTML = `<h2>For voksne</h2>
+    <p>Lesestart øver på bokstavlyder og korte, lydrette ord. Det er øving, ikke en erstatning for å lese sammen. Best effekt får barnet når en voksen sitter ved siden av, ca. 10 minutter om dagen.</p>
+    <h3>Fremgang</h3><table>${rows}</table><p>Ord øvd på: ${wk} av ${Object.keys(WORDS).length}. Tid i denne økta: ${Math.round(active/60000)} min.</p>
+    <h3>Egne bokstavlyder</h3><p>Lydene er laget med talesyntese. Si gjerne lyden selv: trykk 🎙, si lyden (for eksempel «sss», ikke «ess»), og trykk Stopp. Opptaket lagres bare på denne enheten.</p>
+    <h3>Innstillinger</h3><p>Lengde på økta: <select id="aMin">${[5,10,15,20].map(m=>`<option ${m===S.min?'selected':''}>${m}</option>`).join('')}</select> minutter</p>
+    <p><button class="m" id="aReset">${resetArm ? 'Trykk igjen for å slette alt' : 'Nullstill fremgang'}</button></p>
+    <h3>Personvern</h3><p>Ingen konto, ingen reklame, ingen sporing. Ingenting sendes noe sted. Alt lagres i nettleseren på denne enheten.</p>
+    <p style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px"><button class="btn s" id="aGo">▶ Fortsett å øve</button><button class="btn s" id="aClose">Lukk</button></p>
+    <p style="font-size:13px;opacity:.7">Lesestart v${VERSION} · del av <a href="../" target="_top">Relic of the Sunken Siren</a> · Skrift: Andika (SIL OFL) · Stemme: Piper</p>`;
+  p.onclick = e => { const t = e.target.closest('button'); if (!t) return; unlock();
+    if (t.dataset.p) seq('L_' + t.dataset.p);
+    else if (t.dataset.r) record(t.dataset.r);
+    else if (t.dataset.x){ delete S.rec['L_' + t.dataset.x]; save(); drawAdult(); }
+    else if (t.id === 'aReset'){ if (resetArm){ const keep = S.rec; Object.assign(S, {n:2, L:{}, W:{}, done:false, seen:false, newL:'is', rec:keep}); save(); resetArm = false; closeAdult(); startScreen(); } else { resetArm = true; drawAdult(); } }
+    else if (t.id === 'aGo'){ closeAdult(); active = 0; round(); }
+    else if (t.id === 'aClose'){ closeAdult(); replay(); } };
+  $('#aMin').onchange = e => { S.min = +e.target.value; save(); };
+}
+async function record(l){
+  if (mr && mr.state === 'recording'){ mr.stop(); return; }
+  try {
+    const st = await navigator.mediaDevices.getUserMedia({audio:true}); const chunks = [];
+    mr = new MediaRecorder(st); mr.l = l;
+    mr.ondataavailable = e => chunks.push(e.data);
+    mr.onstop = () => { st.getTracks().forEach(t => t.stop()); const r = new FileReader();
+      r.onload = () => { S.rec['L_' + l] = r.result; save(); mr = null; drawAdult(); seq('L_' + l); };
+      r.readAsDataURL(new Blob(chunks, {type: mr.mimeType})); };
+    mr.start(); setTimeout(() => mr && mr.state === 'recording' && mr.stop(), 3000); drawAdult();
+  } catch(e){ mr = null; alertBox('Fikk ikke tilgang til mikrofonen. Sjekk tillatelsen i nettleseren.'); }
+}
+function alertBox(t){ const p = $('#adultPn'); const d = el('p', '', '⚠️ ' + t); d.style.color = '#c8553d'; p.prepend(d); }
+
+document.addEventListener('visibilitychange', () => { if (document.hidden) stop(); });
+window.GAME = {S, LYD, ORDER, WORDS}; // for automatiske tester
+startScreen();
+</script>
+</body>
+</html>
