@@ -27,7 +27,11 @@ head = ('<meta http-equiv="Content-Security-Policy" content="%s">\n<meta name="r
         '<link rel="manifest" href="../manifest.webmanifest">\n<link rel="icon" href="../ikoner/ikon-192.png">\n'
         '<link rel="apple-touch-icon" href="../ikoner/apple-touch-icon.png">\n' % GAME_CSP)
 # Registrerer service workeren (offline) også når spilleren går rett til spillet.
-SW_REG = "<script>if('serviceWorker'in navigator)navigator.serviceWorker.register('../sw.js',{scope:'../'}).catch(()=>{})</script>"
+# Når en ny versjon er lastet ned, lastes siden på nytt, men bare mens startskjermen vises (ikke midt i spillet).
+SW_REG = ("<script>if('serviceWorker'in navigator){const h=!!navigator.serviceWorker.controller;"
+          "navigator.serviceWorker.addEventListener('controllerchange',()=>{const t=document.getElementById('title');"
+          "if(h&&t&&getComputedStyle(t).display!=='none')location.reload()});"
+          "navigator.serviceWorker.register('../sw.js',{scope:'../'}).catch(()=>{})}</script>")
 
 
 def bygg_spill(fil, lang):
@@ -80,7 +84,8 @@ shutil.copy(os.path.join(here, 'manifest.webmanifest'), out)
 #    så nye versjoner av spillet automatisk erstatter den gamle kopien på enhetene.
 import hashlib
 alle, h = [], hashlib.sha256()
-for root, _, files in os.walk(out):
+for root, dirs, files in os.walk(out):
+    dirs[:] = [d for d in dirs if not d.startswith('.') and d != 'verktoy']  # aldri .git o.l.
     for n in sorted(files):
         if n in ('sw.js', '.nojekyll') or root.startswith(dl): continue
         rel = os.path.relpath(os.path.join(root, n), out).replace(os.sep, '/')

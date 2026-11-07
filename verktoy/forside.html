@@ -201,6 +201,7 @@ if(seen)intro.remove();else{try{sessionStorage.setItem('intro',1)}catch(e){}$('s
 // offline: service worker lagrer hele nettstedet lokalt etter første besøk
 const off=$('offline');
 if('serviceWorker' in navigator){
+ const hadSW=!!navigator.serviceWorker.controller;navigator.serviceWorker.addEventListener('controllerchange',()=>{if(hadSW)location.reload()});
  navigator.serviceWorker.addEventListener('message',e=>{const d=e.data||{};if(typeof d.done!=='number')return;
   off.textContent=d.done>=d.total?'✈️ Klar! Hele spillet, på alle språk, virker nå uten nett på denne enheten.':'✈️ Klar uten nett på norsk. Laster ned de andre språkene i bakgrunnen ('+d.done+'/'+d.total+')...';off.classList.add('ok')});
  navigator.serviceWorker.register('sw.js').then(()=>navigator.serviceWorker.ready).then(r=>{off.textContent='✈️ Klar! Spillet virker nå uten nett.';off.classList.add('ok');r.active&&r.active.postMessage('status')})
