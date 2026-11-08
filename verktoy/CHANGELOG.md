@@ -2,6 +2,16 @@
 
 Nyeste versjon øverst. Formatet er fast fordi forsiden leser det: `## <versjon> · <dato>` og så punkter som begynner med `- `.
 
+## 0.12.5 · 8. nov 2026
+- Etter en flytur går bildet rett fra flyet til det nye stedet. Det mørke havnekontoret vises ikke lenger et øyeblikk.
+- Storm i alle land: før kom stormen bare i Sahara. Nå kan den komme overalt. Himmelen blir mørk, regnet pisker på skrå og det lyner. I Dubai og Australia blir det sandstorm, og på Nordpolen snøstorm.
+- Havet: rolig vær gir glatt sjø, mens storm gir mørkt vann, hvite skumtopper og sprut mot land.
+- 11 nye fabeldyr fra ekte sagn: ifrit, nasnas og Kel Essuf i Sahara, Khattaf Rafay i Dubai, Stormskipet, pukwudgie og wendigo i USA, Mimi-ånder og Muldjewangk i Australia, Chullachaqui og Yacumama i Peru.
+- Minispillene kommer i variert rekkefølge og aldri samme type to kapitler på rad.
+- Nessie svømmer nå ute i Loch Ness, større og med lang hals, og vannet ringer rundt henne.
+- Nye dyr: en ekte kamel som ligger og hviler i Sahara, en lurvete snøape i Japan og flodhester som ligger i vannet i Sør-Afrika.
+- Hesten til den hodeløse rytteren har riktig størrelse.
+
 ## 0.12.4 · 8. nov 2026
 - Nordpolen: hundesleden har ekte grønlandshunder i vifte foran en sleide av tre, isbjørnen har myke former og riktig størrelse, og «fjellene» er byttet ut med skrugarder av is.
 - Nordpolen: det frosne skipet er et ekte polarskip i Frams stil, med master, rigg og dekkshus, fastfrosset i isen.
