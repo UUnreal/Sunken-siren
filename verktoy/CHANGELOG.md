@@ -2,6 +2,9 @@
 
 Nyeste versjon øverst. Formatet er fast fordi forsiden leser det: `## <versjon> · <dato>` og så punkter som begynner med `- `.
 
+## 0.12.9 · 8. nov 2026
+- Kina: qilinen har fått sin egen plass i gresset, så den ikke lenger står gjemt bak pixiuen.
+
 ## 0.12.8 · 8. nov 2026
 - Flere fabeldyr er tegnet på nytt etter sagnene: inkanyamba som kjempeslange med hestehode i fossekulpen, mamlambo med krokodillekropp som lyser grønt, akhlut som ulv i spekkhoggerfarger, selkien som kvinne med selskinnet på en stein, og pixiuen som en vinget bronseløve som ikke lenger ligner qilinen.
 - Nordpolen: krakenen løfter en kjempekappe med øye og armer opp av råka, og Qalupalik har grønn hud, vått hår og amauti.
