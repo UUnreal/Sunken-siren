@@ -2,6 +2,16 @@
 
 Nyeste versjon øverst. Formatet er fast fordi forsiden leser det: `## <versjon> · <dato>` og så punkter som begynner med `- `.
 
+## 0.12.3 · 8. nov 2026
+- Kina: hus, tempel, trær, kameler og vogn har fått ekte størrelse i forhold til professoren. Fire nye sagnvesener langs veien: huli jing, pixiu, bixi og xiezhi.
+- Trær i alle land er mange ganger høyere enn professoren, som i virkeligheten. Sjiraffene er like høye som ekte sjiraffer.
+- Folk i Sahara, Dubai, New York og ved polen er tegnet som ekte mennesker med skuldre, armer og ansikt, ikke som klosser.
+- Alt vann har ekte bølger: små krusninger i stille vær, store bølger med skumtopper i storm. Fuglene søker ly i storm.
+- Skottland: Foyers-fossen er stor, med to fall, sprut og tåke. Brownien er en liten, rufsete mann med skjegg og kost, slik sagnene beskriver ham. Småbrukene har riktig størrelse.
+- Nessie og de andre sagnvesenene vises alltid når du går forbi, og har samme pikselstil som i Norge.
+- Kjøreturer går alltid til et nytt sted i landet, ikke bare noen meter.
+- Overgangen når du går gjennom dører og etter reiser er en myk toning i stedet for en hard sirkel.
+
 ## 0.12.2 · 8. nov 2026
 - Japan: bambusen flytter seg ikke lenger når professoren går.
 - Japan: husene, toriiportene, helligdommen, pagoden og borgen har fått ekte størrelse i forhold til professoren (1,75 m).

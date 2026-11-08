@@ -30,7 +30,7 @@ button.on{background:var(--von);border-color:var(--gold)}@media(hover:hover){but
 <div class="ov" id="title"><canvas id="tc" style="position:absolute;inset:0;width:100%;height:100%;z-index:-1;touch-action:auto;background:none"></canvas><h1>Relic of the<br>Sunken Siren</h1><p>Caribbean, 1934. Professor Julian Vance is hunting the Sun Disc from the sunken temple. He is dramatically overqualified for everything except the physical stuff.</p>
 <p style="opacity:.75;font-size:14px">Tap to walk. Pick a verb, then a thing. Tap one thing in your bag and then another to combine. 👁 shows everything you can tap. Sound on!</p>
 <div id="langs" style="font-size:16px;display:flex;gap:6px;flex-wrap:wrap;justify-content:center"><button data-l="no">🇳🇴 Norsk</button><button data-l="en">🇬🇧 English</button></div>
-<div><button id="bNew">New game</button> <button id="bCont" style="display:none">Continue</button> <button id="bKode">💾 I have a code</button><button id="bNor">❄️ Test Norway</button><button id="bAur">🌌 Test aurora</button><button data-t="41">🏜️ Test Sahara</button><button data-t="56">🕌 Test Dubai</button><button data-t="71">🗽 Test USA</button><button data-t="86">🧊 Test North Pole</button><button data-t="101">🏰 Test Scotland</button><button data-t="116">⛩️ Test Japan</button><button data-t="131">🐉 Test China</button><button data-t="146">🦘 Test Australia</button><button data-t="161">🦒 Test South Africa</button><button data-t="176">🦙 Test Peru</button><button data-t="191">🌼 Test Mexico</button><div id="ver" style="font:12px sans-serif;opacity:.7;margin-top:6px">Version 0.12.2 · 8 Nov 2026</div><div id="cred" style="font:11px sans-serif;opacity:.55;margin-top:3px">Music made with Meta MusicGen (CC-BY-NC 4.0)</div></div></div>
+<div><button id="bNew">New game</button> <button id="bCont" style="display:none">Continue</button> <button id="bKode">💾 I have a code</button><button id="bNor">❄️ Test Norway</button><button id="bAur">🌌 Test aurora</button><button data-t="41">🏜️ Test Sahara</button><button data-t="56">🕌 Test Dubai</button><button data-t="71">🗽 Test USA</button><button data-t="86">🧊 Test North Pole</button><button data-t="101">🏰 Test Scotland</button><button data-t="116">⛩️ Test Japan</button><button data-t="131">🐉 Test China</button><button data-t="146">🦘 Test Australia</button><button data-t="161">🦒 Test South Africa</button><button data-t="176">🦙 Test Peru</button><button data-t="191">🌼 Test Mexico</button><div id="ver" style="font:12px sans-serif;opacity:.7;margin-top:6px">Version 0.12.3 · 8 Nov 2026</div><div id="cred" style="font:11px sans-serif;opacity:.55;margin-top:3px">Music made with Meta MusicGen (CC-BY-NC 4.0)</div></div></div>
 <div id="intro" style="position:fixed;inset:0;z-index:20;background:#000;cursor:pointer"><canvas id="ic" style="width:100%;height:100%;display:block;touch-action:none"></canvas></div>
 <div class="ov" id="code" style="display:none;z-index:8;background:rgba(8,5,12,.94)"><h2 id="cT" style="color:var(--gold);margin:0"></h2><pre id="cB" style="white-space:pre-wrap;font-size:17px;line-height:1.5;max-width:560px;text-align:left;background:#1a1222;padding:12px;border-radius:8px;border:1px solid #5a4470;margin:0;max-height:45vh;overflow:auto"></pre><button id="cP" style="display:none">▶ Play the signal</button><input id="cI" autocomplete="off" autocapitalize="characters" spellcheck="false" style="font:inherit;font-size:22px;padding:10px;width:min(320px,80vw);text-align:center;text-transform:uppercase;border-radius:8px;border:2px solid var(--gold);background:#0c0810;color:var(--ink)"><div><button id="cOK">Answer</button> <button id="cH" style="background:var(--vb)">💡 Hint</button> <button id="cS" style="background:var(--vb)">🔎 Search</button> <button id="cW" style="background:var(--vb)">📖 Wikipedia</button> <button id="cN" style="background:var(--vb)">📚 Encyclopedia</button> <button id="cX" style="background:var(--vb)">Close</button></div><p id="cM" style="min-height:22px;color:#ff9a7a"></p></div>
 <div class="ov" id="globe" style="display:none;z-index:9"><h2 style="color:var(--gold);margin:0">🌍 The journey around the world</h2><canvas id="gc" style="position:static;inset:auto;width:min(260px,62vw);height:min(260px,62vw);image-rendering:pixelated;background:none;touch-action:auto"></canvas><p id="gT" style="font-size:20px;margin:0"></p><div style="width:min(320px,80vw);height:14px;background:#2a1a30;border:1px solid #5a4470;border-radius:7px;overflow:hidden"><div id="gB" style="height:100%;width:0;background:linear-gradient(90deg,#f2b544,#ffe48a)"></div></div><p id="gL" style="white-space:pre-line;font-size:14px;opacity:.85;margin:0"></p><button id="gX">Close</button></div>
@@ -946,7 +946,7 @@ function rsky(){const s=skyNow(),[a,b]=RV,w=b-a+4,cw=(w+16)|0,k=s.c.join()+cw;if
  else{const ma=((s.h+24-18)%24)/12,x=a+w*.1+ma*w*.8,y=150-Math.sin(ma*Math.PI)*110;rdisc(x,y,8,'#f2eedc');rdisc(x+4,y-2,7,s.c[0])}
  skyClouds(s);
  // fugler langt borte (ikke i Nord-Norge og på polisen om vinteren, der har regionene egne ravner)
- const rm=S&&S.room,BN={sahara:1,peru:1,aus:2,mex:2,dubai:2,safr:3,skott:3,japan:4,kina:4,usa:5}[rm];if(BN&&s.night<.5){const per=48+hsh(rm.length*7)*30,cy=(T+hsh(rm.length)*90)%per,pr=cy/30;if(pr<1)for(let i=0;i<BN;i++){const x=a-60+pr*(w+120)-i*(10+hsh(i+.3)*12),y=58+hsh(i*1.7+rm.length)*36+Math.sin(T*.35+i*2)*5;gull(X,x,y,.26+hsh(i+.9)*.1,T*(.8+hsh(i)*.4)+i*2.1,1,'#2a1a14')}}return s}
+ const rm=S&&S.room,BN={sahara:1,peru:1,aus:2,mex:2,dubai:2,safr:3,skott:3,japan:4,kina:4,usa:5}[rm];if(BN&&s.night<.5&&!(typeof WX=='object'&&WX.storm>.3)){const per=48+hsh(rm.length*7)*30,cy=(T+hsh(rm.length)*90)%per,pr=cy/30;if(pr<1)for(let i=0;i<BN;i++){const x=a-60+pr*(w+120)-i*(10+hsh(i+.3)*12),y=58+hsh(i*1.7+rm.length)*36+Math.sin(T*.35+i*2)*5;gull(X,x,y,.26+hsh(i+.9)*.1,T*(.8+hsh(i)*.4)+i*2.1,1,'#2a1a14')}}return s}
 // ---------- Himmel: ekte skytyper (fakta: WMO International Cloud Atlas / met.no) ----------
 // Cirrus: høye fjærskyer av iskrystaller med krokete haler. Cumulus: haugskyer med flat bunn, pent vær; store høyt oppe, små og flate mot horisonten.
 // Stratocumulus: grått, klumpete skydekke (vanlig i Nord-Europa om vinteren). Cumulonimbus: tordensky som tårner seg opp til en flat «ambolt», med regnskyll og lyn.
@@ -1041,10 +1041,11 @@ function profPix(walk,talk){const ph=walk*7.5,st=walk?Math.sin(ph):0,gu=gustW()*
 // professoren tegnes i spillets koordinater: 1 piksel = 2 enheter, skarpt
 function drawProf(x,y,walk,dir,talk){X.save();X.translate(Math.round(x/2)*2,Math.round(y/2)*2);X.scale(2*dir,2);X.imageSmoothingEnabled=false;profPix(walk,talk);X.restore()}
 // tuaregen Amastan (pikselfigur i indigo)
-function rtuareg(x,y,talk){X.save();X.translate(x,y);X.scale(-1,1);const gu=gustW(),br=Math.round(Math.sin(T*2+1)*.6);Rr('rgba(0,0,0,.28)',-9,-1,18,3);
- for(let r=0;r<34;r++){const w=8+Math.round(r*.18),fl=r>20?Math.round(Math.sin(T*6+r*.3)*gu):0;Rr('#1a0e0a',-w-1+fl,-36+r,w*2+2,1);Rr(r%5?'#2a3e8a':'#22337a',-w+fl,-36+r,w*2,1)}Rr('#3a52a8',-6,-36,3,30);
- Rr('#1a0e0a',-5,-49+br,11,13);Rr('#1e2a6a',-4,-48+br,9,11);Rr('#8a5a3a',-1,-44+br,6,3);Pp('#fff',2,-43+br);Pp('#111',3,-43+br);
- let sx=-4,sy=-44+br;for(let i=0;i<10;i++){sx-=1+gu*.5;sy+=Math.sin(T*8+i*.6)*gu*.6;Rr('#2a3e8a',sx,sy,2,2)}Rr('#e8d8a0',-9,-12,3,12);X.restore()}
+// Tuaregen Amastan: indigoblå kjortel som blafrer i vinden, tagelmust (hodeklede som dekker ansiktet) med bare øynene fri, kamelstokk.
+function rtuareg(x,y,talk){const gu=gustW();dPer(x,y,-1,{skin:'#8a5a3a',coat:'#2a3e8a',leg:'#22337a',robe:1,shoe:'#6a4a2a',k:2.4,
+ hat:br=>{fE('#1e2a6a',.2,-23.2+br,2.4,2.8);nPg('#1e2a6a',[[-2.2,-22+br],[2.5,-22.6+br],[2.3,-20.4+br],[-2.2,-20.4+br]]);Rr('#8a5a3a',.2,-24+br,2.2,.9);Pp('#fff',1.4,-23.8+br);Pp('#111',1.9,-23.8+br);let sx=-2.6,sy=-23+br;for(let i=0;i<6;i++){sx-=.6+gu*.3;sy+=Math.sin(T*8+i*.6)*gu*.3;Rr('#2a3e8a',sx,sy,1,1)}},
+ ex:()=>{X.strokeStyle='#e8d8a0';X.lineWidth=.6;X.beginPath();X.moveTo(2.4,-12.4);X.lineTo(3,0);X.stroke()}})}
+
 // ---------- vær og fotspor ----------
 // WX.storm 0..1. En sandstorm kommer innimellom i Sahara (aldri i testmodus). ?storm=1 tvinger fram en storm.
 const WX={storm:0,next:240+Math.random()*180,on:0,t:0,warned:0};const FP=[];let rLastT=0,fpLast=0;
@@ -1290,8 +1291,12 @@ function dCamel(x,y,dir,ph,walk,k=2.75){if(!vis(x-70,140))return;X.save();X.tran
  Rr(DD,16.4,-25.4,.8,1);Pp('#1a1008',17.6,-23.6);Rr(DD,19.2,-22.8,.6,.4);Rr(L,16.8,-24.6,1.4,.4);
  nPg('#8a2a20',[[-4,-17.2],[2.6,-17.6],[3.4,-12],[-4.6,-11.8]]);Rr('#d8a040',-4.4,-12.4,8,.6);
  leg(-6.2,-11,0,B,0);leg(7.4,-11,0,B,1);X.restore()}
-function dMan(x,y,w,dir){if(!vis(x-20,40))return;X.save();X.translate(x,y);X.scale(dir*2.3,2.3);Rr('rgba(0,0,0,.2)',-4,0,9,1);Rr('#8a6a4a',-3,-1,2,1);Rr('#8a6a4a',1,-1,2,1);
- for(let r=0;r<19;r++){const ww=3+r*.09;Rr(r%6?w[0]:w[1],-ww,-20+r,ww*2,1)}Rr(w[2],-2,-24,4,4);Pp('#222',1,-23);Rr(w[3],-3,-26,6,3);Rr(w[3],-3,-24,1,7);Rr('#1a1a1a',-3,-26,6,1);if(w[4])w[4]();X.restore()}
+// Folk i Dubai, New York og ved polen tegnes nå som ekte personer (dPer): skuldre, armer, hender, ansikt. Lys kjortel = kandura med ghutra og agal; ellers frakk, bukser og lue.
+function dMan(x,y,w,dir){const L=c=>{const n=parseInt(c.slice(1),16);return((n>>16)+(n>>8&255)+(n&255))/765},robe=L(w[0])>.8;
+ dPer(x,y,dir,{skin:w[2],coat:w[0],leg:w[1],robe,shoe:robe?'#8a6a4a':'#1a1410',k:2.3,hair:robe?null:'#2a1a10',
+  hat:robe?br=>{nPg(w[3],[[-2.8,-25+br],[2.4,-25.8+br],[2.9,-23.4+br],[1.6,-23.2+br],[-1.2,-23.6+br],[-2.6,-18+br],[-3.8,-20.5+br]]);Rr('#1a1a1a',-2.4,-25.6+br,5,.8)}:br=>{nPg(w[3],[[-2.6,-24.4+br],[-2.2,-26.2+br],[2,-26.4+br],[3.4,-24.6+br],[4.4,-24.2+br],[-2.4,-24+br]])},
+  ex:()=>{if(w[4]){X.save();X.scale(.98,.98);w[4]();X.restore()}}})}
+
 // Bu Darya: stiger opp av Creeken i skumringen, tanghår og skjell, lysende øyne, svømmehud
 const bdX=()=>1980+Math.sin(T*.04)*90,bdA=()=>{const s=skyNow();return Math.max(Math.min(1,BD.show),s.night>.3?.8:0,Math.max(0,Math.min(1,Math.sin(T*.06+1)*3-1.6)))};
 function dBuDarya(){BD.show=Math.max(0,BD.show-.008);const x=bdX(),a=bdA();if(!vis(x-30,60))return;ghost(x,200,24,40,a,()=>{const r=Math.sin(T*.8)*1.5;
@@ -1478,7 +1483,7 @@ R.pol={ww:POLW*2,region:1,prof:1,pole:1,walk:[[[30,440],[POLW*2-30,440],[POLW*2-
  npcs:()=>({ingrid:[700,400],qalu:[2840,330],kraken:[2980,300]}),
  draw(){const cl=camX/2;RV=[cl,cl+VW()/2];X.save();X.scale(2,2);pSky();nAurora(.4);pRidge(520,1180);pShip(1780);pIce();pLead(1300,1640);pKraken();pQalu();
   pTent(120,'#c8b890');pTent(190,'#a89870');if(!DRV)pSled(230);pBear();pSeal(1250);pPole(2450);for(let i=0;i<5;i++)pRidge(2050+i*80,2080+i*80);
-  dMan(350,232,['#5a4a3a','#4a3a2a','#e0b090','#e8e0d0',()=>{Rr('#e8e0d0',-4,-26,8,4);Rr('#c8302a',-3,-18,6,1)}],1);
+  dMan(350,232,['#5a4a3a','#4a3a2a','#e0b090','#5a4a3a',()=>{X.strokeStyle='#e8e0d0';X.lineWidth=1.3;X.beginPath();X.ellipse(.4,-23.2,2.6,2.9,0,0,7);X.stroke();Rr('#c8302a',-3,-18.5,6,1)}],1);
   if(DRV)pSled(P.x/2-40);footprints();const st=POL_SITES[sahSite()];if(st&&vis(st.x-20,40)){const yy=120+Math.sin(T*3)*3;Rr('#1a0e0a',st.x-4,yy-1,9,9);Rr('#ffd23f',st.x-3,yy,7,7);Rr('#1a0e0a',st.x-1,yy+2,3,3)}X.restore()},
  front(){const dt=Math.min(.1,T-(QA.lt||T));QA.lt=T;driveTick(dt);ui();X.save();X.scale(2,2);nSnow(gustW()*.6);const s=skyNow();if(s.night>0){X.fillStyle=`rgba(10,18,52,${.3*s.night})`;X.fillRect(RV[0]-2,0,RV[1]-RV[0]+4,270)}X.restore()},
  hs(){const n=S.ch,si=sahSite(),H=[];
@@ -1535,7 +1540,11 @@ const nearHouse=()=>NHOUSE.reduce((m,h)=>Math.abs(h+48-P.x/2)<Math.abs(m+48-P.x/
 function nCtx(){if(S.room!='norge')return null;if(NB.on&&!nSheltered())return['ly','🏃 Run for shelter',()=>run(async()=>{const h=!S.f.fonn&&P.x<940?NHOUSE[0]:nearHouse(),tx=(h+48)*2;await say('P','Run, professor, run!');P.path=[[tx,470]];for(let i=0;i<60&&!nSheltered();i++)await new Promise(r=>setTimeout(r,100));if(!nSheltered()){P.x=tx;P.path=[];camSnap=1}await say('P','Inside in the warmth! I will wait here until the storm passes.')})];
  if(!S.f.fonn&&Math.abs(P.x-940)<150)return['mak','⛏ Shovel',()=>run(async()=>{if(!has('spade'))return say('P','The snowdrift is taller than me. I need a shovel. Maybe at the storehouse?');for(let i=0;i<4;i++){burst(940,440,'#f4f8ff',18,140);sfx('blip');await new Promise(r=>setTimeout(r,FAST?0:350))}S.f.fonn=1;await say('P','All shovelled! I have a doctorate, but that was the hardest work I have ever done.')})];return null}
 // Kjøreturer: varighet etter avstand (ca. 450 enheter/s), og ingen tur hvis målet bare er noen skritt unna. Gir false da, så kalleren hopper over «Fremme».
-function drive(v,to){const d=Math.abs(to-P.x);if(d<260)return say('P','The next clue is only a few steps away. I will walk the rest.').then(()=>{walkTo(to,480);return false});return new Promise(res=>{DRV={v,x0:P.x,x1:to,t:0,dur:Math.min(7,Math.max(1.6,d/450)),res:()=>res(true),dir:to>P.x?1:-1};sfx(v=='car'?'door':'blip')})}
+// Kjøring skal alltid gå til et nytt sted i landet: er målet nærmere enn ca. 40 m, kjører vi i stedet til det fjerneste stedet i landet (fra RSITES) og ser oss om der.
+// Turen tar 3–8 sekunder og kamera følger kjøretøyet gjennom landskapet. Etterpå sier professoren hvor han kom.
+function drive(v,to){let d=Math.abs(to-P.x),dest=null;if(d<1400){let best=null;try{for(const s of RSITES()){const dx=Math.abs(s.x*2-P.x);if(dx>1400&&(!best||dx>Math.abs(best.x*2-P.x)))best=s}}catch(e){}
+  if(!best)return say('P','The next clue is only a few steps away. I will walk the rest.').then(()=>{walkTo(to,480);return false});dest=best;to=Math.max(80,best.x*2-80);d=Math.abs(to-P.x)}
+ return(dest?say('P','The clue is right here, but we will take a trip to '+dest.n+' og ser oss om.'):Promise.resolve()).then(()=>new Promise(res=>{DRV={v,x0:P.x,x1:to,t:0,dur:Math.min(8,Math.max(3,d/300)),res:()=>res(true),dir:to>P.x?1:-1};sfx(v=='car'?'door':'blip')}))}
 function driveTick(dt){if(!DRV)return;DRV.t+=dt/(FAST?.05:DRV.dur||2.6);const k=Math.min(1,DRV.t),e=k<.5?2*k*k:1-(-2*k+2)**2/2;P.x=DRV.x0+(DRV.x1-DRV.x0)*e;P.path=[];if(k>=1){const r=DRV.res;DRV=null;r()}}
 const norSite=()=>{const n=S.ch;return n>=26&&n<=40?(n-26)%NOR_SITES.length:0};
 R.norge={ww:NORW*2,region:1,prof:1,polar:1,walk:[[[30,440],[NORW*2-30,440],[NORW*2-30,528],[30,528]]],spawn:{start:[120,480]},
@@ -1946,7 +1955,7 @@ function glints(){room.hs().filter(h=>h&&GLINT.has(h.id)).forEach(h=>{const p=(T
 function loop(ts){if(document.getElementById('lsf')&&document.getElementById('lsf').style.opacity=='1'){requestAnimationFrame(loop);return}const dt=Math.min(.05,(ts-last)/1000||0);last=ts;T+=dt;
  if(P.path.length){const[tx,ty]=P.path[0],dx=tx-P.x,dy=ty-P.y,d=Math.hypot(dx,dy),sp=(FAST?2000:170*(room.region?.68*(1-WX.storm*.5):1))*sc(P.y)*dt;if(Math.abs(dx)>1)P.dir=dx>0?1:-1;P.t+=dt;stepT+=dt;if(stepT>.32){stepT=0;sfx('step')}if(d<=sp){P.x=tx;P.y=ty;P.path.shift();if(!P.path.length&&arrive){const a=arrive;arrive=null;a()}}else{P.x+=dx/d*sp;P.y+=dy/d*sp}}else P.t=0;
  if(cur){cur.t-=dt;if(cur.t<=0){const r=cur.res;cur=null;try{speechSynthesis.cancel()}catch(e){}try{curSrc&&curSrc.stop()}catch(e){}curSrc=null;duck(0);r()}}
- if(iris){irisV+=(iris.to?1:-1)*dt*2.4;if(iris.to?irisV>=1:irisV<=0){irisV=iris.to;const r=iris.res;iris=null;r()}}
+ if(iris){irisV+=(iris.to?1:-1)*dt*1.7;if(iris.to?irisV>=1:irisV<=0){irisV=iris.to;const r=iris.res;iris=null;r()}}
  if(cv.width<2||Math.abs(cv.width-cv.getBoundingClientRect().width*dpr)>2)resize();
  k=cv.height/H;const vw=VW(),rw=room.ww||W,tg=vw>=rw?(rw-vw)/2:Math.max(0,Math.min(rw-vw,P.x-vw/2));camX=camSnap?tg:camX+(tg-camX)*Math.min(1,dt*3.5);camSnap=0;
  X.setTransform(1,0,0,1,0,0);X.fillStyle='#000';X.fillRect(0,0,cv.width,cv.height);
@@ -1959,7 +1968,7 @@ function loop(ts){if(document.getElementById('lsf')&&document.getElementById('ls
  drawSpeech();X.restore();
  X.setTransform(1,0,0,1,0,0);const cw=cv.width,ch=cv.height;{const vw=Math.ceil(cw/8),vh=Math.ceil(ch/8);if(!VIG||VIG.width!=vw||VIG.height!=vh){VIG=document.createElement('canvas');VIG.width=vw;VIG.height=vh;const g=VIG.getContext('2d'),rg=g.createRadialGradient(vw/2,vh/2,Math.min(vw,vh)*.35,vw/2,vh/2,Math.max(vw,vh)*.75);rg.addColorStop(0,'rgba(0,0,0,0)');rg.addColorStop(1,'rgba(0,0,0,.55)');g.fillStyle=rg;g.fillRect(0,0,vw,vh)}X.imageSmoothingEnabled=true;X.drawImage(VIG,0,0,cw,ch)}
  if(flash>0){X.fillStyle=`rgba(255,240,200,${flash*.7})`;X.fillRect(0,0,cw,ch);flash=Math.max(0,flash-dt*1.5)}
- if(irisV<1){const px=(P.x-camX)*k,py=(P.y-80)*k;X.fillStyle='#000';X.beginPath();X.rect(0,0,cw,ch);X.arc(px,py,Math.max(0,irisV)*Math.hypot(cw,ch),0,7,true);X.fill()}
+ if(irisV<1){const v=Math.max(0,Math.min(1,irisV)),e=v*v*(3-2*v),px=(P.x-camX)*k,py=(P.y-80)*k,R=Math.hypot(cw,ch);/* myk overgang: skjermen toner mykt ned i mørke med en lys, fjæret sirkel rundt professoren (ingen harde kanter) */const g=X.createRadialGradient(px,py,R*e*.55,px,py,R*(e*1.1+.08));g.addColorStop(0,'rgba(8,6,12,0)');g.addColorStop(1,`rgba(8,6,12,${Math.min(1,1.15-e*.9)})`);X.fillStyle=g;X.fillRect(0,0,cw,ch);X.fillStyle=`rgba(8,6,12,${(1-e)*.85})`;X.fillRect(0,0,cw,ch)}
  if(ban){ban.l-=dt;const a=Math.min(1,ban.l*2),sc2=Math.min(1,(2.2-ban.l)*5);X.save();X.globalAlpha=a;X.translate(cw/2,ch*.32);X.scale(sc2,sc2);const fs=Math.min(cw*.13,90);X.font=`bold ${fs}px Georgia`;X.textAlign='center';X.lineWidth=fs*.12;X.strokeStyle='#4a1a08';X.strokeText(ban.t,0,0);X.fillStyle=lg(0,-fs,0,0,['#fff6c0','#f2b544','#c06a1a']);X.fillText(ban.t,0,0);X.font=`bold ${fs*.32}px Georgia`;X.fillStyle='#fff';X.strokeStyle='#000';X.lineWidth=4;const s2='⭐'.repeat(ban.s||3)+(ban.s==3?'  Solved without help':'');X.strokeText(s2,0,fs*.55);X.fillText(s2,0,fs*.55);X.restore();if(ban.l<=0)ban=null}
  if(mini){X.fillStyle='rgba(8,5,12,.88)';X.fillRect(0,0,cw,ch);const[kk,ox,oy]=mt();X.setTransform(kk,0,0,kk,ox,oy);drawMini()}
  if(hold&&!busy&&!mini&&!codeOpen&&(holdT+=dt)>.25){holdT=0;const q=cpos({clientX:hold.cx,clientY:hold.cy});walkTo(Math.max(20,Math.min((room.ww||W)-20,q.x)),q.y)}
@@ -1987,7 +1996,7 @@ function mkReg(k,c){MK[k]=c;c.cr=c.cr||[];c.npcs=c.npcs||[];c.props=c.props||[];
  REGS[k]={a:c.a,b:c.a+14,S:()=>c.sites,intro:c.intro,out:c.out,outLook:c.outLook,bg:c.bg,bgx:c.bgx};
  [...c.npcs,...c.cr].forEach(n=>{NPC[n.id]={name:n.name,col:n.col};VOX[n.id]=n.vox||[1,1]});
  const crA=q=>Math.max(Math.min(1,q.show),Math.max(0,Math.min(1,Math.sin(T*(q.sp||.06)+(q.ph||0))*3-1.8)),q.nightOn&&skyNow().night>.5?.85:0);
- c.crA=crA;c.crDraw=id=>{const q=c.cr.find(e=>e.id==id);q.show=Math.max(0,q.show-.006);{const qx=q.px?q.px():q.x;if(Math.abs(P.x/2-qx)<280&&Math.sin(T*.22+(q.ph||0))>-.6)q.show=Math.max(q.show,1)}const a=crA(q),x=q.px?q.px():q.x;if(a>0&&q.draw&&vis(x-q.w,q.w*2))ghost(x,q.y,q.w,q.h,a,()=>q.draw(a))};
+ c.crA=crA;c.crDraw=id=>{const q=c.cr.find(e=>e.id==id);q.show=Math.max(0,q.show-.006);{const qx=q.px?q.px():q.x;if(Math.abs(P.x/2-qx)<280)q.show=Math.max(q.show,1)}const a=crA(q),x=q.px?q.px():q.x;if(a>0&&q.draw&&vis(x-q.w,q.w*2))fSprX(x,q.y,{w:q.w,h:q.h,fly:1},()=>q.draw(a),a)};
  const W2=c.W*2,rideX=()=>c.ride.at??c.ride.x;
  R[k]={ww:W2,region:1,prof:1,walk:[[[30,440],[W2-30,440],[W2-30,528],[30,528]]],spawn:{start:[120,480]},
   npcs:()=>{const o={};c.npcs.forEach(n=>o[n.id]=[n.x*2,n.y?n.y*2:400]);c.cr.forEach(q=>o[q.id]=[(q.px?q.px():q.x)*2,(q.y-q.h*.6)*2+90]);return o},
@@ -2022,12 +2031,20 @@ function dPer(x,y,dir,o,ph=0,walk=0){if(!vis(x-20,40))return;const k=o.k||2.25;X
  if(!o.robe){ln(dk(o.leg),1.9,[[-.5,-12],[-.5+s*1.4,-6],[-.4+s*2.6,-.8]]);ln(o.leg,1.9,[[.6,-12],[.6-s*1.4,-6],[.7-s*2.6,-.8]]);Rr(o.shoe||'#2a1a10',-1.3+s*2.6,-1,3,1);Rr(o.shoe||'#2a1a10',-.2-s*2.6,-1,3,1)}
  else{Rr(o.shoe||'#2a1a10',-1.6,-1,2.6,1);Rr(o.shoe||'#2a1a10',.8,-1,2.6,1)}
  ln(dk(o.coat),1.6,[[-.6,-19.4+br],[-.9-s*1.2,-15.6],[-.6-s*2,-12.2]]);
- const bot=o.robe?-1:-10.6;nPg(o.coat,[[-2.9,-20+br],[2.9,-20+br],[3.2,-14],[o.robe?4.3:3.4,bot],[o.robe?-4.3:-3.4,bot],[-3.2,-14]]);nPg(dk(o.coat),[[-2.9,-20+br],[-1.1,-20+br],[-1.5,bot],[o.robe?-4.3:-3.4,bot],[-3.2,-14]]);
+ // kropp med skuldre, smalere midje og hofter; kjortel/kimono vider seg ut mot en bølgende fald med folder
+ if(o.robe){const w=Math.sin(T*1.3+x)*.3;nPg(o.coat,[[-3.1,-20+br],[3.1,-20+br],[3.4,-16.5],[2.7,-13],[3.6,-7],[4.6+w,-1.6],[2.4,-.8],[0,-1.3],[-2.4,-.8],[-4.6+w,-1.6],[-3.6,-7],[-2.7,-13],[-3.4,-16.5]]);nPg(dk(o.coat),[[-3.1,-20+br],[-1.2,-20+br],[-1,-13],[-1.6,-1],[-2.4,-.8],[-4.6+w,-1.6],[-3.6,-7],[-2.7,-13],[-3.4,-16.5]]);ln(dk(o.coat),.35,[[.9,-12],[1.3,-1.4]]);ln(dk(o.coat),.35,[[2.4,-11],[3.4,-2]]);ln(mixC(o.coat,'#ffffff',.25),.4,[[2.6,-19.6+br],[1.2,-15],[1.6,-13]])}
+ else{nPg(o.coat,[[-3.1,-20+br],[3.1,-20+br],[3.4,-17],[2.7,-13.6],[3.2,-10.4],[-3.2,-10.4],[-2.7,-13.6],[-3.4,-17]]);nPg(dk(o.coat),[[-3.1,-20+br],[-1.2,-20+br],[-1,-10.4],[-3.2,-10.4],[-2.7,-13.6],[-3.4,-17]]);ln(dk(o.coat),.35,[[.4,-19.6+br],[.6,-10.8]]);ln(mixC(o.coat,'#ffffff',.22),.4,[[2.6,-19.6+br],[2.2,-14]])}
  if(o.belt)Rr(o.belt,-3.2,-13.8,6.5,.9);
- ln(o.coat,1.7,[[.8,-19.4+br],[1+s*1.2,-15.6],[1.5+s*2,-12.4]]);X.fillStyle=o.skin;X.beginPath();X.arc(1.6+s*2,-11.9,.85,0,7);X.fill();
- Rr(dk(o.skin),-.6,-21.4+br,1.4,1.6);X.beginPath();X.arc(.3,-23.1+br,2.25,0,7);X.fill();nPg(o.skin,[[2.2,-23.6+br],[3.1,-22.6+br],[2.3,-22.2+br]]);Pp('#1a1010',1.4,-23.6+br);
+ ln(o.coat,o.robe?2.1:1.7,[[.8,-19.4+br],[1+s*1.2,-15.6],[1.5+s*2,-12.4]]);X.fillStyle=o.skin;X.beginPath();X.ellipse(1.6+s*2,-11.8,.75,.95,0,0,7);X.fill();
+ Rr(dk(o.skin),-.6,-21.4+br,1.4,1.6);X.fillStyle=o.skin;X.beginPath();X.ellipse(.3,-23.1+br,2.05,2.4,0,0,7);X.fill();nPg(o.skin,[[2.1,-23.8+br],[2.9,-22.7+br],[2.2,-22.1+br]]);nPg(o.skin,[[-.6,-21.6+br],[2,-21.2+br],[1.6,-20.8+br],[-.4,-21+br]]);
+ Pp(dk(o.skin),-.9,-23+br);Pp('#1a1010',1.4,-23.6+br);Rr(dk(o.hair||o.skin),.8,-24.6+br,1.3,.35);Rr(dk(o.skin),1.2,-21.9+br,.9,.3);
  if(o.hair){X.fillStyle=o.hair;X.beginPath();X.arc(-.1,-23.6+br,2.35,Math.PI*.75,Math.PI*1.95);X.fill()}
  if(o.hat)o.hat(br);if(o.ex)o.ex(br,s);X.restore()}
+// Personer tegnes i et lite lerret og får samme pikselstil som vesenene: mørk kontur, lys kant oppe, skygge nede. Da ser de ut som mennesker og ikke som klosser.
+{const _d=dPer,PC=document.createElement('canvas');dPer=function(x,y,dir,o,ph=0,walk=0){if(!vis(x-20,40)||FAST)return _d(x,y,dir,o,ph,walk);const k=o.k||2.25,W=Math.ceil(22*k)+4,H=Math.ceil(32*k)+4;PC.width=W;PC.height=H;const g=PC.getContext('2d'),X0=X,R0=RV;X=g;RV=[-1e5,1e5];try{_d(W/2+(x-Math.round(x)),H-3*k,dir,o,ph,walk)}finally{X=X0;RV=R0}
+ const im=g.getImageData(0,0,W,H),d=im.data,S=new Uint8Array(W*H),q=new Uint8ClampedArray(d);for(let i=0;i<W*H;i++)S[i]=d[i*4+3]>=128;
+ for(let yy=0;yy<H;yy++)for(let xx=0;xx<W;xx++){const i=yy*W+xx,j=i*4;if(S[i]){let m=1;if(!(yy>0&&S[i-W]))m=1.18;if(!(yy<H-1&&S[i+W]))m*=.8;for(let c=0;c<3;c++)q[j+c]=d[j+c]*m;q[j+3]=255}else if(d[j+3]<128&&((xx>0&&S[i-1])||(xx<W-1&&S[i+1])||(yy>0&&S[i-W])||(yy<H-1&&S[i+W]))){q[j]=22;q[j+1]=18;q[j+2]=16;q[j+3]=210}}
+ im.data.set(q);g.putImageData(im,0,0);X.save();X.imageSmoothingEnabled=false;X.drawImage(PC,Math.round(x)-W/2,Math.round(y)-H+3*k);X.restore()}}
 // Felles bein for firbeinte dyr: hofte (hx,hy), lengde l, fase o; kneet bøyer seg framover på frambeina og bakover på bakbeina (som hos ekte hovdyr).
 function qLeg(hx,hy,l,ph,o,walk,c,w,front,hoof){const s=walk?Math.sin(ph+o):0,lift=walk?Math.max(0,Math.cos(ph+o))*l*.08:0,kx=hx+s*l*.12+(front?l*.04:-l*.08),ky=hy+l*.52-lift,fx=hx+s*l*.24,fy=-lift*.6;
  X.strokeStyle=c;X.lineCap='round';X.lineWidth=w;X.beginPath();X.moveTo(hx,hy);X.lineTo(kx,ky);X.stroke();X.lineWidth=w*.7;X.beginPath();X.moveTo(kx,ky);X.lineTo(fx,fy);X.stroke();if(hoof)Rr(hoof,fx-w*.45,fy-w*.5,w*.95,w*.55)}
@@ -2130,7 +2147,7 @@ mkReg('skott',{W:SKOW,a:101,place:'Scotland',trw:'rain',clim:[.6,1,.15],sites:SK
   pGround(204,skoPal.moor,2);
   for(const [x,h,p] of[[40,58,0],[470,64,1],[620,52,2],[1120,60,3],[1250,48,4],[1640,66,5],[2140,58,6],[2290,50,7],[2560,62,8]])sPine(x,206,h,p);
   for(const [x,h,p] of[[540,44,1],[1060,40,2],[1700,46,3],[2200,42,4]])dTree(x,206,h,p,gustW(),AUT[2],.55);
-  sCroft(150,206,50,22,1);sCroft(260,208,58,24,0);sCroft(390,206,46,21,1);
+  gS(0,206,3,()=>sCroft(0,206,46,22,1));gS(160,208,3,()=>sCroft(160,208,50,24,0));gS(322,206,3,()=>sCroft(322,206,36,21,1));
   for(let i=0;i<14;i++){const x=440+i*8;Rr(i%2?'#7a786e':'#6a685e',x,214-(i%3),8,5)}// steingjerde
   sStones(1900);sBurn(2010,2050);MK.skott.crDraw('kelpie');
   const cp=(T*.015)%1;sCow(560+Math.sin(cp*6.28)*20,236,Math.cos(cp*6.28)>0?1:-1,T*2.5,1);sCow(640,232,-1,0,0);
@@ -2316,12 +2333,12 @@ mkReg('kina',{W:KINW,a:131,place:'China',trw:'fair',clim:[.05,.35,0],sites:KIN,n
  bg(){rsky();pHills(172,34,.007,1,'#8a8a98',.15,206);kWall(.35,192,22,-1e9);pGround(204,['#a8885a','#b8986a','#8a6a40'],1.5,5)},
  draw(){pHills(170,36,.007,1,'#8e8c9a',.12,206,'#9e9cac');kWall(.35,192,22,650);
   pGround(204,['#a8885a','#b8986a','#8a6a40'],1.5,5);
-  kHutong(60,206,90,26,1);kHutong(160,206,70,24,0);kHutong(240,206,96,28,1);kHutong(350,206,80,25,0);kHutong(440,206,74,24,1);
-  kTemple(860);for(const x of[700,1020])for(let i=0;i<3;i++)sPine(x+i*24,206,40+i*6,i+x);
+  gS(0,206,3.4,()=>kHutong(0,206,90,30,1));gS(320,206,3.4,()=>kHutong(320,206,74,28,0));
+  gS(890,206,2.4,()=>kTemple(890));for(const x of[700,1020])for(let i=0;i<3;i++)sPine(x+i*24,206,40+i*6,i+x);
   kBridge(1360);kWillow(1290,206,46,1);kWillow(1440,206,42,2);MK.kina.crDraw('qilin');
   kPersimmon(560,206,40);kPersimmon(1560,206,44);kPersimmon(2160,206,38);
   for(const [x,h,p] of[[1700,46,1],[2260,40,2],[2560,48,3]])dTree(x,206,h,p,gustW(),AUT[2],.35);
-  const cp=(T*.006)%1,cx=1700+cp*900;kCamel(cx,236,1,T*3,1);kCamel(cx-64,238,1,T*3+1.5,1);kCamel(cx-128,236,1,T*3+.7,1);
+  const cp=(T*.006)%1,cx=1700+cp*900;kCamel(cx,236,1,T*3,1,3.1);kCamel(cx-80,238,1,T*3+1.5,1,3.1);kCamel(cx-160,236,1,T*3+.7,1,3.1);
   kMagpie(600,236,1,0);kMagpie(612,238,-1,1.5);kMagpie(1180,234,1,.7);
   MK.kina.crDraw('drage')},
  front(){},
@@ -2468,7 +2485,7 @@ mkReg('safr',{W:SAFW,a:161,place:'South Africa',trw:'rain',clim:[.25,.8,.65],sit
   for(let i=0;i<5;i++)fRondavel(160+i*60,206+(i%2)*2);fBaobab(1360);fKopje(2420);MK.safr.crDraw('grootslang');
   {const s=skyNow(),x0=780,x1=980;if(vis(x0,x1-x0)){for(let y=204;y<230;y+=2){Rr(mixC(s.c[2],'#5a5a3a',.6),x0+Math.sin(y*.2)*4,y,x1-x0,2)}fHippo(830,214);fHippo(850,216);fHippo(930,212);nPg('#4a5a3a',[[960,224],[972,221],[990,222],[994,224]]);Rr('#3a4a2a',988,221,8,1)}}
   for(const [x,h,p] of[[60,58,1],[540,66,2],[700,50,3],[1120,62,4],[1600,70,5],[2080,56,6],[2240,64,7],[2560,52,8]])fAcacia(x,206,h,p);
-  fElephant(1180,218,1,T*1.5,0,.8);fElephant(1260,222,-1,0,0,.55);fGiraffe(1620,214,1,0,.75);fGiraffe(1680,218,-1,2,.62);
+  fElephant(1180,218,1,T*1.5,0,.8);fElephant(1260,222,-1,0,0,.55);fGiraffe(1620,230,1,0,1.45);fGiraffe(1720,232,-1,2,1.25);
   {const s=skyNow(),x0=1850,x1=1960;if(vis(x0,x1-x0)){X.fillStyle=mixC(s.c[2],'#4a4a3a',.55);X.beginPath();X.ellipse(1905,214,55,7,0,0,7);X.fill()}}
   const zp=(T*.01)%1;for(let i=0;i<4;i++)fZebra(1860+i*26+Math.sin(zp*6.28+i)*10,234+(i%2)*3,i%2?1:-1,T*3+i,0);
   soar(1500,60,60,.9,'#3a3028','#e8e0d0',1);soar(1700,70,40,.8,'#3a3028','#e8e0d0',3);
@@ -2642,7 +2659,19 @@ function extReg(k,arr,add,fn){arr.push(...add);const c=MK[k],d=c.draw;c.draw=fun
 const PG=(c,P)=>{X.fillStyle=c;X.beginPath();P.forEach(([x,y],i)=>i?X.lineTo(x,y):X.moveTo(x,y));X.closePath();X.fill()};
 // Skottland: steinbu (bothy), Foyers-fossen ved Loch Ness, slusene i Fort Augustus (Caledonian Canal, 1822)
 function sBothy(x){if(!vis(x-40,90))return;Rr('#6a6a64',x-34,186,68,30);for(let i=0;i<6;i++)for(let j=0;j<3;j++)Rr((i+j)%2?'#5a5a54':'#7a7a72',x-34+i*11+(j%2)*5,188+j*9,10,8);PG('#3a4a3a',[[x-40,188],[x,168],[x+40,188]]);Rr('#2a2018',x-6,200,12,16);Rr('#f2c060',x+16,194,6,5);smoke(x+24,166)}
-function sFoyers(x){if(!vis(x-60,120))return;PG('#3e463e',[[x-60,206],[x-40,120],[x-10,110],[x+30,118],[x+60,206]]);for(let i=0;i<12;i++){const y=124+((T*90+i*17)%84);Rr(i%3?'rgba(230,240,248,.85)':'#fff',x-6+(i%4)*3,y,3,8)}Rr('rgba(220,235,245,.5)',x-8,124,16,84);for(let i=0;i<8;i++){const a=T*3+i;Rr('rgba(255,255,255,.6)',x-14+Math.cos(a)*14,204+Math.sin(a)*2,3,2)}[[x-48,150,40],[x+40,146,44]].forEach(([px,py,h],i)=>sPine(px,py+50,h,i))}
+// Falls of Foyers: ca. 50 m høyt fall i to trinn ned i en kløft med bjørk og furu ved Loch Ness (Robert Burns skrev om den i 1787). Fossen går ut over skjermkanten øverst fordi den er så høy.
+function sFoyers(x){if(!vis(x-150,300))return;const st=typeof WX=='object'?WX.storm||0:0,fl=1+st*.6;PG('#343c36',[[x-44,-120],[x+44,-120],[x+48,206],[x-48,206]]);for(let k=0;k<10;k++)Rr('rgba(0,0,0,.25)',x-40+(k*29)%80,-100+k*30,14,2);
+ PG('#2e3630',[[x-150,206],[x-130,40],[x-110,-120],[x-34,-120],[x-26,60],[x-30,112],[x-40,120],[x-36,206]]);PG('#2e3630',[[x+150,206],[x+128,46],[x+104,-120],[x+30,-120],[x+24,60],[x+32,112],[x+44,120],[x+40,206]]);
+ PG('#3a443c',[[x-130,40],[x-110,-120],[x-80,-120],[x-70,30],[x-90,90]]);PG('#262c28',[[x+128,46],[x+104,-120],[x+86,-120],[x+80,40],[x+100,100]]);
+ for(let k=0;k<14;k++){const yy=-110+k*22,sd=k%2?1:-1;Rr('rgba(10,14,12,.35)',x+sd*(40+(k*13)%60)-12,yy,26,2);Rr(k%3?'#4a6a3a':'#5a7a40',x-sd*(50+(k*17)%50),yy+6,8+(k%3)*3,3)}
+ PG('#4a524a',[[x-34,110],[x-14,106],[x+16,107],[x+34,111],[x+46,124],[x+20,121],[x-10,123],[x-44,124]]);for(let k=0;k<6;k++)Rr('#5a7a40',x-40+k*15,108+(k%2),7,2);
+ const fall=(x0,x1,y0,y1,n,sp)=>{const sp2=(y1-y0)*.07,P_=[[x0+1,y0],[x1-1,y0]];for(let y=y0;y<=y1;y+=6)P_.push([x1+sp2*(y-y0)/(y1-y0)+Math.sin(y*.3+T*4)*1.2,y]);for(let y=y1;y>=y0;y-=6)P_.push([x0-sp2*(y-y0)/(y1-y0)+Math.sin(y*.37+T*4.4)*1.2,y]);PG('rgba(205,225,238,.92)',P_);for(let i=0;i<n;i++){const xx=x0+(i+.5)*(x1-x0)/n+Math.sin(i*3.1)*1.2,v=sp*(.8+hsh(i*7)*.5)*fl;for(let k=0;k<3;k++){const yy=y0+((T*v+i*37+k*(y1-y0)/3)%(y1-y0));Rr(i%3?'#ffffff':'#e4f0f8',xx,yy,1.6,6+hsh(i+k)*8)}Rr('rgba(150,180,200,.45)',xx+1,y0,.8,y1-y0)}
+  Rr('rgba(255,255,255,.5)',x0-1,y0,1.5,y1-y0);Rr('rgba(255,255,255,.5)',x1-.5,y0,1.5,y1-y0)};
+ fall(x-12,x+12,-120,110,10,70);fall(x-20,x+18,120,198,14,90);
+ for(let i=0;i<16;i++){const q=(T*.25+i/16)%1,sx=x+Math.sin(i*2.3+T*.4)*(18+q*30),r=4+q*16;X.fillStyle=`rgba(235,242,248,${.32*(1-q)})`;X.beginPath();X.ellipse(sx,112-q*40,r,r*.6,0,0,7);X.fill();X.beginPath();X.ellipse(sx,200-q*34,r*1.2,r*.6,0,0,7);X.fill()}
+ for(let i=0;i<22;i++){const a=T*2.2+i*.9,q=(T*1.3+i*.13)%1;Rr('rgba(255,255,255,.75)',x+Math.cos(a)*(10+q*26),200-q*14-Math.abs(Math.sin(a))*6,1.6,1.6);Rr('rgba(255,255,255,.7)',x+Math.cos(a)*(8+q*20),114-q*10,1.4,1.4)}
+ for(let k=0;k<6;k++)Rr('rgba(255,255,255,.55)',x-30+k*11+Math.sin(T*3+k)*3,203,8,2);
+ [[x-120,40,60,0],[x+116,46,64,1],[x-90,96,46,2],[x+96,104,44,3]].forEach(([px,py,h,i])=>i%2?sPine(px,py,h*.42,i):dTree(px,py,h*.42,i,gustW(),[['#3a5a2a','#4a6a32','#5a7a3a']][0],.6))}
 function sLocks(x){if(!vis(x-90,180))return;for(let i=0;i<3;i++){const lx=x-80+i*56,ly=208-i*4;Rr('#5a5a58',lx,ly-6,52,10);Rr('#1e3040',lx+3,ly-4,46,6);Rr('#3a2a1a',lx+48,ly-14,5,18);Rr('#2a1a10',lx+44,ly-16,14,3)}Rr('#e8e8e0',x-20,176,30,20);PG('#4a4a50',[[x-24,178],[x-5,166],[x+14,178]]);Rr('#2a4a6a',x-12,184,6,6);Rr('#8a3a2a',x+30,196,24,8);Rr('#e8e0d0',x+34,190,6,6)}
 // Japan: risåkre etter innhøstingen med tørkestativ (hazagake), varm kilde (onsen) med snøaper, borg (tenshu)
 function jRice(x){if(!vis(x-90,180))return;for(let r=0;r<4;r++)Rr(r%2?'#8a7a4a':'#7a6a3a',x-90+r*6,198+r*5,180-r*12,5);for(let r=0;r<4;r++)for(let i=0;i<20;i++)Rr('#c8b070',x-86+r*6+i*8.5,197+r*5,1,2);for(let k=0;k<2;k++){const hx=x-50+k*80;Rr('#5a4028',hx,186,2,22);Rr('#5a4028',hx+44,186,2,22);Rr('#5a4028',hx-2,188,50,2);for(let i=0;i<12;i++)Rr(i%2?'#d8b860':'#c8a850',hx+i*4,189,4,12)}}
@@ -2857,7 +2886,8 @@ const fS=(c,P)=>{X.fillStyle=c;X.beginPath();const n=P.length;X.moveTo((P[n-1][0
 const fL=(c,w,P)=>{X.strokeStyle=c;X.lineWidth=w;X.lineCap='round';X.beginPath();P.forEach(([x,y],i)=>i?X.lineTo(x,y):X.moveTo(x,y));X.stroke()};
 let fBS=0;const fEye=(x,y,c='#ffd23f')=>{if((T+fBS*.13)%4.7<.13){fL('#111',.8,[[x-1.4,y],[x+1.4,y]]);return}fE(c,x,y,1.4,1.4);X.fillStyle='#111';X.fillRect(x-.4,y-.6,.9,1.2)};
 // Tegner vesenet i et lite lerret og gir det pikselstil som resten av spillet: mørk kontur, lys kant fra himmelen, skygge under, færre farger. Pusting = svak vertikal skalering.
-const FSC={};function fSpr(id,x,y,f,a){const k=FK[id],w=Math.ceil(k.w)+4,h=Math.ceil(k.h)+6,W=2*w,H=h+6,c=FSC.c=FSC.c||document.createElement('canvas');c.width=W;c.height=H;const g=c.getContext('2d'),X0=X;X=g;fBS=x;g.translate(w,h);try{g.scale(1,1+Math.sin(T*1.7+x)*.012);f()}catch(e){}finally{X=X0}
+const FSC={};function fSpr(id,x,y,f,a){return fSprX(x,y,FK[id],f,a)}
+function fSprX(x,y,k,f,a){const w=Math.ceil(k.w)+4,h=Math.ceil(k.h)+6,W=2*w,H=h+6,c=FSC.c=FSC.c||document.createElement('canvas');c.width=W;c.height=H;const g=c.getContext('2d'),X0=X;X=g;fBS=x;g.translate(w,h);try{g.scale(1,1+Math.sin(T*1.7+x)*.012);f()}catch(e){}finally{X=X0}
  const im=g.getImageData(0,0,W,H),d=im.data,o=new Uint8ClampedArray(d),S=new Uint8Array(W*H);for(let i=0;i<W*H;i++)S[i]=d[i*4+3]>=128;
  for(let yy=0;yy<H;yy++)for(let xx=0;xx<W;xx++){const i=yy*W+xx,q=i*4;if(S[i]){let m=1;if(!(yy>0&&S[i-W]))m=1.25;else if(!(yy>1&&S[i-2*W]))m=1.1;if(!(yy<H-1&&S[i+W]))m*=.7;m*=1-.2*yy/H+((xx+yy)&1)*.035;for(let j=0;j<3;j++)o[q+j]=Math.round(d[q+j]*m/17)*17;o[q+3]=255}
   else if(d[q+3]<128&&((xx>0&&S[i-1])||(xx<W-1&&S[i+1])||(yy>0&&S[i-W])||(yy<H-1&&S[i+W]))){o[q]=20;o[q+1]=18;o[q+2]=16;o[q+3]=225}}
@@ -2931,7 +2961,14 @@ const FK={
  // Skottland
  selkie:{n:'The selkie',v:[1.2,1],w:28,h:40,d(){const s=Math.sin(T*.9);fS('#6a6a6e',[[-26,0],[-22,-8],[4,-12],[14,-8],[16,0]]);fE('#6a6a6e',16,-12,6,5);fEye(18,-13,'#1a1a1a');fS('#e8d4c0',[[-6,-12],[-8,-34],[2,-40],[8,-34],[6,-12]]);fE('#e8d4c0',0,-40,5,6);fS('#3a2a1a',[[-6,-42],[0,-48],[7,-42],[6,-28+s],[-7,-28]]);fE('#e8d4c0',0,-40,3.6,4.6);fEye(-1.6,-41,'#3a4a5a');fEye(1.6,-41,'#3a4a5a');for(let i=0;i<4;i++)fE('rgba(220,235,245,.5)',-30+i*16,1,6,1.2)},
   look:'A woman sits on a sealskin at the water\'s edge. It is a selkie! In Scottish legend they are seals that can shed their skin and become human.',l:['Do not touch my skin, professor. Without it I can never go home to the sea.','Thank you. The sea remembers those who are kind.']},
- brownie:{n:'The brownie',v:[1.7,1.25],w:14,h:30,d(){const s=Math.sin(T*3);fS('#6a4a2a',[[-6,0],[-7,-14],[0,-20],[7,-14],[6,0]]);fE('#c89a72',0,-22,5,5);fS('#5a3a1a',[[-6,-24],[0,-30],[6,-24],[5,-20],[-5,-20]]);fS('#7a5a3a',[[-4,-20],[0,-14],[4,-20]]);fEye(-1.6,-23,'#2a1a0a');fEye(1.6,-23,'#2a1a0a');fL('#6a4a2a',1.4,[[6,-12],[10,-6+s*2]]);fL('#8a6a3a',1,[[10,-6+s*2],[10,-16+s*2]]);fL('#c8b070',1.4,[[8,-16+s*2],[12,-18+s*2]])},
+ brownie:{n:'The brownie',v:[1.7,1.25],w:16,h:36,d(){const s=Math.sin(T*2.4),w=Math.sin(T*1.1);
+  // brownie (brùnaidh): liten, rufsete mann ca. 90 cm i brune filler, langt skjegg og bustete hår, bare føtter, med kost (skotsk folketro)
+  fL('#7a5638',1.8,[[-2,-12],[-3,-6],[-3,0]]);fL('#7a5638',1.8,[[2,-12],[3,-6],[3.4,0]]);fE('#a87a58',-3.4,.2,2,1);fE('#a87a58',3.8,.2,2,1);
+  fS('#6a4a2a',[[-6,-24],[6,-24],[7,-16],[8,-10],[6,-8],[4,-11],[1,-8],[-2,-11],[-5,-8],[-8,-10],[-7,-16]]);for(let i=0;i<4;i++)fS('#5a3c20',[[-7+i*4,-11],[-5+i*4,-6-(i%2)*2],[-3+i*4,-11]]);fL('#3a2a14',.9,[[-6,-16],[6,-16]]);
+  fL('#6a4a2a',1.8,[[-5,-22],[-8,-16],[-6,-12+s]]);fE('#c89a72',-6,-12+s,1.2,1.2);
+  fE('#c89a72',0,-28,4.6,5);fS('#8a6a4a',[[-5,-27],[-6,-21],[-3,-16],[0,-14],[3,-16],[5,-21],[4,-26],[2,-23],[-2,-23]]);for(let i=0;i<5;i++)fL('#6a4a2a',.6,[[-3+i*1.5,-22],[-3.5+i*1.6,-16]]);
+  fS('#5a3a1e',[[-6,-29],[-5,-34],[-2,-35],[0,-33],[2,-35.5],[5,-34],[6,-29],[4,-31],[0,-30.5],[-4,-31]]);fE('#c89a72',4.4,-27,1.2,1.6);fEye(-1.4,-28,'#2a1a0a');fEye(2,-28,'#2a1a0a');fE('#b8805a',.4,-25.8,1.2,1);
+  fL('#6a4a2a',1.8,[[5,-22],[8,-16],[9,-12+s]]);fE('#c89a72',9,-12+s,1.2,1.2);fL('#8a6a3a',1,[[10,-4+s],[8,-26+s]]);fS('#c8b070',[[8,-4+s],[13,-4+s],[14,1+s],[7,1+s]]);for(let i=0;i<4;i++)fL('#a89050',.5,[[8.5+i*1.5,-3+s],[8+i*1.6,1+s]])},
   look:'A little brown man with a broom. A brownie! In Scottish legend they do housework at night, but are offended if you give them clothes.',l:['Do not give me a coat! Then I must leave forever.','A bowl of cream on the doorstep is payment enough.']},
  cusith:{n:'Cù-sìth',v:[.4,.7],w:30,h:34,d(){const r=T*7,s=Math.sin(r);fS('#2e5a3a',[[-24,-14],[-18,-22],[8,-24],[18,-20],[22,-14],[14,-10],[-18,-10]]);fE('#2e5a3a',22,-24,7,6);fS('#2e5a3a',[[26,-24],[34,-22],[28,-19]]);fS('#244a30',[[18,-30],[20,-36],[23,-29]]);fEye(24,-26,'#ffe060');fL('#2e5a3a',3,[[-24,-16],[-30,-26],[-26,-34]]);[[-16,0],[-10,1.6],[10,.8],[16,2.4]].forEach(([x,o])=>fL('#2e5a3a',2.6,[[x,-12],[x+Math.sin(r+o)*4,0]]))},
   look:'A huge dark green hound with a curled tail. The cù-sìth, the fairy hound of Scottish Highland legend. It barks three times, and you must be indoors before the third.',l:['Woof ... (one). Woof ... (two).','You are lucky. I will wait with the third until you have solved the riddle.']},
@@ -2969,6 +3006,29 @@ const FK={
  fS('#4a7a6a',[[28,-6],[46,-4],[48,0],[26,0]]);for(let k=0;k<3;k++)fL('#e8e0c8',.6,[[44+k*1.6,-1],[45+k*1.6,1]]);
  if(!op)for(let i=0;i<2;i++){const q=(T*.3+i/2)%1;X.fillStyle=`rgba(255,255,255,${.7*(1-q)})`;X.font='bold 6px Georgia';X.fillText('z',48+q*8,-26-q*12)}},
   look:'A large green-scaled beast sleeping in a cave. The Nian from Chinese legend! It fears the colour red, light and loud bangs. That is why the Chinese celebrate New Year with fireworks.',l:['Zzzz ... Is it New Year already?','No? Then I will sleep on. Do not wake me with anything red.']},
+ // Kina, flere ekte sagnvesener langs hele veien (Shanhaijing og kinesisk folketro)
+ huli:{n:'Huli jing',v:[1.3,1.05],w:30,h:34,d(){const ph=T*1.1;for(let i=0;i<9;i++){const an=-2.5+i*.17+Math.sin(ph+i*.6)*.1;fL(i%2?'#e8a050':'#f0b868',3,[[-8,-10],[-8+Math.cos(an)*9,-10+Math.sin(an)*9],[-8+Math.cos(an)*17,-10+Math.sin(an)*17]]);fE('#fff4e0',-8+Math.cos(an)*17,-10+Math.sin(an)*17,1.6,1.6)}
+  const leg=(x,c)=>{fL(c,1.8,[[x,-9],[x+.5,-4],[x,0]]);fE('#2a1a10',x+.6,0,1.4,.7)};leg(-5,'#b86a30');leg(6,'#b86a30');fS('#e09048',[[-10,-9],[-7,-14],[5,-15],[10,-11],[8,-7],[-8,-7]]);fS('#fff0d8',[[0,-8],[8,-8],[9,-11],[2,-10]]);leg(-3,'#e09048');leg(8,'#e09048');
+  fS('#e09048',[[7,-13],[10,-19],[14,-20],[19,-17],[15,-15],[11,-12]]);fS('#e09048',[[10,-19],[10,-24],[13,-20]]);fS('#e09048',[[13,-20],[15,-24],[15,-19]]);fE('#fff0d8',16,-16,2.4,1.4);fEye(14,-18,'#ffd23f');fE('#1a1a1a',19.5,-17,.8,.7)},
+  look:'A red-gold fox with nine tails! A huli jing, the fox spirit from old Chinese texts such as the Shanhaijing. It can live for a thousand years.',l:['Nine tails, professor. One for every hundred years I have lived.','I have seen many scholars walk here. The wisest asked before they guessed.']},
+ pixiu:{n:'Pixiu',v:[.45,.7],w:30,h:40,d(){const s=Math.sin(T*1.4),f=Math.sin(T*2)*2;
+  const leg=(x,c)=>{fS(c,[[x-3,-14],[x+3,-14],[x+3,-2],[x+5,0],[x-4,0],[x-3,-2]])};leg(-12,'#8a6a2a');leg(8,'#8a6a2a');
+  fS('#7a6a2a',[[-6,-22],[-16,-32-f],[-24,-30-f],[-18,-24],[-10,-20]]);for(let k=0;k<3;k++)fL('#5a4a1a',.8,[[-8,-22],[-18+k*3,-30-f+k]]);
+  fS('#c8a040',[[-20,-14],[-18,-24],[-6,-27],[8,-27],[16,-22],[18,-14],[8,-11],[-14,-11]]);for(let i=0;i<6;i++)fE('rgba(120,90,30,.6)',-12+i*5,-20+(i%2)*3,2,1.4);fL('#c8a040',2,[[-20,-18],[-26,-22+s*2],[-28,-28]]);
+  leg(-8,'#c8a040');leg(12,'#c8a040');fS('#c8a040',[[12,-24],[16,-32],[24,-33],[28,-28],[26,-22],[18,-20]]);fS('#e8d080',[[19,-33],[21,-40],[23,-33]]);
+  for(let k=0;k<4;k++)fS('#8a6a2a',[[14+k*2,-32],[13+k*2,-36],[16+k*2,-33]]);fEye(22,-29,'#ff6a20');fL('#3a2a10',1,[[22,-24],[27,-25]]);fE('#e8e0c8',26,-24,1,1.2)},
+  look:'A winged lion with one horn, golden as bronze. A pixiu! In Chinese folklore it guards wealth and chases away evil spirits. It has no behind, so whatever it swallows stays there.',l:['Grrr. All gold that comes in stays with me.','But knowledge I gladly share; it does not grow smaller.']},
+ bixi:{n:'Bixi',v:[.25,.6],w:30,h:62,d(){const lk=Math.max(0,Math.sin(T*.3)-.85)*6;
+  R_('#6a6a62',-26,-4,52,4);fS('#8a8a80',[[-26,-4],[-24,-16],[-12,-22],[10,-22],[22,-16],[26,-4]]);for(let i=0;i<5;i++)for(let j=0;j<2;j++)fS('#7a7a70',[[-18+i*8,-8-j*6],[-14+i*8,-11-j*6],[-10+i*8,-8-j*6],[-14+i*8,-5-j*6]]);
+  fS('#8a8a80',[[22,-12],[30,-14+lk*.3],[36,-10],[34,-5],[26,-4]]);fEye(31,-11,lk>0?'#ffd23f':'#5a5a52');for(const x of[-18,16])fE('#7a7a70',x,-2,4,2.4);
+  R_('#9a968a',-8,-58,16,38);R_('#b0ac9e',-10,-62,20,6);for(let i=0;i<6;i++)for(let j=0;j<2;j++)R_('#5a5850',-5+j*6,-52+i*5,3,2)},
+  look:'A stone tortoise with a dragon head carrying a tall stone tablet. It is Bixi, one of the Dragon King\'s nine sons. They stand by temples and tombs all over China.',l:['(The stone eyes gleam for a moment.)','I have carried this tablet for five hundred years. Read it, so I do not carry it in vain.']},
+ xiezhi:{n:'Xiezhi',v:[.6,.8],w:22,h:46,d(){const s=Math.sin(T*1.2),hb=Math.sin(T*.8)*1.2;
+  const leg=(x,c)=>{fL(c,2.2,[[x,-16],[x+.5,-7],[x,0]]);fE('#1a1a1a',x+.6,0,1.6,.8)};leg(-9,'#2a3a3a');leg(8,'#2a3a3a');
+  fS('#3a4e4e',[[-13,-15],[-11,-24],[2,-26],[11,-24],[13,-18],[10,-14],[-11,-14]]);for(let i=0;i<5;i++)fE('rgba(20,40,40,.7)',-8+i*4,-20,1.6,2.4);fL('#3a4e4e',1.6,[[-13,-20],[-17,-16+s*2]]);
+  leg(-6,'#3a4e4e');leg(11,'#3a4e4e');fS('#3a4e4e',[[9,-24],[13,-32+hb],[18,-34+hb],[21,-30+hb],[17,-26+hb],[12,-22]]);fL('#e8d8a0',1.4,[[16,-34+hb],[15,-42+hb],[18,-46+hb]]);
+  fL('#d8d8c8',.8,[[18,-27+hb],[17,-23+hb]]);fEye(18,-31+hb,'#9fe0ff')},
+  look:'A small dark animal like a goat with one horn. Xiezhi! In Chinese legend it can tell right from wrong and butts whoever lies. It became a symbol of justice.',l:['I see that you speak the truth, professor.','Whoever lies to himself never finds the answer. You do not.']},
  // Australia
  yowie:{n:'The yowie',v:[.3,.6],w:30,h:88,d(){const g=T*1.1,s=Math.sin(g),hb=Math.sin(g*.7)*1.5;
  const leg=(x,c,p)=>{const o=Math.sin(g+p)*2;fS(c,[[x-6,-40],[x+6,-40],[x+5+o,-6],[x+8+o,0],[x-6+o,0],[x-5+o,-6]])};
@@ -3008,7 +3068,7 @@ const FK={
  xolo:{n:'Xoloitzcuintle',v:[.9,.9],w:22,h:26,d(){const r=T*6,s=Math.sin(r);fS('#4a4a4e',[[-18,-10],[-14,-18],[8,-20],[14,-16],[16,-10],[10,-8],[-14,-8]]);fE('#4a4a4e',16,-20,5,4.6);fS('#4a4a4e',[[14,-24],[16,-32],[19,-23]]);fS('#4a4a4e',[[17,-22],[22,-28],[21,-20]]);fEye(18,-21,'#ffd23f');fL('#4a4a4e',1.6,[[-18,-12],[-24,-16+s*2]]);[[-12,0],[-7,1.6],[7,.8],[12,2.4]].forEach(([x,o])=>fL('#4a4a4e',1.8,[[x,-10],[x+Math.sin(r+o)*3,0]]))},
   look:'A hairless dark grey dog with big ears. A xoloitzcuintle! In Aztec myth it guides the dead across the river to Mictlan. The breed still exists.',l:['Woof! I show the way, even where it is dark.','Follow me, professor. The next clue is not far away.']}};
 const FKP={sahara:[['ghul',2700,236],['aisha',3260,230]],dubai:[['umduwais',2700,236],['salasil',3600,234]],usa:[['jersey',2900,214],['headless',4000,236]],pol:[['akhlut',2700,232],['nanurluk',3800,236],['mahaha',4300,236]],
- skott:[['selkie',2700,232],['brownie',3300,236],['cusith',4000,236]],japan:[['tanuki',2700,236],['tengu',3350,232],['yukionna',4100,232]],kina:[['fenghuang',2750,200],['shishi',3350,236],['nian',4100,234]],
+ skott:[['selkie',2700,232],['brownie',3300,236],['cusith',4000,236]],japan:[['tanuki',2700,236],['tengu',3350,232],['yukionna',4100,232]],kina:[['huli',780,236],['pixiu',1180,236],['bixi',1960,236],['xiezhi',2380,236],['fenghuang',2750,200],['shishi',3350,236],['nian',4100,234]],
  aus:[['yowie',2700,232],['minmin',3350,190],['yarama',4100,232]],safr:[['tokoloshe',2700,236],['mamlambo',3350,236],['inkanyamba',4100,226]],peru:[['muki',2700,236],['ekeko',3350,236]],mex:[['nahual',2700,236],['chaneque',3350,236],['xolo',4100,236]]};
 const FKS={};
 function folkA(id,x,nt){const q=FKS[id]=FKS[id]||{s:0};if(Math.abs(P.x/2-x)<300)q.s=Math.max(q.s,1);else q.s=Math.max(0,q.s-.004);const a=Math.max(q.s,Math.max(0,Math.min(1,Math.sin(T*.07+x)*3-1.9)));return nt&&skyNow().night<.4?a*.25:a}
@@ -3195,6 +3255,27 @@ function xTheme(){const k=xLK();if(k===xTk)return;xTk=k;const L=XTL[k],A=XTA[k];
   else if(v=='inu'){for(const d of[-22,0,22]){R_('#8a8a80',x+d-5,368,10,14);R_('#8a8a80',x+d-9,362,18,5);R_('#8a8a80',x+d-3,354,6,8)}}
   X.restore();return}
  return _x(p,c)}}
+// ---------- Ekte størrelser på trær, dyr og kjøretøy (professoren 62 enheter = 1,75 m, ca. 35 enheter per meter) ----------
+// Faktasjekk: løvtrær og furu 8–15 m, piletre 10–15 m, kakitre 5–10 m, baktrisk kamel ca. 2,1 m til puklene, muldyr ca. 1,4 m over manken, kinesisk gårdshus (siheyuan) ca. 3–4 m med tak.
+// gS skalerer en tegning rundt bakkepunktet; synsfeltet RV regnes om så ingenting forsvinner for tidlig i kanten. Trærne blir lavere enn virkeligheten så de får plass på skjermen, men alltid flere ganger høyere enn professoren.
+function gS(ax,ay,k,f){const R0=RV;RV=[(R0[0]-ax)/k+ax,(R0[1]-ax)/k+ax];X.save();X.translate(ax,ay);X.scale(k,k);X.translate(-ax,-ay);try{return f()}finally{X.restore();RV=R0}}
+let gSno=0;
+{const _t=dTree;dTree=function(x,y,h,...a){return gSno?_t(x,y,h,...a):gS(x,y,2.4,()=>_t(x,y,h,...a))}}
+{const _p=sPine;sPine=function(x,y,h,ph){return gSno?_p(x,y,h,ph):gS(x,y,2.4,()=>_p(x,y,h,ph))}}
+{const _k=kPersimmon;kPersimmon=function(x,y,h){gS(x,y,2.4,()=>{gSno=1;try{_k(x,y,h)}finally{gSno=0}})}}
+{const _w=kWillow;kWillow=function(x,y,h,ph){gS(x,y,2.6,()=>_w(x,y,h,ph))}}
+{const _c=kCart;kCart=function(x,dir,m){gS(x,232,2,()=>_c(x,dir,m))}}
+// ---------- Ekte bølger på alt vann: små krusninger i stille vær, høye bølger med skumtopper når det blåser opp til storm ----------
+// Bølgene blir større og lengre jo nærmere de er (perspektiv). Vindstyrken kommer fra gustW() og stormen fra WX.storm, så bølgene følger været.
+function rWaves(y0,y1,l,r){const[a,b]=RV;l=Math.max(l,a-2);r=Math.min(r,b+2);if(l>=r||y1-y0<4)return;const s=skyNow(),st=typeof WX=='object'?WX.storm||0:0,wd=Math.min(2.6,gustW()),A0=.35+wd*.45+st*3.2,N=Math.max(4,(y1-y0)/2.6|0);
+ const hi=[],dk=[],fo=[],lit=mixC(s.c[2],'#ffffff',.35);for(let k=0;k<N;k++){const d=(k+.5)/N,y=y0+(y1-y0)*Math.pow(d,1.5),A=A0*(.2+d*1.1),L=8+d*26,sp=(1.2+wd*.5+st)*(1.2-d*.4),ph=k*1.7;
+  for(let x=(l|0)-((l|0)%2);x<r;x+=2){const u=Math.sin(x/L*6.283+T*sp+ph),yy=y-u*A;if(u>.45)hi.push(x,yy-1,2,1);else if(u<-.3)dk.push(x,yy+1,2,1);if(u>.9&&(st>.25||wd>1.7)&&hsh(Math.floor(x/6)*13+k+Math.floor(T*sp*.3))>.35)fo.push(x-1,yy-1.5-A*.3,3+A*.4,1+A*.25)}}
+ X.globalAlpha=.5;rects(lit,hi);X.globalAlpha=.22;rects('#000814',dk);X.globalAlpha=.8+.15*Math.sin(T*3);rects('#f4f8fc',fo);X.globalAlpha=1;
+ const sw=Math.sin(T*(.8+wd*.3))*(1+st*2),F=[];for(let x=(l|0);x<r;x+=2){const fy=y1-1-Math.max(0,Math.sin(x*.07+T*1.3))*(1+st*3)+sw*.5;F.push(x,fy,2,1+st*2)}X.globalAlpha=.55+st*.3;rects('#f2f6fa',F);X.globalAlpha=1}
+{const _w=pWater;pWater=function(y0,y1,dk,x0=-1e9,x1=1e9){_w(y0,y1,dk,x0,x1);rWaves(y0,y1,x0,x1)}}
+{const _f=nFjord;nFjord=function(){_f();rWaves(176,206,-1e9,1e9)}}
+{const _c=dCreek;dCreek=function(){_c();rWaves(183,206,1540,1e9)}}
+{const _h=uHarbor;uHarbor=function(){_h();rWaves(184,205,-1e9,700)}}
 // ---------- Forhistorie før introen ----------
 // Fem korte bilder om professor Julian Vance (fra Oslo, to doktorgrader, null muskler) og steinen med tegnene. Vises første gang, kan hoppes over.
 // Knytter an til introen (kartet med tegnet på pulten) og til kapittel 25 («Alt gjentar sæ»). Fortelleren snakker nordnorsk som ellers i spillet.
