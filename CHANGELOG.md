@@ -2,6 +2,14 @@
 
 Nyeste versjon øverst. Formatet er fast fordi forsiden leser det: `## <versjon> · <dato>` og så punkter som begynner med `- `.
 
+## 0.13.0 · 8. nov 2026
+- Skottland er bygd ferdig med 15 egne steder, ett for hvert kapittel: Nasjonalmuseet, borghallen i Edinburgh, Royal Mile, Clava-røysa i høylandet, Loch Ness, Urquhart, Glencoe, Neptuns trapp under Ben Nevis, et svarthus på Hebridene, Fingals hule, Callanish-steinene, slusene i Fort Augustus, Brig o' Doon, kelpiens dam og et hvelv for fragmentet.
+- Seks nye oppgaver som bare finnes i Skottland: vev tartan, still en piktisk symbolstein, gå kelpiens vadesteiner, la midtvinterssola treffe gangen i Clava-røysa, spill sekkepipe og få båten opp en slusetrapp. Senere besøk gir vanskeligere utgaver.
+- Hvert sted forteller ekte historie, som Columba og vannudyret i år 565, Telfords kanal fra 1822 og Tam o' Shanter.
+- Ute i Skottland står det fiskekasser, robåter og tartanpledd i stedet for bokhyller, skjeletter og tepper.
+- Trykk treffer nå riktig i minispillene også når menyen under spillet blir høyere.
+- Kapitlet «Whiskybrenneriet» heter nå «Slusene i Fort Augustus».
+
 ## 0.12.9 · 8. nov 2026
 - Kina: qilinen har fått sin egen plass i gresset, så den ikke lenger står gjemt bak pixiuen.
 
