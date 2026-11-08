@@ -1,12 +1,12 @@
-# Uavhengig kontroll – v0.13.0
+# Uavhengig kontroll – v0.14.0
 
 Kontrollert 8. nov 2026 av en egen kontrolltråd, ikke av byggetråden.
 
 **Krav fra 08:17:** et vesen eller dyr er bare BESTÅTT hvis det er gjenkjennelig på skjermbildet ut fra sagnbeskrivelsen og holder samme kvalitet som de norske trollene. Streker, klumper og klosser er FEIL. Bølger skal ha kropp og skum, ikke streker.
 
-**Slik ble det testet:** Chromium i portrett mobilstørrelse 390×844 med berøring. Koden som ble testet er commit `fe91102` på `main`, altså nøyaktig det GitHub Pages viser. Selve live-adressen er sperret fra testmaskinen, derfor kjørte jeg den samme koden lokalt. Testknappene på forsiden ble brukt for alle 12 land. Natt ble tvunget fram med `HOV=23.5`. Storm ble tvunget fram med `WX.on=1` og `MK[land].wx=()=>1`. Fabeldyrene ble oppsøkt ved å flytte professoren til posisjonene deres.
+**Slik ble det testet:** Chromium i portrett mobilstørrelse 390×844 med berøring. Koden som ble testet er commit `3df09f9` på `main`, altså nøyaktig det GitHub Pages viser. Selve live-adressen er sperret fra testmaskinen, derfor kjørte jeg den samme koden lokalt. Testknappene på forsiden ble brukt for alle 12 land. Natt ble tvunget fram med `HOV=23.5`. Storm ble tvunget fram med `WX.on=1` og `MK[land].wx=()=>1`. Fabeldyrene ble oppsøkt ved å flytte professoren til posisjonene deres.
 
-**Resultat v0.13.0: 15 BESTÅTT · 2 FEIL** (Skottland har egne oppgaver, de andre 11 landene har det ikke ennå)
+**Resultat v0.14.0: 16 BESTÅTT · 1 FEIL** (Skottland og Japan har egne oppgaver, 10 land gjenstår)
 
 | # | Punkt | Status | Funn |
 |---|---|---|---|
@@ -17,7 +17,7 @@ Kontrollert 8. nov 2026 av en egen kontrolltråd, ikke av byggetråden.
 | 5 | Mennesker ser ut som mennesker tilpasset landet | ✅ BESTÅTT | Kimono, rickshaw, folk ved markedsbodene i Kina, kamelkaravane, skotsk kvinne og jeger, inuitt med pelshette. Jeg så ingen firkanter. |
 | 6 | Plantene står stille når man går (Japan) | ✅ BESTÅTT (kode og bilder) | Tegnekoden for Japan bruker hverken `P.x` eller `camX`, så plantenes svai er ikke koblet til at professoren går. |
 | 7 | Dyrene skiller seg fra bakken | ✅ BESTÅTT | Alle dyr og vesener jeg så har mørk kontur og skygge, og står tydelig fram. |
-| 8 | Oppgavene er ulike i hvert land | ❌ FEIL (1 av 12 land ferdig) | **Skottland (101–115) er BESTÅTT:** det har 6 egne skotske oppgaver: piktisk symbolstein, sekkepipe, tartanvev, Clava-røys, kelpie-steiner og sluser. Hver type kommer 2–3 ganger, og senere besøk er vanskeligere. Oppgavene er knyttet til stedet og historien. **De andre 11 landene** (kapittel 26–100 og 116–205) bruker fortsatt bare slide, lights, hanoi og cube. ![](kontroll/skottland-oppgaver-tips.jpg) |
+| 8 | Oppgavene er ulike i hvert land | ❌ FEIL (2 av 12 land ferdig) | **Skottland (101–115) BESTÅTT** med 6 egne oppgaver. **Japan (116–130) BESTÅTT** med 6 egne oppgaver: soroban, kanji, teseremoni, zen-hage, hemmelig eske fra Hakone og elvekryssing med rev, kappa og agurk. Tipsene er testet i zen-hagen (119) og elvekryssingen (126), og nivå 3 gir riktig neste trekk. Små feil: tipset i zen-hagen nevner «steinene» selv om brettet på det letteste nivået ikke har steiner, og nivå 3 skriver «Neste trekk: Neste: til høyre.» (dobbelt «Neste»). Elvekryssingen er den klassiske gåten med ulv, geit og kål i japansk drakt. **10 land gjenstår:** Norge, Sahara, Dubai, USA, Nordpolen, Kina, Australia, Sør-Afrika, Peru og Mexico bruker fortsatt slide, lights, hanoi og cube. ![](kontroll/japan-maltavler.jpg) ![](kontroll/japan-oppgaver-tips.jpg) |
 | 9 | Kjøring tar deg til et nytt område | ✅ BESTÅTT | `drive()` kjører nå minst ca. 23 m til et annet navngitt sted, og den sier hvor. Den blandede engelske replikken er rettet i v0.12.4. Avstandene er fortsatt bare innenfor samme stripe på ca. 140 m. |
 | 10 | Myke og elegante overganger etter fly og ved dører | ✅ BESTÅTT (v0.12.5) | Havnekontoret og teksten «Mekanismen må løses» er borte. Etter 4 s står professoren direkte i landet. Dørene bruker iris-overgang. ![](kontroll/ankomst-mekanismen.jpg) |
 | 11 | Professoren klarer å løpe i storm | ✅ BESTÅTT | Han kommer seg fram i storm i alle land. Merknad: i v0.12.5 er farten i storm halvert (126 enheter på 2,5 s mot 252 før). Det er greit hvis det er meningen at han kjemper mot vinden. |
@@ -26,7 +26,7 @@ Kontrollert 8. nov 2026 av en egen kontrolltråd, ikke av byggetråden.
 | 14 | Fossen i Skottland er stor og imponerende | ✅ BESTÅTT | Foyers-fossen er nå høy og går i to trinn, med dusj. Den fyller hele skjermhøyden. Merknad: vannet forsvinner rett i gresset, uten kulp eller elv. ![](kontroll/skottland-foss.jpg) |
 | 15 | Fabeldyrene er gjenkjennelige ut fra sagnene | ✅ BESTÅTT (v0.12.9) | Se punkt 3. |
 | 16 | Polen: hundene ser ut som hunder og sleden som en slede, polfolket er ikke klosser, og det gule merket står ikke på himmelen | ✅ BESTÅTT (v0.12.4) | Sleden har nå meier og ramme, og hundene har hode, ører og hale. Merket er et gult flagg på en stang på bakken. Inuitten med pelshette ser bra ut. ![](kontroll/pol-slede-merke.jpg) |
-| 17 | Skottland: egen kulisse per kapittel, og ikke bokhylle, skjelett og rødt teppe | ❌ FEIL | Alle 15 kapitlene har egen bakgrunn: museum, borgmur, Royal Mile, høyland, Loch Ness, Urquhart, Glencoe, Ben Nevis, Hebridene, Fingals hule, Callanish, Fort Augustus, Brig o' Doon, kelpiens dam og fragmenthvelvet. Kapittel 112 heter «Slusene i Fort Augustus». **Men:** det ligger fortsatt skjelett i 102 (borgen), 106 (Urquhart) og 110 (Fingals hule), og 106 og 109 har bokhylle. De samme fem rekvisittene står overalt: statue med lapp, innrammet maleri av en hjort med «?», tønne, steinbord med lyng og krukke. Det henger et innrammet maleri utendørs ved Loch Ness, Callanish, Fort Augustus og Brig o' Doon, og det står en statue i Fingals hule. Stedene ser derfor kopierte ut. ![](kontroll/skottland-15-steder.jpg) |
+| 17 | Skottland og Japan: egen kulisse per kapittel med ting som hører til stedet | ✅ BESTÅTT (v0.14.0) | Skjelettene og de felles statuene og tønnene er borte. Skottland har skjold og sverd, klanvåpen, keltisk kors, torvkurv, hummerteine, fiskegarn og rokk. Japan har revestatue, Jizō, steinlykt, taiko-tromme, tansu-kommode, papirparasoll, bonsai og vannkum. Merknad: oppslagstavla med «?» går igjen i mange rom i begge land. ![](kontroll/skottland-japan-rom.jpg) |
 
 v0.12.5: storm virker i alle land, ankomsten er ren og det er 11 nye fabeldyr. Gjenstår: havet i New York, Dubai og Nordpolen med 3 fabeldyr, og oppgaver som er unike for hvert land.
 
