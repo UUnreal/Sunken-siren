@@ -1,12 +1,12 @@
-# Uavhengig kontroll – v0.12.9
+# Uavhengig kontroll – v0.13.0
 
 Kontrollert 8. nov 2026 av en egen kontrolltråd, ikke av byggetråden.
 
 **Krav fra 08:17:** et vesen eller dyr er bare BESTÅTT hvis det er gjenkjennelig på skjermbildet ut fra sagnbeskrivelsen og holder samme kvalitet som de norske trollene. Streker, klumper og klosser er FEIL. Bølger skal ha kropp og skum, ikke streker.
 
-**Slik ble det testet:** Chromium i portrett mobilstørrelse 390×844 med berøring. Koden som ble testet er commit `7d954ab` på `main`, altså nøyaktig det GitHub Pages viser. Selve live-adressen er sperret fra testmaskinen, derfor kjørte jeg den samme koden lokalt. Testknappene på forsiden ble brukt for alle 12 land. Natt ble tvunget fram med `HOV=23.5`. Storm ble tvunget fram med `WX.on=1` og `MK[land].wx=()=>1`. Fabeldyrene ble oppsøkt ved å flytte professoren til posisjonene deres.
+**Slik ble det testet:** Chromium i portrett mobilstørrelse 390×844 med berøring. Koden som ble testet er commit `fe91102` på `main`, altså nøyaktig det GitHub Pages viser. Selve live-adressen er sperret fra testmaskinen, derfor kjørte jeg den samme koden lokalt. Testknappene på forsiden ble brukt for alle 12 land. Natt ble tvunget fram med `HOV=23.5`. Storm ble tvunget fram med `WX.on=1` og `MK[land].wx=()=>1`. Fabeldyrene ble oppsøkt ved å flytte professoren til posisjonene deres.
 
-**Resultat v0.12.9: 14 BESTÅTT · 1 FEIL · 1 ikke kontrollert** (bare unike oppgaver per land gjenstår)
+**Resultat v0.13.0: 15 BESTÅTT · 2 FEIL** (Skottland har egne oppgaver, de andre 11 landene har det ikke ennå)
 
 | # | Punkt | Status | Funn |
 |---|---|---|---|
@@ -17,11 +17,11 @@ Kontrollert 8. nov 2026 av en egen kontrolltråd, ikke av byggetråden.
 | 5 | Mennesker ser ut som mennesker tilpasset landet | ✅ BESTÅTT | Kimono, rickshaw, folk ved markedsbodene i Kina, kamelkaravane, skotsk kvinne og jeger, inuitt med pelshette. Jeg så ingen firkanter. |
 | 6 | Plantene står stille når man går (Japan) | ✅ BESTÅTT (kode og bilder) | Tegnekoden for Japan bruker hverken `P.x` eller `camX`, så plantenes svai er ikke koblet til at professoren går. |
 | 7 | Dyrene skiller seg fra bakken | ✅ BESTÅTT | Alle dyr og vesener jeg så har mørk kontur og skygge, og står tydelig fram. |
-| 8 | Oppgavene er ulike i hvert land | ❌ FEIL | `CH[26..205].mini` bruker fortsatt bare de samme 4 minispillene (slide 53, hanoi 47, lights 45, cube 35). Nå er rekkefølgen bare stokket. Kravet er at hvert land skal ha sine egne oppgaver knyttet til historien, og en ny rekkefølge på de samme spillene oppfyller ikke det. |
+| 8 | Oppgavene er ulike i hvert land | ❌ FEIL (1 av 12 land ferdig) | **Skottland (101–115) er BESTÅTT:** det har 6 egne skotske oppgaver: piktisk symbolstein, sekkepipe, tartanvev, Clava-røys, kelpie-steiner og sluser. Hver type kommer 2–3 ganger, og senere besøk er vanskeligere. Oppgavene er knyttet til stedet og historien. **De andre 11 landene** (kapittel 26–100 og 116–205) bruker fortsatt bare slide, lights, hanoi og cube. ![](kontroll/skottland-oppgaver-tips.jpg) |
 | 9 | Kjøring tar deg til et nytt område | ✅ BESTÅTT | `drive()` kjører nå minst ca. 23 m til et annet navngitt sted, og den sier hvor. Den blandede engelske replikken er rettet i v0.12.4. Avstandene er fortsatt bare innenfor samme stripe på ca. 140 m. |
 | 10 | Myke og elegante overganger etter fly og ved dører | ✅ BESTÅTT (v0.12.5) | Havnekontoret og teksten «Mekanismen må løses» er borte. Etter 4 s står professoren direkte i landet. Dørene bruker iris-overgang. ![](kontroll/ankomst-mekanismen.jpg) |
 | 11 | Professoren klarer å løpe i storm | ✅ BESTÅTT | Han kommer seg fram i storm i alle land. Merknad: i v0.12.5 er farten i storm halvert (126 enheter på 2,5 s mot 252 før). Det er greit hvis det er meningen at han kjemper mot vinden. |
-| 12 | Hint i tre nivåer og synlig tilbakemelding i alle minispill | ⚪ IKKE KONTROLLERT | Dette krever at jeg spiller gjennom minispill, og det rakk jeg ikke denne runden. Neste kontroll tar det. |
+| 12 | Hint i tre nivåer og synlig tilbakemelding i alle minispill | ✅ BESTÅTT | Testet med ekte trykk i piktisk stein (101), Clava-røys (104) og sluser (108). Hvert trykk på 💡 Tips gir neste nivå (1/3, 2/3, 3/3). Nivå 3 sier det konkrete neste trekket («Felt 1 skal være speilet», «Velg des.», «Trykk Flytt båten»), og det stemmer med oppgaven. Måltavla vises først. Et trykk på et felt bytter symbolet der det ble trykket, også med to rader i sekken. Tips i de generiske minispillene er ikke testet. |
 | 13 | Naturlig verden: vind i trærne, lys om natta og lignende | ✅ BESTÅTT (v0.12.5) | Storm virker nå i alle land: mørk himmel og kraftig regn, sandstorm i Dubai og Australia, snøstorm på Nordpolen. Natt fungerer, med nordlys og lys i vinduene. ![](kontroll/dubai-sandstorm.jpg) ![](kontroll/pol-snostorm.jpg) |
 | 14 | Fossen i Skottland er stor og imponerende | ✅ BESTÅTT | Foyers-fossen er nå høy og går i to trinn, med dusj. Den fyller hele skjermhøyden. Merknad: vannet forsvinner rett i gresset, uten kulp eller elv. ![](kontroll/skottland-foss.jpg) |
 | 15 | Fabeldyrene er gjenkjennelige ut fra sagnene | ✅ BESTÅTT (v0.12.9) | Se punkt 3. |
