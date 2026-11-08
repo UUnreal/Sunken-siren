@@ -2,6 +2,12 @@
 
 Nyeste versjon øverst. Formatet er fast fordi forsiden leser det: `## <versjon> · <dato>` og så punkter som begynner med `- `.
 
+## 0.12.8 · 8. nov 2026
+- Flere fabeldyr er tegnet på nytt etter sagnene: inkanyamba som kjempeslange med hestehode i fossekulpen, mamlambo med krokodillekropp som lyser grønt, akhlut som ulv i spekkhoggerfarger, selkien som kvinne med selskinnet på en stein, og pixiuen som en vinget bronseløve som ikke lenger ligner qilinen.
+- Nordpolen: krakenen løfter en kjempekappe med øye og armer opp av råka, og Qalupalik har grønn hud, vått hår og amauti.
+- Den hodeløse rytteren rir en ekte hest i galopp.
+- Nessies hals er alltid med i bildet sammen med puklene.
+
 ## 0.12.7 · 8. nov 2026
 - 18 fabeldyr er tegnet på nytt med fyldige kropper etter sagnene, blant dem Mimi-åndene, Yara-ma-yha-who, Muldjewangk, Bu Salasil med lenkene, Aisha Qandisha med hover, ghulen, mahaha, tokoloshen, Mamlambo, den kinesiske dragen med gevir og perle, qilinen med skjell, pixiuen og fenghuang-føniksen.
 - Min min-lysene gløder nå som ekte lyskuler over sletta.
