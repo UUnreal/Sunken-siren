@@ -2,6 +2,10 @@
 
 Nyeste versjon øverst. Formatet er fast fordi forsiden leser det: `## <versjon> · <dato>` og så punkter som begynner med `- `.
 
+## 0.12.6 · 8. nov 2026
+- Bølgene er tegnet helt på nytt som ekte vannmasser: mørk bunn, grønnblått lys gjennom toppen, brekkende topper som krøller seg, skum som renner ned og sprut som vinden river av. Rolig vær gir myke dønninger.
+- Hudson-elva i New York får også bølger i storm.
+
 ## 0.12.5 · 8. nov 2026
 - Etter en flytur går bildet rett fra flyet til det nye stedet. Det mørke havnekontoret vises ikke lenger et øyeblikk.
 - Storm i alle land: før kom stormen bare i Sahara. Nå kan den komme overalt. Himmelen blir mørk, regnet pisker på skrå og det lyner. I Dubai og Australia blir det sandstorm, og på Nordpolen snøstorm.
