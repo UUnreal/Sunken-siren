@@ -2,6 +2,12 @@
 
 Nyeste versjon øverst. Formatet er fast fordi forsiden leser det: `## <versjon> · <dato>` og så punkter som begynner med `- `.
 
+## 0.12.2 · 8. nov 2026
+- Japan: bambusen flytter seg ikke lenger når professoren går.
+- Japan: husene, toriiportene, helligdommen, pagoden og borgen har fått ekte størrelse i forhold til professoren (1,75 m).
+- Japan: sikahjortene har mørk vinterpels og skygge, så de ikke går i ett med grusveien. Makakene er også lettere å se.
+- Gåterommene er ulike i hvert land: lyskilden er et speil i solrike land, papirlykt i Japan og Kina, lommelykt i USA, tranlampe i Norge, stormlykt i Skottland og qulliq på Nordpolen. Alteret og hylla har også eget utseende i hvert land, så ikke alle rom har fakkel og stearinlys.
+
 ## 0.12.1 · 7. nov 2026
 - Hvert minispill viser nå en målskjerm med bilde før du begynner, så du ser hva som skal til. Trykk «🎯 Mål» for å se den igjen.
 - Trykk i minispill virker også mens en snakkeboble vises.

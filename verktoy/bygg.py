@@ -88,6 +88,9 @@ endr = ''
 for b in blokker:
     hode, *linjer = b.strip().split('\n')
     endr += '<p class="ver">%s</p><ul>%s</ul>\n' % (html.escape(hode), ''.join('<li>%s</li>' % html.escape(l[2:]) for l in linjer if l.startswith('- ')))
+# Lenke til Lesestart (barneversjonen) bare når den mappen finnes i nettstedet.
+LESE = '<p style="margin:10px 0 0;font-size:15px">🐚 <b>For de minste (5–7 år):</b> <a href="lesestart/" style="color:#0a6fd6">Lesestart</a>, lær bokstavlydene sammen med professoren.</p>'
+f = f.replace('<!--LESESTART-->', LESE if os.path.isdir(os.path.join(out, 'lesestart')) else '')
 f = f.replace('<!--VERSJON-->', html.escape(ver[0][0])).replace('<!--ENDRINGER-->', endr)
 open(os.path.join(out, 'index.html'), 'w', encoding='utf-8').write(f)
 shutil.copy(os.path.join(here, 'CHANGELOG.md'), out)

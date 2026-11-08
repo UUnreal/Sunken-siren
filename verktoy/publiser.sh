@@ -2,7 +2,8 @@
 # Bygger, tester og publiserer nettstedet. Bruk: publiser.sh <repo-mappe> "<commit-melding>"
 set -euo pipefail
 REPO=$1; MSG=$2; HERE=$(cd "$(dirname "$0")" && pwd); SRC=${SRC:-/mnt/project-files/spill/sunken-siren.html}
-cd "$REPO" && git pull -q origin main && git clean -fdxq && git rm -rq --ignore-unmatch . >/dev/null
+cd "$REPO" && git pull -q origin main && # fjern bare det bygg.py lager; andre mapper (f.eks. lesestart/) beholdes
+rm -rf index.html spill bilder ikoner last-ned sw.js manifest.webmanifest CHANGELOG.md README.md verktoy .nojekyll
 python3 "$HERE/bygg.py" "$SRC" . | grep -E "offline-versjon|språk"
 grep -q '"\.git' sw.js && { echo "FEIL: .git i sw.js"; exit 1; }
 mkdir -p verktoy && cp -r "$HERE"/{README.md,SIKKERHET.md,CHANGELOG.md,bygg.py,publiser.sh,forside.html,sw.js,manifest.webmanifest,test.js,test-offline.js,bilder,ikoner} verktoy/ && cp verktoy/README.md README.md
