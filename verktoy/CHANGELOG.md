@@ -2,6 +2,16 @@
 
 Nyeste versjon øverst. Formatet er fast fordi forsiden leser det: `## <versjon> · <dato>` og så punkter som begynner med `- `.
 
+## 0.12.4 · 8. nov 2026
+- Nordpolen: hundesleden har ekte grønlandshunder i vifte foran en sleide av tre, isbjørnen har myke former og riktig størrelse, og «fjellene» er byttet ut med skrugarder av is.
+- Nordpolen: det frosne skipet er et ekte polarskip i Frams stil, med master, rigg og dekkshus, fastfrosset i isen.
+- Australia: kenguruene er tegnet på nytt. Hannen er rødbrun og hunnene blågrå, med kraftige bein, tykk hale og skygge. De hopper ordentlig.
+- Australia: ørkentrærne har ekte kroner, og første kapittel heter nå «Ankomst i outbacken».
+- Det gule merket er nå en vimpel på en stang i bakken, ikke en firkant som svever på himmelen.
+- Gåten i introen gir ingen tips lenger. Den må du finne ut av selv.
+- Alle dyr i alle land har fått mørk kontur, lys fra himmelen og skygge, og mykere former. De skiller seg nå tydelig fra bakken.
+- Den engelske replikken når du kjører har ikke lenger norske ord i seg.
+
 ## 0.12.3 · 8. nov 2026
 - Kina: hus, tempel, trær, kameler og vogn har fått ekte størrelse i forhold til professoren. Fire nye sagnvesener langs veien: huli jing, pixiu, bixi og xiezhi.
 - Trær i alle land er mange ganger høyere enn professoren, som i virkeligheten. Sjiraffene er like høye som ekte sjiraffer.
