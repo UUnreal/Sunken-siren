@@ -2,6 +2,13 @@
 
 Nyeste versjon øverst. Formatet er fast fordi forsiden leser det: `## <versjon> · <dato>` og så punkter som begynner med `- `.
 
+## 0.12.7 · 8. nov 2026
+- 18 fabeldyr er tegnet på nytt med fyldige kropper etter sagnene, blant dem Mimi-åndene, Yara-ma-yha-who, Muldjewangk, Bu Salasil med lenkene, Aisha Qandisha med hover, ghulen, mahaha, tokoloshen, Mamlambo, den kinesiske dragen med gevir og perle, qilinen med skjell, pixiuen og fenghuang-føniksen.
+- Min min-lysene gløder nå som ekte lyskuler over sletta.
+- Stormskipet er et ordentlig gammelt nederlandsk seilskip, og wendigoen og andre nattvesener er ikke gjennomsiktige lenger.
+- Nessie har fått tykkere hals.
+- Stormbølgene blir ikke høyere enn det som passer for stedet.
+
 ## 0.12.6 · 8. nov 2026
 - Bølgene er tegnet helt på nytt som ekte vannmasser: mørk bunn, grønnblått lys gjennom toppen, brekkende topper som krøller seg, skum som renner ned og sprut som vinden river av. Rolig vær gir myke dønninger.
 - Hudson-elva i New York får også bølger i storm.

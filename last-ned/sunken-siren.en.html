@@ -30,7 +30,7 @@ button.on{background:var(--von);border-color:var(--gold)}@media(hover:hover){but
 <div class="ov" id="title"><canvas id="tc" style="position:absolute;inset:0;width:100%;height:100%;z-index:-1;touch-action:auto;background:none"></canvas><h1>Relic of the<br>Sunken Siren</h1><p>Caribbean, 1934. Professor Julian Vance is hunting the Sun Disc from the sunken temple. He is dramatically overqualified for everything except the physical stuff.</p>
 <p style="opacity:.75;font-size:14px">Tap to walk. Pick a verb, then a thing. Tap one thing in your bag and then another to combine. 👁 shows everything you can tap. Sound on!</p>
 <div id="langs" style="font-size:16px;display:flex;gap:6px;flex-wrap:wrap;justify-content:center"><button data-l="no">🇳🇴 Norsk</button><button data-l="en">🇬🇧 English</button></div>
-<div><button id="bNew">New game</button> <button id="bCont" style="display:none">Continue</button> <button id="bKode">💾 I have a code</button><button id="bNor">❄️ Test Norway</button><button id="bAur">🌌 Test aurora</button><button data-t="41">🏜️ Test Sahara</button><button data-t="56">🕌 Test Dubai</button><button data-t="71">🗽 Test USA</button><button data-t="86">🧊 Test North Pole</button><button data-t="101">🏰 Test Scotland</button><button data-t="116">⛩️ Test Japan</button><button data-t="131">🐉 Test China</button><button data-t="146">🦘 Test Australia</button><button data-t="161">🦒 Test South Africa</button><button data-t="176">🦙 Test Peru</button><button data-t="191">🌼 Test Mexico</button><div id="ver" style="font:12px sans-serif;opacity:.7;margin-top:6px">Version 0.12.6 · 8 Nov 2026</div><div id="cred" style="font:11px sans-serif;opacity:.55;margin-top:3px">Music made with Meta MusicGen (CC-BY-NC 4.0)</div></div></div>
+<div><button id="bNew">New game</button> <button id="bCont" style="display:none">Continue</button> <button id="bKode">💾 I have a code</button><button id="bNor">❄️ Test Norway</button><button id="bAur">🌌 Test aurora</button><button data-t="41">🏜️ Test Sahara</button><button data-t="56">🕌 Test Dubai</button><button data-t="71">🗽 Test USA</button><button data-t="86">🧊 Test North Pole</button><button data-t="101">🏰 Test Scotland</button><button data-t="116">⛩️ Test Japan</button><button data-t="131">🐉 Test China</button><button data-t="146">🦘 Test Australia</button><button data-t="161">🦒 Test South Africa</button><button data-t="176">🦙 Test Peru</button><button data-t="191">🌼 Test Mexico</button><div id="ver" style="font:12px sans-serif;opacity:.7;margin-top:6px">Version 0.12.7 · 8 Nov 2026</div><div id="cred" style="font:11px sans-serif;opacity:.55;margin-top:3px">Music made with Meta MusicGen (CC-BY-NC 4.0)</div></div></div>
 <div id="intro" style="position:fixed;inset:0;z-index:20;background:#000;cursor:pointer"><canvas id="ic" style="width:100%;height:100%;display:block;touch-action:none"></canvas></div>
 <div class="ov" id="code" style="display:none;z-index:8;background:rgba(8,5,12,.94)"><h2 id="cT" style="color:var(--gold);margin:0"></h2><pre id="cB" style="white-space:pre-wrap;font-size:17px;line-height:1.5;max-width:560px;text-align:left;background:#1a1222;padding:12px;border-radius:8px;border:1px solid #5a4470;margin:0;max-height:45vh;overflow:auto"></pre><button id="cP" style="display:none">▶ Play the signal</button><input id="cI" autocomplete="off" autocapitalize="characters" spellcheck="false" style="font:inherit;font-size:22px;padding:10px;width:min(320px,80vw);text-align:center;text-transform:uppercase;border-radius:8px;border:2px solid var(--gold);background:#0c0810;color:var(--ink)"><div><button id="cOK">Answer</button> <button id="cH" style="background:var(--vb)">💡 Hint</button> <button id="cS" style="background:var(--vb)">🔎 Search</button> <button id="cW" style="background:var(--vb)">📖 Wikipedia</button> <button id="cN" style="background:var(--vb)">📚 Encyclopedia</button> <button id="cX" style="background:var(--vb)">Close</button></div><p id="cM" style="min-height:22px;color:#ff9a7a"></p></div>
 <div class="ov" id="globe" style="display:none;z-index:9"><h2 style="color:var(--gold);margin:0">🌍 The journey around the world</h2><canvas id="gc" style="position:static;inset:auto;width:min(260px,62vw);height:min(260px,62vw);image-rendering:pixelated;background:none;touch-action:auto"></canvas><p id="gT" style="font-size:20px;margin:0"></p><div style="width:min(320px,80vw);height:14px;background:#2a1a30;border:1px solid #5a4470;border-radius:7px;overflow:hidden"><div id="gB" style="height:100%;width:0;background:linear-gradient(90deg,#f2b544,#ffe48a)"></div></div><p id="gL" style="white-space:pre-line;font-size:14px;opacity:.85;margin:0"></p><button id="gX">Close</button></div>
@@ -2160,7 +2160,7 @@ function sNessTrace(){// Nessie: kjølvann viser alltid hvor hun svømmer, hun d
  const f=Math.sin(T*.07);if(f>.4){const fx=700+(T*4)%500;X.globalAlpha=Math.min(1,(f-.4)*4)*.85;X.fillStyle='#2a3a34';X.beginPath();X.ellipse(fx,176,5,2.5,0,Math.PI,0);X.ellipse(fx+11,176,4,2,0,Math.PI,0);X.fill();X.fillRect(fx+16,169,1.6,7);X.globalAlpha=1}}
 function sNessie(a){const t=T*.6,nk=Math.sin(t)*1.5;X.scale(1.4,1.4);X.fillStyle='rgba(10,20,24,.35)';X.beginPath();X.ellipse(-8,1.5,52,3,0,0,7);X.fill();X.strokeStyle='rgba(220,235,245,.35)';X.lineWidth=.6;for(let i=0;i<3;i++){const r=((T*6+i*14)%42);X.beginPath();X.ellipse(30,0,r,r*.12,0,0,7);X.stroke()}X.fillStyle='rgba(230,240,250,.5)';for(let i=0;i<4;i++)X.fillRect(-46+i*26+Math.sin(T+i)*2,-1,14,1);
  nPg('#2a3a34',[[-40,0],[-34,-8],[-26,-10],[-18,-6],[-14,0]]);nPg('#2a3a34',[[-8,0],[-2,-12],[8,-14],[16,-9],[20,0]]);nPg('#3a4c44',[[-2,-11],[8,-13],[12,-11],[4,-9]]);
- nPg('#2a3a34',[[18,0],[22,-14],[24,-30],[26,-44+nk],[30,-52+nk],[36,-54+nk],[40,-51+nk],[38,-48+nk],[32,-47+nk],[30,-40],[29,-26],[28,-12],[26,0]]);nPg('#3a4c44',[[23,-16],[25,-32],[27,-44+nk],[28,-44+nk],[27,-30],[26,-16]]);Pp('#d8ffe8',35,-52+nk);
+ fS('#2a3a34',[[14,0],[19,-14],[21,-30],[23,-44+nk],[28,-53+nk],[36,-56+nk],[42,-52+nk],[40,-47+nk],[33,-46+nk],[32,-40],[32,-26],[32,-12],[30,0]]);fEye(35,-52+nk,'#d8ffe8');nPg('#3a4c44',[[23,-16],[25,-32],[27,-44+nk],[28,-44+nk],[27,-30],[26,-16]]);Pp('#d8ffe8',35,-52+nk);
 }
 function sKelpie(a){const ph=T*.8,dr=(T*30)%12;
  // vannhest: svart og våt, manke av vannplanter, drypper hele tiden
@@ -2359,19 +2359,28 @@ function kCart(x,dir,m){X.save();X.translate(x,232);X.scale(dir,1);const ph=m?T*
  X.strokeStyle='#5a3a1e';X.lineWidth=1.2;X.beginPath();X.moveTo(8,-14);X.lineTo(26,-18);X.stroke();
  const mx=34;qLeg(mx-8,-14,14,ph,Math.PI,m,'#4a3a2a',2,0,'#1a1008');qLeg(mx+6,-14,14,ph,0,m,'#4a3a2a',2,1,'#1a1008');nPg('#6a5a48',[[mx-11,-16],[mx-10,-22],[mx+6,-23],[mx+10,-19],[mx+8,-14],[mx-10,-14]]);qLeg(mx-6,-14,14,ph,0,m,'#6a5a48',2,0,'#1a1008');qLeg(mx+8,-14,14,ph,Math.PI,m,'#6a5a48',2,1,'#1a1008');
  nPg('#6a5a48',[[mx+6,-22],[mx+10,-27],[mx+15,-25],[mx+17,-21],[mx+14,-20],[mx+10,-19]]);nPg('#6a5a48',[[mx+9,-26],[mx+8,-32],[mx+11,-27]]);nPg('#6a5a48',[[mx+11,-26],[mx+12,-32],[mx+13,-26]]);Pp('#1a1008',mx+13,-24);X.restore()}
-function kDragon(a){const t=T*.8;X.lineCap='round';const pts=[];for(let i=0;i<=30;i++){const u=i/30;pts.push([-60+u*120,-40+Math.sin(u*7-t)*10+Math.sin(u*3+t*.5)*5])}
- // slangekropp med skjell og ryggfinne, fire bein med klør, gevir, værhår og perle
- const seg=(w,c)=>{X.strokeStyle=c;X.lineWidth=w;X.beginPath();pts.forEach((p,i)=>i?X.lineTo(p[0],p[1]):X.moveTo(p[0],p[1]));X.stroke()};seg(7,'#1e5a4a');seg(5,'#2e7a5e');seg(2,'#c8b860');
- for(let i=2;i<30;i+=2){const[p0,p1]=[pts[i],pts[i+1]];nPg('#c84a2a',[[p0[0],p0[1]-3],[p1[0],p1[1]-3],[(p0[0]+p1[0])/2,p0[1]-6]])}
- for(const i of[8,20]){const p=pts[i];X.strokeStyle='#1e5a4a';X.lineWidth=2;X.beginPath();X.moveTo(p[0],p[1]);X.lineTo(p[0]+3,p[1]+7);X.lineTo(p[0]+6,p[1]+8);X.stroke();for(let k=0;k<3;k++)Pp('#e8e0c0',p[0]+5+k,p[1]+9)}
- const h=pts[30];nPg('#2e7a5e',[[h[0]-2,h[1]-4],[h[0]+6,h[1]-5],[h[0]+12,h[1]-2],[h[0]+12,h[1]+1],[h[0]+6,h[1]+3],[h[0]-2,h[1]+3]]);nPg('#c8b860',[[h[0]+4,h[1]+1],[h[0]+12,h[1]+1],[h[0]+10,h[1]+3]]);Pp('#ffe080',h[0]+5,h[1]-3);
- X.strokeStyle='#e8d8a0';X.lineWidth=1;X.beginPath();X.moveTo(h[0]+2,h[1]-4);X.lineTo(h[0]-3,h[1]-10);X.lineTo(h[0]-6,h[1]-11);X.moveTo(h[0]-2,h[1]-8);X.lineTo(h[0]+1,h[1]-11);X.stroke();X.strokeStyle='#e8d8a0';X.lineWidth=.6;X.beginPath();X.moveTo(h[0]+11,h[1]);X.quadraticCurveTo(h[0]+18,h[1]+2+Math.sin(T*2)*2,h[0]+22,h[1]-3);X.stroke();
- X.fillStyle='rgba(255,240,200,.6)';X.beginPath();X.arc(h[0]+20,h[1]+6,3,0,7);X.fill();Rr('#fff8e0',h[0]+19,h[1]+5,2,2)}
-function kQilin(a){X.save();X.globalAlpha=.6;for(let i=0;i<10;i++){const fx=-14+i*3.2,fy=-30+Math.sin(T*4+i)*2;nPg(i%2?'#ffb040':'#ff7a30',[[fx-1.5,fy+6],[fx,fy],[fx+1.5,fy+6]])}X.restore();
- // qilin: hjortelik kropp med skjell, kuhale, ett horn, hover, flammer
- qLeg(-9,-16,16,0,0,0,'#7a5a2a',2,0,'#2a1a10');qLeg(9,-16,16,0,0,0,'#7a5a2a',2,1,'#2a1a10');nPg('#c8a040',[[-13,-19],[-11,-25],[0,-27],[10,-27],[14,-22],[11,-16],[-10,-16]]);for(let i=0;i<10;i++)Rr(i%2?'#2a7a6a':'#3a9a7a',-9+i*2,-24+(i%2)*3,2,2);
- qLeg(-6,-16,16,0,0,0,'#a88030',2.2,0,'#2a1a10');qLeg(12,-16,16,0,0,0,'#a88030',2.2,1,'#2a1a10');X.strokeStyle='#a88030';X.lineWidth=1.2;X.beginPath();X.moveTo(-13,-22);X.quadraticCurveTo(-18,-20,-17,-14);X.stroke();Rr('#e8e0c0',-18,-15,2,3);
- nPg('#c8a040',[[9,-26],[13,-28],[16,-36],[18,-38],[22,-37],[24,-34],[19,-33],[16,-30],[13,-22]]);Pp('#1a1008',20,-36);nPg('#e8d8a0',[[17,-38],[16,-44],[18,-39]]);for(let i=0;i<5;i++)Rr('#e8e0c0',10+i*1.6,-29+i*1.4,1,4);Rr('#e8e0c0',22,-33,2,2)}
+function kDragon(a){const t=T*.8,N=44,P=[];for(let i=0;i<=N;i++){const u=i/N;P.push([-62+u*112,-40+Math.sin(u*6-t)*10+Math.sin(u*2.6+t*.5)*5])}
+ // lóng, den kinesiske dragen: lang slangekropp med skjell, gyllen buk, rød ryggkam, fire bein med klør, hjortegevir, manke, lange værhår og perlen den jager
+ const W=u=>1.5+Math.sin(Math.min(1,u*1.25)*Math.PI*.95)*6.5,T0=[],B0=[],Bl=[];for(let i=0;i<=N;i++){const p=P[i],q=P[Math.min(N,i+1)],o=P[Math.max(0,i-1)],dx=q[0]-o[0],dy=q[1]-o[1],l=Math.hypot(dx,dy)||1,nx=-dy/l,ny=dx/l,w=W(i/N);T0.push([p[0]-nx*w,p[1]-ny*w]);B0.push([p[0]+nx*w,p[1]+ny*w]);Bl.push([p[0]+nx*w*.4,p[1]+ny*w*.4])}
+ for(let i=2;i<N-2;i+=2){const p=T0[i];fS('#b8302a',[[p[0]-2,p[1]+1],[p[0]+1,p[1]-5-W(i/N)*.3],[p[0]+3,p[1]+1]])}
+ for(const [i,o] of[[12,0],[30,2]])for(const d of[0,1]){const p=B0[i+d*3],s=Math.sin(T*2+o+d*2)*2;fL(d?'#1e5a4a':'#174838',3,[[p[0],p[1]-1],[p[0]+3+s,p[1]+7],[p[0]+7+s,p[1]+9]]);for(let k=0;k<3;k++)fL('#e8e0c0',.8,[[p[0]+7+s,p[1]+9],[p[0]+8+s+k*1.5,p[1]+11]])}
+ nPg('#1e6a52',[...T0,...B0.slice().reverse()]);nPg('#d8b048',[...Bl,...B0.slice().reverse()]);for(let i=1;i<N-1;i+=2){const p=P[i];fE('#2e8a6a',p[0],p[1]-W(i/N)*.35,1.4,1);if(i%4==1)fL('#a88a30',.6,[[Bl[i][0],Bl[i][1]],[B0[i][0],B0[i][1]]])}
+ const h=P[N],x=h[0],y=h[1],jw=Math.sin(T*1.5)*1.5;fS('#c83a2a',[[x-8,y-8],[x-14,y-2],[x-10,y+6],[x-4,y+2]]);
+ fS('#1e6a52',[[x-5,y-7],[x+4,y-10],[x+14,y-8],[x+21,y-4],[x+21,y],[x+12,y+1],[x+2,y+3],[x-5,y+4]]);fS('#1e6a52',[[x+2,y+3],[x+12,y+2+jw],[x+18,y+5+jw],[x+10,y+8+jw],[x,y+7]]);fS('#7a1a14',[[x+10,y+1],[x+20,y+.5],[x+17,y+4+jw],[x+10,y+4+jw]]);
+ for(let k=0;k<4;k++){fS('#f0ecd8',[[x+12+k*2,y],[x+13+k*2,y+2],[x+14+k*2,y]]);fS('#f0ecd8',[[x+11+k*2,y+5+jw],[x+12+k*2,y+3+jw],[x+13+k*2,y+5+jw]])}
+ fS('#d8b048',[[x+6,y-9],[x+12,y-9],[x+10,y-7]]);fEye(x+9,y-6,'#ffd23f');fE('#0a2a20',x+20,y-3,.9,.9);
+ fL('#e8d8a0',1.4,[[x+2,y-9],[x-4,y-17],[x-9,y-19]]);fL('#e8d8a0',1,[[x-2,y-14],[x+2,y-19]]);fL('#e8d8a0',1,[[x-6,y-18],[x-6,y-23]]);fL('#e8d8a0',1.4,[[x+6,y-10],[x+2,y-19],[x-1,y-23]]);
+ X.strokeStyle='#e8d8a0';X.lineWidth=.8;X.beginPath();X.moveTo(x+19,y-2);X.quadraticCurveTo(x+28,y+2+Math.sin(T*2)*3,x+34,y-4);X.moveTo(x+18,y+2);X.quadraticCurveTo(x+24,y+12,x+32,y+10+Math.sin(T*2+1)*3);X.stroke();
+ const px=x+30+Math.sin(T)*3,py=y-12+Math.cos(T*1.3)*2;fE('#f0f4ff',px,py,3.4,3.4);fE('#a8c8ff',px+1,py+1,1.4,1.4);for(let k=0;k<4;k++)fL('#ff9a40',.8,[[px+Math.cos(T*3+k*1.57)*4,py+Math.sin(T*3+k*1.57)*4],[px+Math.cos(T*3+k*1.57)*6,py+Math.sin(T*3+k*1.57)*6]])}
+function kQilin(a){const s=Math.sin(T*1.6);
+ // qilin: hjortekropp dekket av skjell, kuhale, kløvde hover, ett horn (eller små gevir), flammeman langs ryggen; et fredelig, rettferdig dyr i kinesiske sagn
+ const B='#c89a3a',D='#8a6a28',Sc='#3a9a7a',Sd='#24705a';for(let i=0;i<9;i++){const fx=-14+i*3.4,fy=-30+Math.sin(T*4+i)*2;fS(i%2?'#ffb040':'#ff6a20',[[fx-2,fy+6],[fx,fy-2-i%3],[fx+2,fy+6]])}
+ for(const [x,c,o] of[[-10,D,0],[8,D,1.6]])fS(c,[[x-2,-17],[x+2,-17],[x+1.4,-8],[x+1.6,-2],[x-1.6,-2],[x-1.4,-8]]),fS('#2a1a10',[[x-2,0],[x+2,0],[x+1.6,-2],[x-1.6,-2]]);
+ fS(B,[[-15,-18],[-14,-26],[-4,-29],[8,-29],[14,-25],[14,-17],[4,-15],[-10,-15]]);for(let r=0;r<3;r++)for(let i=0;i<7;i++)fS(i%2?Sc:Sd,[[-12+i*3.6+r,-26+r*3.4],[-10.4+i*3.6+r,-27.6+r*3.4],[-8.8+i*3.6+r,-26+r*3.4],[-10.4+i*3.6+r,-24.4+r*3.4]]);
+ for(const [x,c] of[[-7,B],[11,B]])fS(c,[[x-2.2,-17],[x+2.2,-17],[x+1.6,-8],[x+1.8,-2],[x-1.8,-2],[x-1.6,-8]]),fS('#2a1a10',[[x-2.2,0],[x+2.2,0],[x+1.8,-2],[x-1.8,-2]]);
+ fL(D,1.6,[[-15,-24],[-20,-20+s],[-20,-13+s]]);fS('#e8e0c0',[[-22,-14+s],[-18,-14+s],[-20,-9+s]]);
+ fS(B,[[9,-27],[13,-30],[16,-37],[19,-40],[24,-39],[27,-35],[26,-32],[21,-32],[17,-28],[14,-22]]);fS('#e8d8a0',[[21,-35],[27,-35],[26,-32],[21,-32]]);fEye(20,-37,'#2a1a10');fS('#f0e0a0',[[17,-40],[18,-48],[20,-40]]);
+ for(let i=0;i<5;i++)fS('#e8e0c0',[[11+i*1.8,-30+i*1.2],[12+i*1.8,-26+i*1.4],[13+i*1.8,-30+i*1.2]]);fS('#e8e0c0',[[24,-32],[27,-31],[25,-28]])}
 mkReg('kina',{W:KINW,a:131,place:'China',trw:'fair',clim:[.05,.35,0],sites:KIN,night:.45,bgx:1700,
  intro:['China, November 1934. The city is called Peiping now, because the capital has moved to Nanjing. The air is dry and cold, and it smells of coal and roasted chestnuts.','I follow the marker between grey walls and red gates.'],
  out:'Out to the alley',outLook:'The door out to the hutongs.',
@@ -2393,7 +2402,7 @@ mkReg('kina',{W:KINW,a:131,place:'China',trw:'fair',clim:[.05,.35,0],sites:KIN,n
   {id:'wang',name:'Lao Wang the camel driver',col:'#e8d0a0',vox:[.8,.9],x:1840,look:'An old man in a fur hat and sheepskin coat, with a walking stick and a long beard.',
    lines:['I am Lao Wang. I have led camels over the mountains for forty years.','My camels have two humps. They can stand the cold here in the north, and the winter snow in the Gobi too.','The wall? It is older than my grandfather\'s grandfather. People say it can be seen from the Moon, but that is just talk.'],tip:'Listen to an old man: ',
    draw(){dPer(1840,234,-1,{skin:'#d8b088',coat:'#7a5a3a',leg:'#4a3a2a',belt:'#3a2a1a',hat:br=>{nPg('#5a4028',[[-3,-24.4+br],[3.4,-24.4+br],[3,-27.6+br],[-2.6,-27.6+br]]);Rr('#d8c8a8',-3.4,-25+br,7,1.4)},ex:()=>{Rr('#e8e8e0',1,-21.4,2,3);X.strokeStyle='#6a4a2a';X.lineWidth=.6;X.beginPath();X.moveTo(1.8,-12);X.lineTo(4,0);X.stroke()}})}}],
- cr:[{id:'drage',name:'The dragon',col:'#a0ffd0',vox:[.3,.6],x:1480,px:()=>1480+Math.sin(T*.02)*80,y:110,w:90,h:60,sp:.045,ph:5,draw:kDragon,
+ cr:[{id:'drage',name:'The dragon',col:'#a0ffd0',vox:[.3,.6],x:1480,px:()=>1480+Math.sin(T*.02)*80,y:110,w:112,h:74,sp:.045,ph:5,draw:kDragon,
    sign:{n:'The dragon head on the bridge',r:[2580,340,60,50],look:'A stone dragon head on the bridge. The dragon rules over rain and rivers. When it wakes, the clouds gather ...'},
    look:'A long, green dragon winds through the clouds with a glowing pearl in front of its mouth. Chinese dragons are wise and bring rain to the fields.',
    lines:['The human can see me. That only happens once in a hundred years.','I bring the rain in spring and shut it out in winter. That is why the air is so dry now.','My pearl is wisdom. I will share a little with you.'],tip:'The dragon\'s wisdom: '},
@@ -3176,13 +3185,94 @@ const FK={
   fS('#2a4a2a',[[24,0],[26,-14+r],[30,-24+r],[38,-28+r],[46,-25+r],[44,-21+r],[36,-20+r],[32,-12],[30,0]]);fS('#c8b860',[[38,-22+r],[45,-23+r],[44,-21+r],[37,-20+r]]);fEye(38,-26+r,'#ffd23f');fL('#c83a3a',.8,[[46,-24+r],[50,-23+r],[52,-25+r]])},
   look:'A giant snake, thick as a tree, lies half under the water. Yacumama, «mother of the water», is the great serpent of Amazon legends. People say the rivers and lakes are hers, and that you should ask permission before you fish.',l:['Ssss ... who comes to my water?','Take only what you need from the river. Then there is enough for everyone.']},
 };
+// ---------- Fabeldyr tegnet på nytt (2026-11-08): fyldige kropper etter sagnene, ingen streker eller klumper ----------
+{const A=(id,o)=>{if(FK[id])Object.assign(FK[id],o)};
+A('mimi',{w:38,h:84,d(){const B='#a8452a',D='#7a2e1a',W='#f0e6d0';
+ const fig=(x,ph,sp)=>{const s=Math.sin(T*1.4+ph)*1.5;
+  fS(D,[[x-4,-38],[x-2,-38],[x-3,-20],[x-4,0],[x-7,0],[x-6,-20]]);fS(B,[[x+1,-38],[x+4,-38],[x+5,-20],[x+6,0],[x+3,0],[x+2,-20]]);
+  fS(B,[[x-5,-38],[x-6,-50],[x-5,-62],[x-3,-68],[x+3,-68],[x+5,-62],[x+6,-50],[x+5,-38]]);fS(D,[[x-5,-40],[x-6,-50],[x-4,-60],[x-2,-50],[x-3,-40]]);
+  fL(B,2.4,[[x-4,-64],[x-9,-52+s],[x-10,-40+s]]);fL(B,2.4,[[x+4,-64],[x+9,-70-s],[x+11,-78-s]]);fL('#5a3a1e',1.2,[[x+11,-84-s],[x+9,-30-s]]);fS('#c8c0b0',[[x+10,-86-s],[x+12,-90-s],[x+12,-84-s]]);
+  fL(B,2,[[x,-68],[x,-72]]);fE(B,x,-76,3.6,4.4);fS('#2a1a10',[[x-4,-78],[x-2,-83],[x+2,-84],[x+4,-79]]);for(const k of[-2,0,2])fS(W,[[x+k-.6,-82],[x+k,-90+Math.abs(k)],[x+k+.6,-82]]);fEye(x+1.4,-76,'#fff');
+  for(let i=0;i<6;i++){Pp(W,x-1+(i%2)*2,-62+i*4);Pp(W,x-5,-30+i*4);Pp(W,x+4,-30+i*4)}if(sp)fS('#6a4a2a',[[x-12,-42+s],[x-8,-42+s],[x-7,-34+s],[x-13,-34+s]])};
+ fig(-13,0,1);fig(12,2,0)}});
+A('minmin',{raw:1,w:40,h:60,d(){for(let i=0;i<2;i++){const x=Math.sin(T*.4+i*2.5)*18-8+i*18,y=-40-i*8+Math.sin(T*.9+i)*5,f=.85+.15*Math.sin(T*7+i*3);
+ const g=X.createRadialGradient(x,y,0,x,y,22);g.addColorStop(0,`rgba(255,250,220,${.75*f})`);g.addColorStop(.25,`rgba(255,230,160,${.35*f})`);g.addColorStop(1,'rgba(255,220,140,0)');X.fillStyle=g;X.fillRect(x-22,y-22,44,44);
+ X.fillStyle='rgba(255,230,160,.18)';X.beginPath();X.ellipse(x,-1,16,2.5,0,0,7);X.fill();X.fillStyle='#fffbe8';X.beginPath();X.arc(x,y,3.6*f,0,7);X.fill();X.fillStyle='rgba(255,240,200,.5)';for(let k=1;k<5;k++)X.fillRect(x-k*3*Math.cos(T*.4+i*2.5),y+k*.6,2,2)}}});
+A('muldjewangk',{w:50,h:54,d(){const r=Math.sin(T*1.1)*2,B='#2e3a26',D='#1c2618',L='#4e5e3a';X.fillStyle='rgba(220,235,250,.5)';for(let i=0;i<6;i++)X.fillRect(-46+i*16+Math.sin(T*2+i)*2,-1,10,1);
+ fS(B,[[-44,0],[-36,-12],[-20,-18],[-4,-16],[6,-8],[8,0]]);for(let k=0;k<7;k++)fS(L,[[-38+k*6,-12-k*.4],[-35+k*6,-19-k*.4],[-32+k*6,-12-k*.4]]);
+ fS(B,[[2,0],[4,-18+r],[10,-34+r],[22,-44+r],[34,-44+r],[42,-36+r],[44,-26+r],[38,-20+r],[30,-22+r],[24,-14],[18,0]]);
+ fS(D,[[30,-28+r],[44,-26+r],[46,-18+r],[40,-14+r],[32,-18+r]]);for(let k=0;k<5;k++)fS('#e8e0c0',[[33+k*2.6,-26+r],[34.2+k*2.6,-22+r],[35.4+k*2.6,-26+r]]);fS('#5a1a14',[[33,-22+r],[44,-21+r],[40,-16+r],[34,-18+r]]);
+ fS(L,[[16,-40+r],[24,-46+r],[30,-44+r],[22,-41+r]]);fEye(30,-37+r,'#ffb020');fEye(24,-38+r,'#ffb020');
+ fL(B,4,[[10,-22],[0,-30+r],[-8,-24+r]]);for(let k=0;k<4;k++)fL(D,1.4,[[-8,-24+r],[-14+k*2,-28+r+k*2]]);fL(B,4,[[20,-18],[30,-6],[36,-2]]);
+ for(let k=0;k<7;k++)fL('#5a6a3a',1.2,[[12+k*4,-42+r+Math.abs(k-3)],[10+k*4+Math.sin(T+k)*2,-30+r+k%3*3]])}});
+A('yarama',{w:34,h:78,d(){const s=Math.sin(T*1.2)*2,B='#c8402a',D='#8a2a1a';
+ fL('#5a4030',7,[[-34,-66],[0,-70],[34,-64]]);fL('#5a4030',4,[[-10,-69],[-18,-80]]);for(let k=0;k<9;k++){const x=-30+k*8;fS('#2e5a2a',[[x-4,-70],[x,-76-k%2*2],[x+5,-71],[x,-66]]);if(k%3==1)fE('#7a3a5a',x+2,-66,1.6,1.6)}
+ X.save();X.translate(s,0);fL(B,3,[[2,-70],[4,-58]]);for(let k=0;k<3;k++)fE('#e88a6a',1+k*1.6,-70,1,1);
+ fS(B,[[-5,-40],[-6,-50],[-2,-56],[5,-56],[7,-50],[6,-40],[2,-36],[-3,-36]]);fE(B,1,-58,0,0);
+ fE(B,0,-46,0,0);fE(B,1,-60,9,8);fS(D,[[-7,-58],[9,-58],[7,-53],[1,-52],[-5,-53]]);fS('#3a0e0a',[[-5,-57],[7,-57],[5,-54],[-3,-54]]);fEye(-3,-63,'#ffe060');fEye(5,-63,'#ffe060');
+ fL(B,2.6,[[-4,-50],[-10,-42-s],[-12,-34-s]]);for(let k=0;k<3;k++)fE('#e88a6a',-12+k*1.4,-33-s,1,1);fL(D,2.8,[[-2,-38],[-4,-28],[-2,-20]]);fL(B,2.8,[[3,-38],[6,-28],[5,-20]]);fE('#e88a6a',-2,-19,1.4,1);fE('#e88a6a',5,-19,1.4,1);X.restore()}});
+A('khattaf',{w:44,h:56,night:0,d(){const r=Math.sin(T*1.4)*2,B='#1e3438',D='#10201f',L='#3a5a58';X.fillStyle='rgba(220,235,250,.55)';for(let i=0;i<5;i++)X.fillRect(-38+i*16+Math.sin(T*2+i)*2,-1,10,1);
+ fS(B,[[-12,0],[-14,-16],[-10,-30],[0,-36],[10,-30],[14,-16],[12,0]]);fS(L,[[-6,-30],[0,-34],[6,-30],[0,-26]]);
+ fE(B,0,-42,8,8);fS(D,[[-8,-46],[0,-52],[8,-46],[6,-40],[-6,-40]]);fEye(-3,-42,'#c0ff60');fEye(3,-42,'#c0ff60');fS('#0a1010',[[-4,-37],[4,-37],[3,-35],[-3,-35]]);
+ for(let k=0;k<8;k++)fL('#2a4a3a',1.4,[[-7+k*2,-48],[-9+k*2.4+Math.sin(T+k)*2,-30+k%3*4]]);
+ fL(B,4,[[10,-28],[24,-38+r],[34,-48+r]]);fL(B,4,[[-10,-28],[-24,-36-r],[-34,-46-r]]);for(const [x,y,d] of[[34,-48+r,1],[-34,-46-r,-1]])for(let k=0;k<4;k++)fL(D,1.6,[[x,y],[x+d*(k-1)*2.5,y-6]])}});
+A('salasil',{w:30,h:66,d(){const s=Math.sin(T*1.1),B='#d8e0e4',D='#9aa8b0',C='#6a6e72';
+ fS(B,[[-12,0],[-14,-10],[-10,-30],[-8,-46],[-4,-54],[4,-54],[8,-46],[10,-30],[14,-10],[12,0],[8,-3],[4,1],[0,-2],[-4,1],[-8,-3]]);for(let k=0;k<4;k++)fL(D,1,[[-8+k*5,-44],[-9+k*6,-2]]);
+ fE(B,0,-58,6,6.5);fS(D,[[-6,-60],[0,-66],[6,-60],[5,-56],[-5,-56]]);fE('#2a3238',-2.2,-58,1.4,2);fE('#2a3238',2.2,-58,1.4,2);fE('#2a3238',0,-53.5,1.2,1.4);
+ fL(B,3,[[-8,-46],[-14,-34+s],[-16,-26+s]]);fL(B,3,[[8,-46],[14,-36-s],[16,-28-s]]);
+ for(const [x,y,d] of[[-16,-26+s,-1],[16,-28-s,1]])for(let k=0;k<7;k++){const cx=x+d*k*3,cy=y+k*3.6;X.strokeStyle=C;X.lineWidth=1.2;X.beginPath();X.ellipse(cx,cy,k%2?1.2:2,k%2?2:1.2,0,0,7);X.stroke()}}});
+A('fenghuang',{w:62,h:64,d(){const f=Math.sin(T*2.2),R='#c8302a',G='#e8b030',Bl='#2a6ac8',Gr='#2a8a5a';
+ for(let k=0;k<5;k++){const c=[R,G,Bl,Gr,G][k];fS(c,[[-6,-30],[-26-k*4,-24+k*3+f*2],[-46-k*3,-14+k*6+f*3],[-48-k*3,-10+k*6+f*3],[-28-k*4,-20+k*3],[-6,-26]]);fE(G,-46-k*3,-12+k*6+f*3,2.4,2.4);fE(Bl,-46-k*3,-12+k*6+f*3,1.2,1.2)}
+ fS(R,[[-10,-30],[-4,-36],[8,-38],[14,-34],[12,-26],[2,-22],[-8,-24]]);fS(G,[[-4,-30],[6,-34],[10,-30],[4,-26]]);
+ fS(G,[[-2,-34],[-14,-50-f*10],[-6,-60-f*14],[6,-52-f*8],[8,-36]]);for(let k=0;k<4;k++)fL(R,1,[[0+k*2,-36],[-8+k*3,-54-f*11]]);fS(Bl,[[2,-34],[16,-52-f*8],[24,-56-f*10],[18,-40],[10,-32]]);
+ fS(R,[[10,-36],[14,-46],[18,-50],[22,-48],[20,-42],[16,-36]]);fS(G,[[22,-48],[27,-47],[22,-45]]);fEye(19,-47,'#1a1010');for(let k=0;k<3;k++)fS(Bl,[[17+k,-50],[15+k*2,-56-k],[18+k,-51]]);fS(G,[[16,-38],[19,-40],[18,-34]])}});
+A('pixiu',{w:34,h:44,d(){const s=Math.sin(T*1.5),B='#3a7a5a',D='#245440',G='#d8b040';
+ for(const [x,o,c] of[[-12,0,D],[8,1.6,D],[-8,3,B],[12,4.6,B]])fS(c,[[x-3,-14],[x+3,-14],[x+3,-2],[x+4,0],[x-4,0],[x-3,-2]]);
+ fS(B,[[-18,-14],[-18,-24],[-10,-28],[6,-28],[14,-26],[18,-18],[14,-12],[-14,-12]]);fS(D,[[-16,-14],[0,-16],[14,-13],[0,-12]]);fL(B,3,[[-18,-22],[-26,-28+s],[-24,-34+s]]);fE(G,-24,-35+s,3,2.4);
+ fS(G,[[-2,-28],[-10,-38],[-4,-36],[2,-44],[6,-34],[12,-40],[10,-28]]);fS('#f0d870',[[0,-32],[2,-40],[5,-33]]);
+ fE(G,16,-30,8,7);fE(B,18,-29,6,5.4);fS(B,[[20,-28],[28,-27],[28,-23],[20,-23]]);fS('#f0f0e0',[[22,-24],[27,-24],[26,-22],[23,-22]]);fEye(18,-31,'#ffd23f');fS(G,[[16,-36],[19,-46],[21,-36]])}});
+A('ghul',{w:32,h:66,d(){const s=Math.sin(T*1.2),B='#6a5a48',D='#4a3e30',L='#8a7a62';
+ fL(D,3,[[-3,-28],[-5,-14],[-3,0]]);fL(B,3,[[3,-28],[5,-14],[6,0]]);fS('#2a2018',[[-6,0],[-1,0],[-2,-3],[-5,-3]]);fS('#2a2018',[[4,0],[9,0],[8,-3],[5,-3]]);
+ fS(B,[[-8,-28],[-10,-40],[-6,-50],[4,-54],[10,-48],[8,-36],[6,-28]]);for(let k=0;k<5;k++)fL(D,1,[[-6+k*3,-48],[-7+k*3,-32]]);fS(D,[[-4,-54],[0,-60],[6,-58],[8,-52]]);
+ fL(B,2.6,[[6,-48],[14,-38+s],[16,-26+s]]);for(let k=0;k<3;k++)fL('#d8d0b8',.8,[[16,-26+s],[15+k*1.6,-22+s]]);fL(D,2.6,[[-6,-48],[-12,-36-s],[-12,-26-s]]);
+ fS(B,[[4,-52],[8,-60],[16,-60],[24,-56],[24,-52],[14,-50]]);fS(L,[[14,-52],[24,-53],[23,-51],[14,-50]]);for(let k=0;k<3;k++)fS('#e8e0c8',[[17+k*2.4,-52],[18+k*2.4,-50],[19+k*2.4,-52]]);fEye(13,-57,'#ff6030');fS(D,[[8,-60],[7,-66],[11,-61]]);fS(D,[[11,-60],[12,-65],[14,-60]])}});
+A('aisha',{w:24,h:68,d(){const s=Math.sin(T*1.3),G='#2a7a4a',D='#1c5634',S='#c89a70',H='#1a1210';
+ fS('#3a2a1a',[[-5,0],[-2,0],[-2,-3],[-5,-3]]);fS('#3a2a1a',[[2,0],[5,0],[5,-3],[2,-3]]);fL('#5a4a3a',2,[[-3,-3],[-3,-8]]);fL('#5a4a3a',2,[[3,-3],[3,-8]]);
+ fS(G,[[-11,-7],[-8,-30],[-6,-44],[6,-44],[8,-30],[11,-7],[6,-9],[0,-6],[-6,-9]]);for(let k=0;k<4;k++)fL(D,1,[[-5+k*3.4,-40],[-8+k*5,-9]]);fS('#d8b040',[[-6,-34],[6,-34],[6,-32],[-6,-32]]);
+ fL(G,2.6,[[-6,-42],[-10,-30+s],[-9,-22+s]]);fE(S,-9,-21+s,1.6,1.6);fL(G,2.6,[[6,-42],[10,-32-s],[9,-24-s]]);fE(S,9,-23-s,1.6,1.6);
+ fS(H,[[-7,-48],[-8,-36],[-5,-40],[-4,-52],[4,-54],[6,-46],[8,-34],[5,-40]]);fE(S,0,-50,4.4,5.2);fS(H,[[-5,-52],[0,-57],[5,-52],[3,-54]]);fEye(-1.6,-50,'#ffd060');fEye(1.8,-50,'#ffd060');fS('#a83a3a',[[-1.4,-46.6],[1.4,-46.6],[0,-46]]);fS(D,[[-8,-52],[0,-60],[8,-52],[6,-56],[-6,-56]])}});
+A('kelessuf',{w:40,h:62,night:0,d(){for(let i=0;i<3;i++){const x=-22+i*22+Math.sin(T*.6+i)*3,h=i==1?50:44,c=['#24243a','#1a1a2e','#2a2a40'][i];
+ fS(c,[[x-8,0],[x-7,-h*.5],[x-5,-h*.85],[x,-h-4],[x+5,-h*.85],[x+7,-h*.5],[x+8,0],[x+4,-3],[x,1],[x-4,-3]]);fS('#3a3a58',[[x-5,-h*.8],[x,-h-3],[x+3,-h*.8],[x,-h*.7]]);fEye(x-1.6,-h+2,'#a0d0ff');fEye(x+1.6,-h+2,'#a0d0ff')}
+ for(let i=0;i<24;i++){const t=(T*.4+i*.13)%1;fE('#c8b080',-30+((i*37)%60)+t*20,-t*30,1.2,.7)}}});
+A('mahaha',{w:26,h:54,d(){const s=Math.sin(T*3),B='#7a9ab8',D='#4e6a88',H='#eef2f6';
+ fL(D,2.6,[[-3,-22],[-7,-12],[-4,0]]);fL(B,2.6,[[3,-22],[7,-12],[6,0]]);fS(B,[[-6,-22],[-8,-32],[-5,-40],[5,-40],[8,-32],[6,-22]]);for(let k=0;k<4;k++)fL(D,.8,[[-5,-36+k*3],[5,-36+k*3]]);
+ fL(B,2,[[5,-38],[12,-30+s],[14,-22+s]]);for(let k=0;k<4;k++)fL('#e8e8e0',.7,[[14,-22+s],[13+k*1.6,-16+s]]);fL(D,2,[[-5,-38],[-12,-30-s],[-13,-22-s]]);for(let k=0;k<4;k++)fL('#e8e8e0',.7,[[-13,-22-s],[-15+k*1.6,-16-s]]);
+ fS(H,[[-8,-44],[-10,-30],[-6,-36],[-6,-48],[6,-50],[8,-36],[10,-30],[7,-44]]);fE(B,0,-45,5,5.6);fS(H,[[-6,-48],[0,-53],[6,-48],[4,-51],[-4,-51]]);fEye(-2,-46,'#ffffff');fEye(2,-46,'#ffffff');
+ fS('#2a1a2a',[[-3.4,-42.4],[3.4,-42.4],[2.4,-40.6],[-2.4,-40.6]]);for(let k=0;k<4;k++)Pp('#fff',-2.4+k*1.6,-42.2)}});
+A('tokoloshe',{w:20,h:36,d(){const s=Math.sin(T*3.2),B='#4a3a2a',D='#2e241a',L='#6a5844';
+ fL(D,3,[[-3,-10],[-4,0]]);fL(B,3,[[3,-10],[4,0]]);fS(B,[[-7,-10],[-8,-18],[-5,-22],[5,-22],[8,-18],[7,-10]]);for(let k=0;k<7;k++)fL(D,.8,[[-6+k*2,-21],[-7+k*2.2,-11]]);
+ fL(B,2.4,[[6,-19],[11,-12+s],[12,-5+s]]);fL(B,2.4,[[-6,-19],[-11,-13-s],[-12,-6-s]]);
+ fE(B,0,-27,7,6.4);fS(B,[[-7,-30],[-14,-36],[-6,-27]]);fS(B,[[7,-30],[14,-36],[6,-27]]);fS(L,[[-12,-34],[-7,-29],[-9,-30]]);fS(L,[[12,-34],[7,-29],[9,-30]]);
+ fEye(-2.6,-28,'#ffe060');fEye(2.6,-28,'#ffe060');fS('#1a0e08',[[-3,-24],[3,-24],[2,-22.6],[-2,-22.6]]);for(let k=0;k<6;k++)fL(D,.8,[[-5+k*2,-33],[-6+k*2.4,-31]])}});
+A('mamlambo',{w:52,h:46,d(){const r=Math.sin(T*.9)*2,B='#2a5a3a',D='#1a3a26',G='#8ae0b0';X.fillStyle='rgba(50,80,70,.7)';X.beginPath();X.ellipse(0,0,50,4,0,0,7);X.fill();X.fillStyle='rgba(220,240,240,.45)';for(let i=0;i<5;i++)X.fillRect(-44+i*18+Math.sin(T*2+i)*2,-1,10,1);
+ for(let k=0;k<3;k++){const x=-38+k*18;fS(B,[[x-9,0],[x-5,-10-k],[x+5,-11-k],[x+9,0]]);for(let j=0;j<3;j++)fE(G,x-3+j*3,-7-k,.9,.9)}
+ fS(B,[[18,0],[20,-16+r],[24,-30+r],[30,-36+r],[40,-36+r],[48,-30+r],[50,-26+r],[44,-24+r],[36,-26+r],[30,-16],[28,0]]);fS(D,[[40,-30+r],[50,-27+r],[48,-24+r],[42,-24+r]]);fE('#0a1a10',48,-28+r,1,1);
+ for(let k=0;k<6;k++)fS('#1a2a1a',[[22+k*2,-30+r-k],[18+k*2,-36+r-k*.5],[24+k*2,-31+r-k]]);fEye(38,-32+r,'#ffd23f');for(let j=0;j<5;j++)fE(G,22+j*2,-20+r-j*2,.9,.9)}});
+A('stormship',{w:64,h:76,night:0,d(){const b=Math.sin(T*.8)*2,W='#3a2a20',L='#5a4030',S='#d8d8cc';X.translate(0,b);
+ fS(W,[[-50,-14],[-40,-6],[30,-6],[46,-12],[52,-22],[40,-18],[-36,-18],[-48,-26]]);fS(L,[[-46,-22],[-36,-18],[40,-18],[48,-20],[40,-16],[-36,-16]]);fS(W,[[-50,-14],[-56,-30],[-36,-30],[-36,-18],[-48,-26]]);for(let k=0;k<3;k++)fS('#ffd890',[[-52+k*5,-26],[-49+k*5,-26],[-49+k*5,-23],[-52+k*5,-23]]);
+ for(const [mx,mh] of[[-24,58],[2,66],[28,52]]){fL('#2a1e16',1.6,[[mx,-18],[mx,-18-mh]]);nPg(S,[[mx-12,-24-mh*.3],[mx+12,-24-mh*.3],[mx+14,-18-mh*.62],[mx-14,-18-mh*.62]]);nPg('#b8b8ac',[[mx+8,-24-mh*.3],[mx+12,-24-mh*.3],[mx+14,-18-mh*.62],[mx+10,-18-mh*.62]]);nPg(S,[[mx-10,-20-mh*.68],[mx+10,-20-mh*.68],[mx+11,-18-mh*.95],[mx-11,-18-mh*.95]]);fL('#2a1e16',1,[[mx-14,-18-mh*.62],[mx+14,-18-mh*.62]]);fL('#2a1e16',1,[[mx-11,-18-mh*.95],[mx+11,-18-mh*.95]])}
+ fS('#c86a2a',[[2,-84],[14,-82],[2,-79]]);fL('#5a4a3a',.7,[[-56,-30],[-24,-76],[2,-84],[28,-70],[52,-22]]);
+ for(let k=0;k<7;k++)fE('#c8d4dc',-50+k*16+Math.sin(T+k)*3,-6,10,4)}});
+}
+{const _f=folkA;folkA=function(id,x,nt){return _f(id,x,0)}}
+
 const FKP={sahara:[['ifrit',1250,232],['nasnas',1900,236],['ghul',2700,236],['kelessuf',3050,236],['aisha',3260,230]],dubai:[['khattaf',1500,206],['umduwais',2700,236],['salasil',3600,234]],usa:[['stormship',1150,196],['pukwudgie',2200,236],['jersey',2900,214],['wendigo',3500,236],['headless',4000,236]],pol:[['akhlut',2700,232],['nanurluk',3800,236],['mahaha',4300,236]],
  skott:[['selkie',2700,232],['brownie',3300,236],['cusith',4000,236]],japan:[['tanuki',2700,236],['tengu',3350,232],['yukionna',4100,232]],kina:[['huli',780,236],['pixiu',1180,236],['bixi',1960,236],['xiezhi',2380,236],['fenghuang',2750,200],['shishi',3350,236],['nian',4100,234]],
  aus:[['muldjewangk',840,214],['mimi',1700,232],['yowie',2700,232],['minmin',3350,190],['yarama',4100,232]],safr:[['tokoloshe',2700,236],['mamlambo',3350,236],['inkanyamba',4100,226]],peru:[['chullachaqui',1500,236],['yacumama',2200,232],['muki',2700,236],['ekeko',3350,236]],mex:[['nahual',2700,236],['chaneque',3350,236],['xolo',4100,236]]};
 const FKS={};
 function folkA(id,x,nt){const q=FKS[id]=FKS[id]||{s:0};if(Math.abs(P.x/2-x)<300)q.s=Math.max(q.s,1);else q.s=Math.max(0,q.s-.004);const a=Math.max(q.s,Math.max(0,Math.min(1,Math.sin(T*.07+x)*3-1.9)));return nt&&skyNow().night<.4?a*.25:a}
 Object.entries(FKP).forEach(([k,L])=>{const r=R[k];if(!r)return;L.forEach(([id])=>{NPC[id]={name:FK[id].n,col:'#e0e8c0'};VOX[id]=FK[id].v});
- const d=r.draw;r.draw=function(){d.call(this);const cl=camX/2;RV=[cl,cl+VW()/2];X.save();X.scale(2,2);try{L.forEach(([id,x,y])=>{const f=FK[id],a=folkA(id,x,f.night);if(a>0&&vis(x-f.w,f.w*2))fSpr(id,x,y,f.d,a)})}catch(e){}finally{X.restore()}};
+ const d=r.draw;r.draw=function(){d.call(this);const cl=camX/2;RV=[cl,cl+VW()/2];X.save();X.scale(2,2);try{L.forEach(([id,x,y])=>{const f=FK[id],a=folkA(id,x,f.night);if(a>0&&vis(x-f.w,f.w*2)){if(f.raw){X.save();X.translate(x,y);X.globalAlpha=a;f.d();X.restore()}else fSpr(id,x,y,f.d,a)}})}catch(e){}finally{X.restore()}};
  const h=r.hs;r.hs=function(){const H=h.call(this)||[];L.forEach(([id,x,y])=>{const f=FK[id];if((FKS[id]||{}).s>.3||folkA(id,x,f.night)>.3)H.push({id:'fk_'+id,name:f.n,r:[2*(x-f.w),2*(y-f.h),4*f.w,2*f.h+10],at:[Math.max(60,2*x-2*f.w-40),482],look:()=>{FKS[id].s=8;return say('P',f.look)},talk:async()=>{FKS[id].s=8;await say(id,f.l[0]);await say(id,f.l[1]);await say(id,'Some advice for you: '+hint2())}})});return H}});
 
 // ---------- Tips (3 nivå) og tilbakemelding i alle minispill ----------
@@ -3380,7 +3470,7 @@ function rWaves(y0,y1,l,r){const[a,b]=RV;l=Math.max(l,a-2);r=Math.min(r,b+2);if(
  // Bølger som vannmasser: rekker fra horisonten (små, tette) til stranda (store). Hver rekke er en fylt flate med skarpe topper (trochoide-aktig form),
  // lys som skinner gjennom toppen (grønnblått), mørk bunn, brekkende skum som renner ned fronten, og sprut som vinden river av i storm. Rolig vær = lave, myke dønninger.
  const deep=mixC(s.c[2],'#05181c',.85),mid=mixC(s.c[2],'#14484c',.7),glass=mixC(s.c[2],'#5cc8b8',.22+.1*(1-st)),foam='#eef6f8',N=st>.3?8:6,sky=mixC(s.c[2],'#ffffff',.3);
- for(let k=0;k<N;k++){const d=(k+1)/N,yb=y0+H*Math.pow(d,1.35),A=(.6+wd*.45)*(.4+d*1.8)+st*(1+Math.pow(d,2.5)*32),L=14+d*46+st*(10+d*40),sp=(.9+wd*.25+st*1.3)*(1.1-d*.3),ph=k*2.37,pw=1.4+st*2.2,lean=st*A*.35;
+ for(let k=0;k<N;k++){const d=(k+1)/N,yb=y0+H*Math.pow(d,1.35),A=Math.min(H*1.1,(.6+wd*.45)*(.4+d*1.8)+st*(1+Math.pow(d,2.5)*32)),L=14+d*46+st*(10+d*40),sp=(.9+wd*.25+st*1.3)*(1.1-d*.3),ph=k*2.37,pw=1.4+st*2.2,lean=st*A*.35;
   const P=[],C=[];for(let x=(l|0)-((l|0)%2)-2;x<=r+2;x+=2){const u=(1+Math.sin(x/L*6.283-T*sp+ph))/2,c=Math.pow(u,pw),y=yb-A*c+A*.15;P.push(x,y);C.push(c)}
   const g=X.createLinearGradient(0,yb-A,0,yb+H*.25);g.addColorStop(0,st>.2?glass:mid);g.addColorStop(.18,mid);g.addColorStop(.6,deep);g.addColorStop(1,deep);X.fillStyle=g;X.beginPath();X.moveTo(P[0],y1+1);for(let q=0;q<P.length;q+=2)X.lineTo(P[q],P[q+1]);X.lineTo(P[P.length-2],y1+1);X.closePath();X.fill();
   // lys kant på toppen og glitter
