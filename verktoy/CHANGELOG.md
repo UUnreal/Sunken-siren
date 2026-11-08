@@ -2,6 +2,12 @@
 
 Nyeste versjon øverst. Formatet er fast fordi forsiden leser det: `## <versjon> · <dato>` og så punkter som begynner med `- `.
 
+## 0.14.0 · 8. nov 2026
+- Japan er bygd ferdig med 15 egne steder: havna i Yokohama, Fuji, Kyoto, Det gylne tempelet, toriien i sjøen ved Itsukushima, bambusskogen, hjortene i Nara, Himeji-borgen, tehuset, kirsebærhagen, kappa-elva, revens helligdom, lanternefestivalen, den skjulte pagoden og et hvelv for fragmentet.
+- Seks nye oppgaver som bare finnes i Japan: still en soroban-kuleramme, koble kanji-tegn til bildene de kommer fra, server teen i riktig rekkefølge, rake zen-hagen i ett strøk, åpne en hemmelig eske fra Hakone og ro reven, kappaen og agurken over elva.
+- I Skottland og Japan er de felles tønnene, statuene, kistene, skjelettene og maleriene byttet ut med ting som hører til stedet, som torvkurv, keltisk kors, rustning, oppslagstavle, steinlykt, revestatue, taiko-tromme og samurairustning. Ute og inne har forskjellige ting.
+- Oppgavepanelene har fått gullramme med edelsteiner, glans og gnister.
+
 ## 0.13.0 · 8. nov 2026
 - Skottland er bygd ferdig med 15 egne steder, ett for hvert kapittel: Nasjonalmuseet, borghallen i Edinburgh, Royal Mile, Clava-røysa i høylandet, Loch Ness, Urquhart, Glencoe, Neptuns trapp under Ben Nevis, et svarthus på Hebridene, Fingals hule, Callanish-steinene, slusene i Fort Augustus, Brig o' Doon, kelpiens dam og et hvelv for fragmentet.
 - Seks nye oppgaver som bare finnes i Skottland: vev tartan, still en piktisk symbolstein, gå kelpiens vadesteiner, la midtvinterssola treffe gangen i Clava-røysa, spill sekkepipe og få båten opp en slusetrapp. Senere besøk gir vanskeligere utgaver.
