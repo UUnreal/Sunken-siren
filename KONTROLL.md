@@ -1,17 +1,17 @@
-# Uavhengig kontroll – v0.14.1
+# Uavhengig kontroll – v0.14.2
 
 Kontrollert 8. nov 2026 av en egen kontrolltråd, ikke av byggetråden.
 
 **Krav fra 08:17:** et vesen eller dyr er bare BESTÅTT hvis det er gjenkjennelig på skjermbildet ut fra sagnbeskrivelsen og holder samme kvalitet som de norske trollene. Streker, klumper og klosser er FEIL. Bølger skal ha kropp og skum, ikke streker.
 
-**Slik ble det testet:** Chromium i portrett mobilstørrelse 390×844 med berøring. Koden som ble testet er commit `61526b6` på `main`, altså nøyaktig det GitHub Pages viser. Selve live-adressen er sperret fra testmaskinen, derfor kjørte jeg den samme koden lokalt. Testknappene på forsiden ble brukt for alle 12 land. Natt ble tvunget fram med `HOV=23.5`. Storm ble tvunget fram med `WX.on=1` og `MK[land].wx=()=>1`. Fabeldyrene ble oppsøkt ved å flytte professoren til posisjonene deres.
+**Slik ble det testet:** Chromium i portrett mobilstørrelse 390×844 med berøring. Koden som ble testet er commit `096c081` på `main`, altså nøyaktig det GitHub Pages viser. Selve live-adressen er sperret fra testmaskinen, derfor kjørte jeg den samme koden lokalt. Testknappene på forsiden ble brukt for alle 12 land. Natt ble tvunget fram med `HOV=23.5`. Storm ble tvunget fram med `WX.on=1` og `MK[land].wx=()=>1`. Fabeldyrene ble oppsøkt ved å flytte professoren til posisjonene deres.
 
-**Resultat v0.14.1: 16 BESTÅTT · 2 FEIL** (havet og egne oppgaver i 10 land gjenstår)
+**Resultat v0.14.2: 17 BESTÅTT · 1 FEIL** (bare egne oppgaver i 10 land gjenstår)
 
 | # | Punkt | Status | Funn |
 |---|---|---|---|
 | 1 | Trykk i intro og kompassgåten | ✅ BESTÅTT | Hvert trykk gir en synlig ring. Det lysende merket på kartet åpner Kompassrosen. Gåten ble løst med ekte trykk (ytre ring 2×, midtre 1×), og 3 ekstra ⭐ ble lagret. ![](kontroll/intro-kompass.jpg) |
-| 2 | Naturlige bølger i alle land: flate, små og store om hverandre, i et vakkert kaos | ❌ FEIL (delvis rettet i v0.14.1) | Den stive sideveis glidningen er borte. Jeg målte bildeforskyvning mellom bilder tatt med 0,3 s mellomrom på Loch Ness, i New York og i Bodø, og vannet flytter seg ikke lenger som et bånd. **Men** i rolig vær er havet fortsatt jevne vannrette striper, uten blanding av flate, små og store bølger. I storm er de store bølgene med kam og skum fra v0.12.6 borte: nå er det mørkt vann med noen få hvite flekker. Venstre og midten er rolig vær, høyre er storm: ![](kontroll/v0141-hav.jpg) |
+| 2 | Naturlige bølger i alle land: flate, små og store om hverandre, i et vakkert kaos | ✅ BESTÅTT (v0.14.2) | Testet på Loch Ness, i Bodø og i New York, i rolig vær og i storm, med tre bilder per tilstand 0,3 s fra hverandre. Det er ingen sideveis glidning (målt forskyvning 0). I rolig vær er overflaten nå et uregelmessig mønster av korte bølger i lyse og mørke grønntoner, i ulike størrelser. I storm er det brytende hvite kammer med sprut i ulike høyder. Merknad: i Bodø går noen stormkammer opp over strandlinjen på den andre siden. Venstre er rolig vær, høyre er storm, og radene er Loch Ness, Bodø og New York: ![](kontroll/v0142-hav.jpg) |
 | 3 | Fabeldyr: like mange og like synlige som i Norge, ekte sagn, og gjenkjennelige med troll-kvalitet | ✅ BESTÅTT (v0.12.9) | Alle 61 vesener er ekte sagnvesener og gjenkjennelige. Hvert land har minst 5. Qilin står nå alene på x=2170 og er hjortelik med grønne skjell og horn. Hesten til den hodeløse rytteren er ca. 1,3 m over manken, og det er realistisk. Det var rytteren og gresskaret som ragte opp. ![](kontroll/fabeldyr-v0128.jpg) ![](kontroll/kina-qilin.jpg) |
 | 4 | Proporsjoner mot professoren på 1,75 m: hus, dyr, kjøretøy og trær | ✅ BESTÅTT (v0.14.1) | Toget i Lima: vognen er ca. 2,3 × professoren (ca. 4 m), og det er riktig. Hvalrossene på Nordpolen har støttenner og luffer, er ca. 3 m lange og ligger lavere enn professoren. Fyret i Bodø rager langt over toppen av skjermen, over 4 × professoren, altså 20 m eller mer. Japan og Kina er fortsatt OK. ![](kontroll/v0141-storrelser.jpg) |
 | 5 | Mennesker ser ut som mennesker tilpasset landet | ✅ BESTÅTT | Kimono, rickshaw, folk ved markedsbodene i Kina, kamelkaravane, skotsk kvinne og jeger, inuitt med pelshette. Jeg så ingen firkanter. |
