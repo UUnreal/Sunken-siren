@@ -2,6 +2,12 @@
 
 Nyeste versjon øverst. Formatet er fast fordi forsiden leser det: `## <versjon> · <dato>` og så punkter som begynner med `- `.
 
+## 0.15.0 · 12. nov 2026
+- Kina er bygd ferdig: 15 egne steder, fra Shanghai i 1934, Den kinesiske mur og Den forbudte by til pandaskogen, Silkeveien, risterrassene og Dragens hule.
+- Seks nye oppgaver bare for Kina: vei tesekker med bismer, finn par med kinesiske tall, still dyrene i kappløpet til Jadekeiseren i riktig rekkefølge, drei luopan-kompasset, sett sammen en knust leirfigur, og bytt deg fram langs Silkeveien.
+- Nye kinesiske ting i rommene: steinløver, bronsegryter, porselensvaser, lakkister, silkeruller, lykter, tekister og en kartstein.
+- Alle fakta er sjekket for 1934. Terrakottahæren var ennå ikke funnet, så du får høre om gravhaugen og hva bøndene fant 40 år senere.
+
 ## 0.14.2 · 12. nov 2026
 - Havet i rolig vær: små og store bølger om hverandre, i stedet for jevne striper.
 - Havet i storm: de høye bølgene med skumtopper og sprut er tilbake.
