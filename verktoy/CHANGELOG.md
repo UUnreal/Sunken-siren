@@ -2,6 +2,10 @@
 
 Nyeste versjon øverst. Formatet er fast fordi forsiden leser det: `## <versjon> · <dato>` og så punkter som begynner med `- `.
 
+## 0.14.2 · 12. nov 2026
+- Havet i rolig vær: små og store bølger om hverandre, i stedet for jevne striper.
+- Havet i storm: de høye bølgene med skumtopper og sprut er tilbake.
+
 ## 0.14.1 · 12. nov 2026
 - Alle mennesker har fått ordentlige ansikter: to øyne med iris, bryn, nese og munn. Professoren også, med briller og bart som rører seg når han snakker.
 - Toget i Peru har riktig størrelse: lokomotivet er rundt 4 meter høyt, med vogn i PeruRail-farger.
