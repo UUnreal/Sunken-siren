@@ -2,6 +2,14 @@
 
 Nyeste versjon øverst. Formatet er fast fordi forsiden leser det: `## <versjon> · <dato>` og så punkter som begynner med `- `.
 
+## 0.14.1 · 12. nov 2026
+- Alle mennesker har fått ordentlige ansikter: to øyne med iris, bryn, nese og munn. Professoren også, med briller og bart som rører seg når han snakker.
+- Toget i Peru har riktig størrelse: lokomotivet er rundt 4 meter høyt, med vogn i PeruRail-farger.
+- Hvalrossene på Nordpolen er tegnet på nytt i ekte størrelse (rundt 3 meter), med støttenner og luffer.
+- Havet i alle land har naturlige bølger: små og store om hverandre, i stedet for at alt glir sidelengs.
+- Fyret i Bodø er nå rundt 20 meter høyt og står på en fjellknaus.
+- Tipsene i zen-hagen i Japan er tydeligere.
+
 ## 0.14.0 · 8. nov 2026
 - Japan er bygd ferdig med 15 egne steder: havna i Yokohama, Fuji, Kyoto, Det gylne tempelet, toriien i sjøen ved Itsukushima, bambusskogen, hjortene i Nara, Himeji-borgen, tehuset, kirsebærhagen, kappa-elva, revens helligdom, lanternefestivalen, den skjulte pagoden og et hvelv for fragmentet.
 - Seks nye oppgaver som bare finnes i Japan: still en soroban-kuleramme, koble kanji-tegn til bildene de kommer fra, server teen i riktig rekkefølge, rake zen-hagen i ett strøk, åpne en hemmelig eske fra Hakone og ro reven, kappaen og agurken over elva.
