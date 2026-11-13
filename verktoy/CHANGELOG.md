@@ -2,6 +2,9 @@
 
 Nyeste versjon øverst. Formatet er fast fordi forsiden leser det: `## <versjon> · <dato>` og så punkter som begynner med `- `.
 
+## 0.16.5 beta · 13. nov 2026
+- Oppgavevinduet på stående mobil er litt høyere, så Lukk ikke ligger oppå overskriften og Mål/Tips ikke dekker oppgaven (kompasset, leirbitene, talltegnene, teseremonien).
+
 ## 0.16.4 beta · 13. nov 2026
 - Større oppgavevindu på stående mobil for 13 oppgaver til (rubik, hanoi, foggara, magic, kanji, chado, shuzi, zodiac, shards, gancheng, luopan, pibroch, himitsu): rammen følger nå bredden på selve oppgaven.
 - Målkortet: «Trykk for å begynne» ligger ikke lenger oppå forklaringen når den er fire linjer (fele, runer).
