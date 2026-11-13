@@ -2,6 +2,11 @@
 
 Nyeste versjon øverst. Formatet er fast fordi forsiden leser det: `## <versjon> · <dato>` og så punkter som begynner med `- `.
 
+## 0.16.8 beta · 13. nov 2026
+- Stjernehimmelen, saltplatene og klippemaleriene i Sahara er tegnet om for stående mobil og er mye større.
+- Meldinger inne i oppgavene brytes over to linjer i stedet for å gå ut av vinduet.
+- Tartanen i Skottland krever alltid minst tre trykk.
+
 ## 0.16.7 beta · 13. nov 2026
 - Oppgavevinduet holder seg under knappene øverst på skjermen, så Lukk alltid kan trykkes.
 
