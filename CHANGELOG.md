@@ -2,6 +2,13 @@
 
 Nyeste versjon øverst. Formatet er fast fordi forsiden leser det: `## <versjon> · <dato>` og så punkter som begynner med `- `.
 
+## 0.16.1 beta · 13. nov 2026
+- Norge har fått seks egne oppgaver i stedet for de fire vanlige: strikk ferdig et selbumønster, ro gjennom Saltstraumen uten å havne i virvelen, mål opp tran med to kanner, få reven, gåsa og kornsekken over sundet, stem fela, og les ord skrevet med runer.
+- Hver oppgave har eget mål, tre nivå med tips og nytt oppsett hver gang.
+- Hvert kapittel i Norge forteller nå noe sant om stedet: Saltstraumen, Lofotfisket, Trollfjordslaget, høvdinghuset på Borg, malmbanen i Narvik, nordlyset, Nordkapp og Svalbard.
+- Rettet: lagringskoden på kortet «Betaen er fullført!» åpnet et land som ikke er med i betaen.
+- Rettet: tipset i foggara-oppgaven sier nå «én gang» i stedet for «1 gang».
+
 ## 0.16.0 beta · 13. nov 2026
 - Dette er en beta med fem land: Norge, Sahara, Skottland, Japan og Kina, og Karibia underveis. Etter Sahara går reisen rett videre til Skottland. Når Kina er løst, er betaen fullført. Flere land kommer senere.
 - Snarveiene til landene på forsiden er fjernet. Alle starter fra begynnelsen og løser gåtene selv.
