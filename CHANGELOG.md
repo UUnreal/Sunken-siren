@@ -2,6 +2,14 @@
 
 Nyeste versjon øverst. Formatet er fast fordi forsiden leser det: `## <versjon> · <dato>` og så punkter som begynner med `- `.
 
+## 0.16.0 beta · 13. nov 2026
+- Dette er en beta med fem land: Norge, Sahara, Skottland, Japan og Kina, og Karibia underveis. Etter Sahara går reisen rett videre til Skottland. Når Kina er løst, er betaen fullført. Flere land kommer senere.
+- Snarveiene til landene på forsiden er fjernet. Alle starter fra begynnelsen og løser gåtene selv.
+- Sahara er bygd ferdig med 15 egne steder og seks nye oppgaver. Du leder vann gjennom en foggara, leder kamelen over sanddynene, finner Nordstjerna med Karlsvogna, laster saltplater jevnt på kamelen, setter klippemaleriene fra Tassili i riktig rekkefølge og fyller inn et magisk kvadrat fra Timbuktu.
+- Nye ting fra Sahara i rommene: messinglykter, kamelsaler, tebrett med mynteté, berberteppe, vannsekker, saltplater og en væderstatue.
+- Kamelene i Sahara og Dubai ble tegnet feil i forrige versjon. Det er rettet.
+- Lagringskoder og lagrede spill virker som før.
+
 ## 0.15.2 · 13. nov 2026
 - Ny musikk: en koselig hardingfelemelodi om dagen i Norge, og lysere og gladere musikk om natta i alle land.
 - Egen musikk når du reiser med fly, båt eller bil.

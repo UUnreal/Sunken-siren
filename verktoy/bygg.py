@@ -78,10 +78,10 @@ f = f.replace('/*ITEMS*/{}', json.dumps(items, ensure_ascii=False).replace('</',
 # Versjon og endringer: leses fra CHANGELOG.md og vises på forsiden (de tre nyeste versjonene).
 import html
 log = open(os.path.join(here, 'CHANGELOG.md'), encoding='utf-8').read()
-ver = re.findall(r'^## (\S+) · (.+)$', log, re.M)
+ver = re.findall(r'^## (.+?) · (.+)$', log, re.M)  # f.eks. «0.16.0 beta · 13. nov 2026»
 if not ver: sys.exit('FEIL: fant ingen versjoner i CHANGELOG.md')
 spill_ver = re.search(r'Versjon (\d+\.\d+\.\d+)', s)
-if spill_ver and spill_ver.group(1) != ver[0][0]:
+if spill_ver and spill_ver.group(1) != ver[0][0].split()[0]:
     sys.exit('FEIL: spillet er versjon %s, men CHANGELOG.md starter med %s' % (spill_ver.group(1), ver[0][0]))
 blokker = re.split(r'^## ', log, flags=re.M)[1:4]
 endr = ''
