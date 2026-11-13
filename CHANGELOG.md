@@ -2,6 +2,11 @@
 
 Nyeste versjon øverst. Formatet er fast fordi forsiden leser det: `## <versjon> · <dato>` og så punkter som begynner med `- `.
 
+## 0.16.4 beta · 13. nov 2026
+- Større oppgavevindu på stående mobil for 13 oppgaver til (rubik, hanoi, foggara, magic, kanji, chado, shuzi, zodiac, shards, gancheng, luopan, pibroch, himitsu): rammen følger nå bredden på selve oppgaven.
+- Målkortet: «Trykk for å begynne» ligger ikke lenger oppå forklaringen når den er fire linjer (fele, runer).
+- Ferjeoppgaven: navnelappene Rev, Gås og Korn er lesbare.
+
 ## 0.16.3 beta · 13. nov 2026
 - Hvert kapittel i Norge har fått sitt eget sted: havna i Bodø, Saltstraumen, Lofotfisket, rorbuene i Henningsvær, Trollfjorden, Borg, malmkaia i Narvik, Senja, Tromsø, nordlyset, reinflokken på vidda, Hammerfest, Nordkapp, Svalbard og en ishule.
 - Norske ting i rommene: fiskekasser, sildetønner, spark, ski, fiskegarn, vedstabel, hvalbein, reinsgevir, anker, rosemalt kiste, reinskinn, sjøkart, varde, fiskehjell og pulk.
