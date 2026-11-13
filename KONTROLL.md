@@ -1,12 +1,14 @@
-# Uavhengig kontroll – v0.15.1
+# Uavhengig kontroll – v0.15.2
 
 Kontrollert 8. nov 2026 av en egen kontrolltråd, ikke av byggetråden.
 
 **Krav fra 08:17:** et vesen eller dyr er bare BESTÅTT hvis det er gjenkjennelig på skjermbildet ut fra sagnbeskrivelsen og holder samme kvalitet som de norske trollene. Streker, klumper og klosser er FEIL. Bølger skal ha kropp og skum, ikke streker.
 
-**Slik ble det testet:** Chromium i portrett mobilstørrelse 390×844 med berøring. Koden som ble testet er commit `1d48a5d` på `main`, altså nøyaktig det GitHub Pages viser. Selve live-adressen er sperret fra testmaskinen, derfor kjørte jeg den samme koden lokalt. Testknappene på forsiden ble brukt for alle 12 land. Natt ble tvunget fram med `HOV=23.5`. Storm ble tvunget fram med `WX.on=1` og `MK[land].wx=()=>1`. Fabeldyrene ble oppsøkt ved å flytte professoren til posisjonene deres.
+**Slik ble det testet:** Chromium i portrett mobilstørrelse 390×844 med berøring. Koden som ble testet er commit `7e5920f` på `main`, altså nøyaktig det GitHub Pages viser. Selve live-adressen er sperret fra testmaskinen, derfor kjørte jeg den samme koden lokalt. Testknappene på forsiden ble brukt for alle 12 land. Natt ble tvunget fram med `HOV=23.5`. Storm ble tvunget fram med `WX.on=1` og `MK[land].wx=()=>1`. Fabeldyrene ble oppsøkt ved å flytte professoren til posisjonene deres.
 
-**Resultat v0.15.1: 17 BESTÅTT · 1 FEIL** (Skottland, Japan og Kina har egne oppgaver, 9 land gjenstår)
+**Resultat v0.15.2: 17 BESTÅTT · 1 FEIL** (Skottland, Japan og Kina har egne oppgaver, 9 land gjenstår)
+
+v0.15.2 (ny musikk): alle 47 musikkspor dekodes i nettleseren og har lyd (24 dag/natt, 12 ankomstmotiv, 6 reisespor og 5 gamle). Reisesporene finnes for alle kjøretøy som brukes (fly, båt og bil). Ankomstmotivet startet i Norge. Ingen sidefeil og ingen manglende filer. Jeg har ikke lyttet, så jeg har ikke vurdert hvordan musikken låter.
 
 | # | Punkt | Status | Funn |
 |---|---|---|---|
