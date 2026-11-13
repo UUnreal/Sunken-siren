@@ -2,6 +2,9 @@
 
 Nyeste versjon øverst. Formatet er fast fordi forsiden leser det: `## <versjon> · <dato>` og så punkter som begynner med `- `.
 
+## 0.16.9 beta · 13. nov 2026
+- Kappaen ved elva i Japan og byttehandelen på Silkeveien er tegnet om for stående mobil. Nå fyller alle oppgavene i spillet skjermen på telefon.
+
 ## 0.16.8 beta · 13. nov 2026
 - Stjernehimmelen, saltplatene og klippemaleriene i Sahara er tegnet om for stående mobil og er mye større.
 - Meldinger inne i oppgavene brytes over to linjer i stedet for å gå ut av vinduet.
