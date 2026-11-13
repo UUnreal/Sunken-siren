@@ -2,6 +2,9 @@
 
 Nyeste versjon øverst. Formatet er fast fordi forsiden leser det: `## <versjon> · <dato>` og så punkter som begynner med `- `.
 
+## 0.15.1 · 13. nov 2026
+- Kartet du skal finne ute står ikke lenger på samme steinstøtte overalt. I Kina kan det også henge som en kartrull mellom bambusstenger eller ved skiltet til en kartbutikk. I Japan kan det sitte på en gammel kunngjøringstavle.
+
 ## 0.15.0 · 12. nov 2026
 - Kina er bygd ferdig: 15 egne steder, fra Shanghai i 1934, Den kinesiske mur og Den forbudte by til pandaskogen, Silkeveien, risterrassene og Dragens hule.
 - Seks nye oppgaver bare for Kina: vei tesekker med bismer, finn par med kinesiske tall, still dyrene i kappløpet til Jadekeiseren i riktig rekkefølge, drei luopan-kompasset, sett sammen en knust leirfigur, og bytt deg fram langs Silkeveien.
