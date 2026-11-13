@@ -2,6 +2,13 @@
 
 Nyeste versjon øverst. Formatet er fast fordi forsiden leser det: `## <versjon> · <dato>` og så punkter som begynner med `- `.
 
+## 0.16.3 beta · 13. nov 2026
+- Hvert kapittel i Norge har fått sitt eget sted: havna i Bodø, Saltstraumen, Lofotfisket, rorbuene i Henningsvær, Trollfjorden, Borg, malmkaia i Narvik, Senja, Tromsø, nordlyset, reinflokken på vidda, Hammerfest, Nordkapp, Svalbard og en ishule.
+- Norske ting i rommene: fiskekasser, sildetønner, spark, ski, fiskegarn, vedstabel, hvalbein, reinsgevir, anker, rosemalt kiste, reinskinn, sjøkart, varde, fiskehjell og pulk.
+- Stedene er tegnet slik de var i 1934. Bruene, Ishavskatedralen og globusen på Nordkapp kom senere og er ikke med.
+- Fela kommer nå tre ganger i stedet for fire, og strikkemønsteret tre ganger.
+- Runeoppgaven forteller at det er den eldre runerekka, fra før vikingtida.
+
 ## 0.16.2 beta · 13. nov 2026
 - Større oppgavevindu på stående mobil: 16 av oppgavene fyller nå skjermen bedre, så tekst, ruter og knapper er rundt en tredel større og lettere å treffe.
 - Tips og mål-knappen ligger nederst i vinduet, og tipsene dekker ikke lenger selve oppgaven.
