@@ -2,6 +2,9 @@
 
 Nyeste versjon øverst. Formatet er fast fordi forsiden leser det: `## <versjon> · <dato>` og så punkter som begynner med `- `.
 
+## 0.16.6 beta · 13. nov 2026
+- Tips- og Mål-knappene er fingerstore på stående mobil i alle oppgaver, og tipsteksten er stor nok til å lese.
+
 ## 0.16.5 beta · 13. nov 2026
 - Oppgavevinduet på stående mobil er litt høyere, så Lukk ikke ligger oppå overskriften og Mål/Tips ikke dekker oppgaven (kompasset, leirbitene, talltegnene, teseremonien).
 
