@@ -2,6 +2,9 @@
 
 Nyeste versjon øverst. Formatet er fast fordi forsiden leser det: `## <versjon> · <dato>` og så punkter som begynner med `- `.
 
+## 0.16.7 beta · 13. nov 2026
+- Oppgavevinduet holder seg under knappene øverst på skjermen, så Lukk alltid kan trykkes.
+
 ## 0.16.6 beta · 13. nov 2026
 - Tips- og Mål-knappene er fingerstore på stående mobil i alle oppgaver, og tipsteksten er stor nok til å lese.
 
