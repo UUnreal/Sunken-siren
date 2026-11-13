@@ -2,6 +2,10 @@
 
 Nyeste versjon øverst. Formatet er fast fordi forsiden leser det: `## <versjon> · <dato>` og så punkter som begynner med `- `.
 
+## 0.16.2 beta · 13. nov 2026
+- Større oppgavevindu på stående mobil: 16 av oppgavene fyller nå skjermen bedre, så tekst, ruter og knapper er rundt en tredel større og lettere å treffe.
+- Tips og mål-knappen ligger nederst i vinduet, og tipsene dekker ikke lenger selve oppgaven.
+
 ## 0.16.1 beta · 13. nov 2026
 - Norge har fått seks egne oppgaver i stedet for de fire vanlige: strikk ferdig et selbumønster, ro gjennom Saltstraumen uten å havne i virvelen, mål opp tran med to kanner, få reven, gåsa og kornsekken over sundet, stem fela, og les ord skrevet med runer.
 - Hver oppgave har eget mål, tre nivå med tips og nytt oppsett hver gang.
