@@ -2,6 +2,11 @@
 
 Nyeste versjon øverst. Formatet er fast fordi forsiden leser det: `## <versjon> · <dato>` og så punkter som begynner med `- `.
 
+## 0.15.2 · 13. nov 2026
+- Ny musikk: en koselig hardingfelemelodi om dagen i Norge, og lysere og gladere musikk om natta i alle land.
+- Egen musikk når du reiser med fly, båt eller bil.
+- En kort velkomstmelodi når du kommer fram til et nytt land, før musikken for landet tar over.
+
 ## 0.15.1 · 13. nov 2026
 - Kartet du skal finne ute står ikke lenger på samme steinstøtte overalt. I Kina kan det også henge som en kartrull mellom bambusstenger eller ved skiltet til en kartbutikk. I Japan kan det sitte på en gammel kunngjøringstavle.
 
