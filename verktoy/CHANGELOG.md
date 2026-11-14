@@ -2,6 +2,9 @@
 
 Nyeste versjon øverst. Formatet er fast fordi forsiden leser det: `## <versjon> · <dato>` og så punkter som begynner med `- `.
 
+## 0.17.0 beta · 14. nov 2026
+- Ny dagmusikk i Norge: «Morgen ved fjorden», en rolig vise som er komponert note for note og varer over tre minutter før den går rundt.
+
 ## 0.16.9 beta · 13. nov 2026
 - Kappaen ved elva i Japan og byttehandelen på Silkeveien er tegnet om for stående mobil. Nå fyller alle oppgavene i spillet skjermen på telefon.
 
