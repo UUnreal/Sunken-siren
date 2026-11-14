@@ -1,14 +1,14 @@
-# Uavhengig kontroll – v0.16.9 beta
+# Uavhengig kontroll – v0.17.0 beta
 
 Kontrollert 8. nov 2026 av en egen kontrolltråd, ikke av byggetråden.
 
 **Krav fra 08:17:** et vesen eller dyr er bare BESTÅTT hvis det er gjenkjennelig på skjermbildet ut fra sagnbeskrivelsen og holder samme kvalitet som de norske trollene. Streker, klumper og klosser er FEIL. Bølger skal ha kropp og skum, ikke streker.
 
-**Slik ble det testet:** Chromium i portrett mobilstørrelse 390×844 med berøring. Koden som ble testet er commit `428768a` på `main`, altså nøyaktig det GitHub Pages viser. Selve live-adressen er sperret fra testmaskinen, derfor kjørte jeg den samme koden lokalt. Testknappene er fjernet i 0.16.0 beta, så jeg hopper til kapitlene med lagringskoder. Natt ble tvunget fram med `HOV=23.5`. Storm ble tvunget fram med `WX.on=1` og `MK[land].wx=()=>1`. Fabeldyrene ble oppsøkt ved å flytte professoren til posisjonene deres.
+**Slik ble det testet:** Chromium i portrett mobilstørrelse 390×844 med berøring. Koden som ble testet er commit `736070d` på `main`, altså nøyaktig det GitHub Pages viser. Selve live-adressen er sperret fra testmaskinen, derfor kjørte jeg den samme koden lokalt. Testknappene er fjernet i 0.16.0 beta, så jeg hopper til kapitlene med lagringskoder. Natt ble tvunget fram med `HOV=23.5`. Storm ble tvunget fram med `WX.on=1` og `MK[land].wx=()=>1`. Fabeldyrene ble oppsøkt ved å flytte professoren til posisjonene deres.
 
-**Resultat v0.16.9 beta: 20 BESTÅTT · 0 FEIL.** Alle punktene Jørund har tatt opp, er bestått i de fem landene i betaen. Dette er ikke kontrollert: hvordan musikken og stemmene låter, oppgavene i Karibia i de nye vinduene (rubik, hanoi, lights, slide), og de sju landene som er skjult. Åpne merknader: radene med kjøpmenn i den vanskelige Silkeveien (142) er bare ca. 27 px høye på en 390 px bred skjerm, den røde nåla i luopan går gjennom overskriften, og steinnisjen og sjøkartet går igjen i Norge-rommene.
+**Resultat v0.17.0 beta: 20 BESTÅTT · 0 FEIL.** Alle punktene Jørund har tatt opp, er bestått i de fem landene i betaen. Dette er ikke kontrollert: hvordan musikken og stemmene låter, oppgavene i Karibia i de nye vinduene (rubik, hanoi, lights, slide), og de sju landene som er skjult. Åpne merknader: radene med kjøpmenn i den vanskelige Silkeveien (142) er bare ca. 27 px høye på en 390 px bred skjerm, den røde nåla i luopan går gjennom overskriften, og steinnisjen og sjøkartet går igjen i Norge-rommene.
 
-v0.15.2 (ny musikk): alle 47 musikkspor dekodes i nettleseren og har lyd (24 dag/natt, 12 ankomstmotiv, 6 reisespor og 5 gamle). Reisesporene finnes for alle kjøretøy som brukes (fly, båt og bil). Ankomstmotivet startet i Norge. Ingen sidefeil og ingen manglende filer. Jeg har ikke lyttet, så jeg har ikke vurdert hvordan musikken låter.
+v0.17.0 (ny dagmusikk i Norge, «Morgen ved fjorden»): sporet dekodes i nettleseren, er 204 sekunder langt, mono, og har lyd hele veien (1,2 sekunder stillhet til slutt). I Norge på dagtid går daglaget opp til fullt volum i løpet av ca. 8 sekunder. Når klokka settes til natt, glir daglaget ned til null og nattlaget opp, og tilbake igjen på dagtid. Musikkfila har vokst fra 7,1 til 8,4 MB. Den lastes i bakgrunnen (async), så spillet starter uten å vente på den, og den ligger i lista som lagres for bruk uten nett. Ingen sidefeil. Jeg kan ikke høre lyden, så hvordan musikken låter, er ikke vurdert.
 
 | # | Punkt | Status | Funn |
 |---|---|---|---|
