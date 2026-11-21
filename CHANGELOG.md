@@ -2,6 +2,9 @@
 
 Nyeste versjon øverst. Formatet er fast fordi forsiden leser det: `## <versjon> · <dato>` og så punkter som begynner med `- `.
 
+## 0.17.3 beta · 21. nov 2026
+- Stemmene lastes nå per land: fortelleren for landet du er i kommer først (ca. 2 MB i stedet for 23 MB), så fortelleren snakker fra første replikk også på mobilnett. Resten lastes i bakgrunnen, og alt virker fortsatt uten nett.
+
 ## 0.17.2 beta · 21. nov 2026
 - Professorens ankomstreplikker i de fem landene har fått ekte opptak. Ingen replikker i betaen bruker lenger maskinstemmen i nettleseren.
 

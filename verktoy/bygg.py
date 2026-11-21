@@ -34,6 +34,31 @@ SW_REG = ("<script>if('serviceWorker'in navigator){const h=!!navigator.serviceWo
           "navigator.serviceWorker.register('../sw.js',{scope:'../'}).catch(()=>{})}</script>")
 
 
+# Norske stemmer deles per land (stemme-deler.json: VO-nøkkel -> del), så en ny spiller på mobilnett
+# får fortelleren for landet hen er i etter ca. 2 MB i stedet for hele fila. Lasterekkefølge: landet i
+# lagringen (ny spiller: norge), så «resten» (professoren og figurene), så de andre landene i spillrekkefølge.
+# Musikken hentes først når fortellerdelen er lastet, så de ikke deler båndbredden.
+# Spillet venter opptil 9 s på en fortellerreplikk mens window.VOP > 0 (filer igjen å laste).
+DELER = ['norge', 'karibia', 'sahara', 'skott', 'japan', 'kina']
+VO_LASTER = ("<script id=\"vo\">(function(){var D=%s,c=26;try{c=JSON.parse(localStorage.getItem('siren')).ch||26}catch(e){}"
+             "var r=c<=25?'karibia':c<=40?'norge':c<=55?'sahara':c<=115?'skott':c<=130?'japan':c<=145?'kina':'norge',i=D.indexOf(r),"
+             "o=[r,'resten'].concat(D.slice(i+1),D.slice(0,i));window.VO=window.VO||{};window.VOP=o.length;"
+             "(function n(){var f=o.shift();if(!f){window.VOP=0;return}var s=document.createElement('script');s.src='lyd/stemmer-'+f+'.js';"
+             "s.onload=s.onerror=function(){window.VOP=o.length;if(!window.MU&&!document.getElementById('mu')){var m=document.createElement('script');m.id='mu';m.src='lyd/musikk.js';document.head.appendChild(m)}n()};document.head.appendChild(s)})()})()</script>")
+
+
+def del_stemmer(body):
+    """Skriver lyd/stemmer-<del>.js og gir tilbake laste-skriptet som erstatter <script id="vo">."""
+    vo = json.loads(body[body.index('=') + 1:].strip().rstrip(';'))
+    kart = json.load(open(os.path.join(here, 'stemme-deler.json'), encoding='utf-8'))
+    deler = {d: {} for d in DELER + ['resten']}
+    for k, v in vo.items(): deler[kart.get(k, 'resten')][k] = v
+    for d, inn in deler.items():
+        open(os.path.join(g, 'lyd', 'stemmer-%s.js' % d), 'w', encoding='utf-8').write(
+            'Object.assign(window.VO=window.VO||{},%s);' % json.dumps(inn, separators=(',', ':')))
+    return VO_LASTER % json.dumps(DELER)
+
+
 def bygg_spill(fil, lang):
     """Lager spill/index[.lang].html. Musikken er lik for alle språk (lyd/musikk.js),
     stemmene er egne per språk (lyd/stemmer[.lang].js)."""
@@ -47,6 +72,12 @@ def bygg_spill(fil, lang):
             body = m.group(1)
             if sid == 'vo' and lang != 'no':  # egne stemmer per språk; spillet leser window.VO_EN før VO
                 body = body.replace('window.VO=', 'window.VO_%s=' % lang.upper(), 1)
+            if sid == 'mu' and lang == 'no':  # norsk side: laste-skriptet for stemmer henter musikken etter første stemmedel
+                open(os.path.join(g, 'lyd', name), 'w', encoding='utf-8').write(body); s = s[:m.start()] + s[m.end():]
+                continue
+            if sid == 'vo' and lang == 'no':
+                s = s[:m.start()] + del_stemmer(body) + s[m.end():]
+                continue
             open(os.path.join(g, 'lyd', name), 'w', encoding='utf-8').write(body)
         s = s[:m.start()] + '<script id="%s" src="lyd/%s" async></script>' % (sid, name) + s[m.end():]
     # 2) Sikkerhet: CSP + ingen referrer, og søkelenker åpnes uten tilgang tilbake til spillet.
