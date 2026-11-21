@@ -2,6 +2,9 @@
 
 Nyeste versjon øverst. Formatet er fast fordi forsiden leser det: `## <versjon> · <dato>` og så punkter som begynner med `- `.
 
+## 0.17.2 beta · 21. nov 2026
+- Professorens ankomstreplikker i de fem landene har fått ekte opptak. Ingen replikker i betaen bruker lenger maskinstemmen i nettleseren.
+
 ## 0.17.1 beta · 20. nov 2026
 - Ny fortellerstemme: alle 249 fortellerreplikker i de fem betalandene er spilt inn med en nordlandsk mannsstemme. Fortelleren bruker ikke lenger maskinstemmen i nettleseren.
 
