@@ -2,6 +2,9 @@
 
 Nyeste versjon øverst. Formatet er fast fordi forsiden leser det: `## <versjon> · <dato>` og så punkter som begynner med `- `.
 
+## 0.17.6 beta · 22. nov 2026
+- Sporrådet «Følg det gule merket …» har fått opptak for alle steder og retninger i de fem landene (55 nye), og har ikke lenger dobbelt punktum.
+
 ## 0.17.5 beta · 22. nov 2026
 - Robotstemmen i nettleseren er fjernet helt fra spillet. Alle replikker i de fem landene har nå ekte opptak, også rådene, gåtehintene og alle varianter som velges tilfeldig (over 700 nye opptak). Mangler et opptak, vises bare teksten.
 - Rådet professoren gir kommer nå som en egen replikk etter det figuren sier, så begge kan ha opptak.
