@@ -2,6 +2,9 @@
 
 Nyeste versjon øverst. Formatet er fast fordi forsiden leser det: `## <versjon> · <dato>` og så punkter som begynner med `- `.
 
+## 0.17.10 beta · 23. nov 2026
+- Loch Ness speiler den grå himmelen i rolig vær, så vannet henger sammen og Nessie ligger tydelig ute i innsjøen. I storm blir vannet mørkt med krapp sjø og skumtopper.
+
 ## 0.17.9 beta · 23. nov 2026
 - Stranda i Karibia har fått turkis grunt vann inn mot sanden og tydelige brenninger som skyller opp.
 - Stormbølgene har fått en lys kant langs ryggen, så skumtoppene sitter fast på bølgen i stedet for å sveve løst.
