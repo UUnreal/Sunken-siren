@@ -2,6 +2,11 @@
 
 Nyeste versjon øverst. Formatet er fast fordi forsiden leser det: `## <versjon> · <dato>` og så punkter som begynner med `- `.
 
+## 0.17.9 beta · 23. nov 2026
+- Stranda i Karibia har fått turkis grunt vann inn mot sanden og tydelige brenninger som skyller opp.
+- Stormbølgene har fått en lys kant langs ryggen, så skumtoppene sitter fast på bølgen i stedet for å sveve løst.
+- Loch Ness: stormen gir tydelig skum og krapp sjø, og Nessie ligger ute i vannet i stedet for oppå bredden.
+
 ## 0.17.8 beta · 23. nov 2026
 - Norskekysten er bygd om: fra neset etter lavvoen og helt til fyret er det nå åpent hav helt inn til ei lav steinfjære med tang og snøflekker, og fjellene på øyene ligger bak havet slik Lofotveggen ser ut fra Bodø-kysten. Skogholtene står på landtunger ut i sjøen, og fyret står på en knaus der bølgene slår opp.
 - Skummet på stormbølgene er mykere og mer ekte: tett hvitt i toppen som blir luftig nedover fronten, hull i skummet og fokk som driver av toppene.
