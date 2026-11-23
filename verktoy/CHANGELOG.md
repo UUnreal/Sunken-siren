@@ -2,6 +2,11 @@
 
 Nyeste versjon øverst. Formatet er fast fordi forsiden leser det: `## <versjon> · <dato>` og så punkter som begynner med `- `.
 
+## 0.17.13 beta · 23. nov 2026
+- ⏮-knappen i introen er synlig igjen (den lå under den svarte filmstripa).
+- Forhistorien har musikk: den rolige harpedelen fra intromusikken spiller svakt mens du leser.
+- Sluttbildet i introen lever: sola går ned, himmelen mørkner, stjernene kommer fram og skipet seiler videre.
+
 ## 0.17.12 beta · 23. nov 2026
 - Ny intro i 90-tallsstil: seks scener (natt over Karibia, skipet i stormen, arbeidsrommet med kartet, jungeltempelet, det sunkne tempelet og solnedgang), lag som glir i ulik fart, rulletekst og gull-logo.
 - Ny intromusikk «Heltefanfare»: egen orkestermelodi med messing, strykere og pauker. Bildene følger musikken.
