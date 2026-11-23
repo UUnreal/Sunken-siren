@@ -2,6 +2,9 @@
 
 Nyeste versjon øverst. Formatet er fast fordi forsiden leser det: `## <versjon> · <dato>` og så punkter som begynner med `- `.
 
+## 0.17.11 beta · 23. nov 2026
+- Trærne ved Loch Ness er byttet ut med trær som faktisk vokser i den kaledonske skogen: skotsk furu med rødoransje bark øverst og smal krone, bjørk med hvit stamme og gule høstblader, og rogn med oransje blader og røde bær.
+
 ## 0.17.10 beta · 23. nov 2026
 - Loch Ness speiler den grå himmelen i rolig vær, så vannet henger sammen og Nessie ligger tydelig ute i innsjøen. I storm blir vannet mørkt med krapp sjø og skumtopper.
 
