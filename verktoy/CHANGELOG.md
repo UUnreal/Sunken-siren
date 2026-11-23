@@ -2,6 +2,11 @@
 
 Nyeste versjon øverst. Formatet er fast fordi forsiden leser det: `## <versjon> · <dato>` og så punkter som begynner med `- `.
 
+## 0.17.12 beta · 23. nov 2026
+- Ny intro i 90-tallsstil: seks scener (natt over Karibia, skipet i stormen, arbeidsrommet med kartet, jungeltempelet, det sunkne tempelet og solnedgang), lag som glir i ulik fart, rulletekst og gull-logo.
+- Ny intromusikk «Heltefanfare»: egen orkestermelodi med messing, strykere og pauker. Bildene følger musikken.
+- Hemmeligheten i introen virker som før.
+
 ## 0.17.11 beta · 23. nov 2026
 - Trærne ved Loch Ness er byttet ut med trær som faktisk vokser i den kaledonske skogen: skotsk furu med rødoransje bark øverst og smal krone, bjørk med hvit stamme og gule høstblader, og rogn med oransje blader og røde bær.
 

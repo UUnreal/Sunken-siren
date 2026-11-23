@@ -35,12 +35,12 @@ button.on{background:var(--von);border-color:var(--gold)}@media(hover:hover){but
 <div class="ov" id="title"><canvas id="tc" style="position:absolute;inset:0;width:100%;height:100%;z-index:-1;touch-action:auto;background:none"></canvas><h1>Relic of the<br>Sunken Siren</h1><p>Caribbean, 1934. Professor Julian Vance is hunting the Sun Disc from the sunken temple. He is dramatically overqualified for everything except the physical stuff.</p>
 <p style="opacity:.75;font-size:14px">Tap to walk. Pick a verb, then a thing. Tap one thing in your bag and then another to combine. 👁 shows everything you can tap. Sound on!</p>
 <div id="langs" style="font-size:16px;display:flex;gap:6px;flex-wrap:wrap;justify-content:center"><button data-l="no">🇳🇴 Norsk</button><button data-l="en">🇬🇧 English</button></div>
-<div><button id="bNew">New game</button> <button id="bCont" style="display:none">Continue</button> <button id="bKode">💾 I have a code</button><div id="ver" style="font:12px sans-serif;opacity:.7;margin-top:6px">Version 0.17.11 beta · 23 Nov 2026</div><div id="cred" style="font:11px sans-serif;opacity:.55;margin-top:3px">Music made with Meta MusicGen (CC-BY-NC 4.0)</div></div></div>
+<div><button id="bNew">New game</button> <button id="bCont" style="display:none">Continue</button> <button id="bKode">💾 I have a code</button><div id="ver" style="font:12px sans-serif;opacity:.7;margin-top:6px">Versjon 0.17.12 beta · 23. nov 2026</div><div id="cred" style="font:11px sans-serif;opacity:.55;margin-top:3px">Music made with Meta MusicGen (CC-BY-NC 4.0)</div></div></div>
 <div id="intro" style="position:fixed;inset:0;z-index:20;background:#000;cursor:pointer"><canvas id="ic" style="width:100%;height:100%;display:block;touch-action:none"></canvas></div>
 <div class="ov" id="code" style="display:none;z-index:8;background:rgba(8,5,12,.94)"><h2 id="cT" style="color:var(--gold);margin:0"></h2><pre id="cB" style="white-space:pre-wrap;font-size:17px;line-height:1.5;max-width:560px;text-align:left;background:#1a1222;padding:12px;border-radius:8px;border:1px solid #5a4470;margin:0;max-height:45vh;overflow:auto"></pre><button id="cP" style="display:none">▶ Play the signal</button><input id="cI" autocomplete="off" autocapitalize="characters" spellcheck="false" style="font:inherit;font-size:22px;padding:10px;width:min(320px,80vw);text-align:center;text-transform:uppercase;border-radius:8px;border:2px solid var(--gold);background:#0c0810;color:var(--ink)"><div><button id="cOK">Answer</button> <button id="cH" style="background:var(--vb)">💡 Hint</button> <button id="cS" style="background:var(--vb)">🔎 Search</button> <button id="cW" style="background:var(--vb)">📖 Wikipedia</button> <button id="cN" style="background:var(--vb)">📚 Encyclopedia</button> <button id="cX" style="background:var(--vb)">Close</button></div><p id="cM" style="min-height:22px;color:#ff9a7a"></p></div>
 <div class="ov" id="globe" style="display:none;z-index:9"><h2 style="color:var(--gold);margin:0">🌍 The journey around the world</h2><canvas id="gc" style="position:static;inset:auto;width:min(260px,62vw);height:min(260px,62vw);image-rendering:pixelated;background:none;touch-action:auto"></canvas><p id="gT" style="font-size:20px;margin:0"></p><div style="width:min(320px,80vw);height:14px;background:#2a1a30;border:1px solid #5a4470;border-radius:7px;overflow:hidden"><div id="gB" style="height:100%;width:0;background:linear-gradient(90deg,#f2b544,#ffe48a)"></div></div><p id="gL" style="white-space:pre-line;font-size:14px;opacity:.85;margin:0"></p><button id="gX">Close</button></div>
 <div class="ov" id="end" style="display:none"><h1 id="endH"></h1><p id="endTxt" style="white-space:pre-line"></p><button id="endB"></button></div>
-<script id="mu" src="lyd/musikk.js" async></script>
+<script id="imu" src="lyd/intro.js" async></script><script id="mu" src="lyd/musikk.js" async></script>
 <script id="vo" src="lyd/stemmer.en.js" async></script>
 <script>
 // Del 1 = kapittel 1-100 (Karibia til Nordpolen), Del 2 = 101-LMAX (sju nye land). Etter LMAX kommer ekspedisjonsmodus.
@@ -2867,130 +2867,182 @@ if(sv&&sv.room){$('bCont').style.display='inline-block';$('bCont').onclick=()=>s
  g.save();g.translate(600,640+Math.sin(t*1.4)*4);g.rotate(Math.sin(t*1.1)*.03);P('#120818',[[-120,-10],[110,-10],[90,30],[-100,30]]);P('#120818',[[-110,-10],[-130,-40],[-90,-10]]);g.fillStyle='#120818';[-50,10,60].forEach((x,i)=>{g.fillRect(x-3,-190+i*20,6,180-i*20)});g.fillStyle='rgba(30,14,36,.92)';[[-50,-180,70,60],[-50,-110,80,70],[10,-160,75,60],[10,-90,85,60],[60,-140,60,50],[60,-80,70,50]].forEach(([x,y,ww,hh])=>{g.beginPath();g.moveTo(x-ww/2,y);g.quadraticCurveTo(x,y+12,x+ww/2,y);g.lineTo(x+ww/2+4,y+hh);g.quadraticCurveTo(x,y+hh-10,x-ww/2-4,y+hh);g.fill()});g.restore();
  g.strokeStyle='#120818';g.lineWidth=3;for(let i=0;i<4;i++){const bx=(500+i*90+t*30)%1100-60,by=200+i*30+Math.sin(t+i)*10,fl=0;gull(g,bx,by,1.7,t+i*.9,1,'#120818')}
  g.setTransform(1,0,0,1,0,0);g.fillStyle=L(0,h,['rgba(0,0,0,.35)','rgba(0,0,0,0)','rgba(0,0,0,.55)']);g.fillRect(0,0,w,h);requestAnimationFrame(f)}requestAnimationFrame(f)})();
-// ---------- Intro: klassisk eventyr-film (originalt verk) ----------
-// Fire scener i pikselstil med tekst i svarte filmstriper og egen eventyrmusikk (messing, strykere, pauker).
-// Hemmelighet: et glødende tegn på kartet i scene 2 stopper introen og åpner et lite kompass-puslespill.
+// ---------- Intro: klassisk eventyr-film i 90-tallsstil (originalt verk) ----------
+// Seks scener i pikselstil med parallakse (lag som glir i ulik fart), rulletekst-kort og egen orkestermusikk (window.IMU, lyd/intro.js).
+// Tidslinja følger musikken: IMU.s = [natt, storm, kart, tempel, hav, finale, slutt, lengde] i sekunder. Mangler fila, brukes syntesemusikken.
+// Hemmelighet: et glødende tegn på kartet i kart-scenen stopper introen og åpner et lite kompass-puslespill (ingen hint om det).
 (function(){const ov=$('intro');if(!ov)return;let seen=0;try{seen=sessionStorage.getItem('introSeen')}catch(e){}let go=window.__IA;try{go=go||sessionStorage.getItem('introGo');sessionStorage.removeItem('introGo')}catch(e){}if(FAST||(seen&&!go)||ov.dataset.skip){ov.remove();return}
- const c=$('ic'),g=c.getContext('2d'),B=document.createElement('canvas'),b=B.getContext('2d');let t=-1,last=0,done=false,paused=false,pz=null;const DUR=34,BT=.6;
- const r=(cl,x,y,w,h)=>{b.fillStyle=cl;b.fillRect(x|0,y|0,Math.max(1,w|0),Math.max(1,h|0))};
- const TXT=[[.5,7.5,'Caribbean, 1934'],[8.5,16,'An old map. A forgotten legend.'],[16.5,24.5,'Beneath the sea, something sings that no one has heard for a thousand years.'],[25,34,'']];
- function music(){try{audioStart();const o=mG,t0=AC.currentTime+.1,N=[['A3',57],['C4',60],['E4',64],['F3',53],['G3',55],['D4',62]];
+ const c=$('ic'),g=c.getContext('2d'),B=document.createElement('canvas'),b=B.getContext('2d');let t=-1,last=0,done=false,paused=false,pz=null;
+ const S=(window.IMU&&IMU.s)||[0,8.28,16.55,28.97,37.24,45.52,62.07,66.2],DUR=S[7];
+ const r=(cl,x,y,w,h)=>{b.fillStyle=cl;b.fillRect(x|0,y|0,Math.max(1,w|0),Math.max(1,h|0))},pg=(cl,P)=>{b.fillStyle=cl;b.beginPath();P.forEach((p,i)=>i?b.lineTo(p[0],p[1]):b.moveTo(p[0],p[1]));b.fill()};
+ const TXT=[[S[0]+5.6,S[1]-.2,'Caribbean, 1934'],[S[1]+.6,S[2]-.4,'These waters have swallowed many ships. And many secrets.'],[S[2]+.6,S[3]-.4,'An old map. A forgotten legend.'],[S[3]+.6,S[4]-.4,'Deep in the jungle stands a temple no one has seen for hundreds of years.'],[S[4]+.6,S[5]-.4,'Beneath the sea, something sings that no one has heard for a thousand years.'],[0,0,'']];
+ const CRED=[[S[0]+.7,S[0]+3.2,'An original adventure game'],[S[0]+3.4,S[0]+5.4,'starring Professor Julian Vance']];
+ // ---- musikk: ferdig orkesterspor (IMU) som følger tidslinja, ellers den gamle syntesemusikken ----
+ let mBuf=null,mSrc=null,mGain=null,synth=0;
+ function mLoad(){if(mBuf||!window.IMU||!AC)return;try{const bin=atob(IMU.d),u=new Uint8Array(bin.length);for(let i=0;i<bin.length;i++)u[i]=bin.charCodeAt(i);mBuf=AC.decodeAudioData(u.buffer).then(x=>(mBuf=x,t>=0&&!done&&!synth&&mPlay(t),x)).catch(()=>{mBuf=null})}catch(e){}}
+ function mPlay(at){try{if(!mBuf||mBuf.then||!AC)return;if(mSrc)try{mSrc.stop()}catch(e){}if(!mGain){mGain=AC.createGain();mGain.gain.value=1.7;mGain.connect(mG)}if(at>=mBuf.duration-.2)return;mSrc=AC.createBufferSource();mSrc.buffer=mBuf;mSrc.connect(mGain);mSrc.start(0,Math.max(0,at))}catch(e){}}
+ function music(){try{audioStart();if(window.IMU){mLoad();return}synth=1;const o=mG,BT=.6,t0=AC.currentTime+.1;
   const ch=[[45,57,60,64],[45,57,60,64],[45,57,60,64],[45,57,60,64],[41,57,60,65],[43,55,59,62],[45,57,60,64],[43,55,59,62],[41,53,57,60],[43,55,59,62],[45,57,61,64],[45,57,61,64],[45,57,61,64],[45,57,61,64]];
   const mel=[[0,8],[64,1],[69,1],[71,1],[72,1],[71,1],[69,1],[64,2],[65,1],[69,1],[72,1],[74,1],[72,1],[71,1],[67,2],[69,.5],[72,.5],[76,1],[74,.5],[72,.5],[71,1],[72,1],[69,3],[77,1],[76,1],[74,1],[72,1],[74,1],[76,1],[81,4],[0,1],[81,1],[76,1],[81,4]];
   ch.forEach((cd,i)=>{const s=t0+i*4*BT;cd.slice(1).forEach(m=>inst('str',m,s,4*BT-.1,.035,o));for(let k=0;k<4;k++)inst('bass',cd[0],s+k*BT,BT*.8,.09,o);if(i>=2)inst('timp',cd[0]-12,s,0,.35,o);if(i>=6&&i<13)for(let k=0;k<8;k++){if(k%4==2)inst('snare',0,s+k*BT/2,0,.18,o);if(k%2)inst('hat',0,s+k*BT/2,0,.05,o)}});
-  for(let k=0;k<16;k++)inst('timp',33,t0+k*BT/2,0,.06+k*.01,o);for(let k=0;k<12;k++)inst('timp',45,t0+40*BT+k*BT/3,0,.08+k*.02,o);
-  let s=t0;mel.forEach(([m,d])=>{if(m)inst('brass',m,s,d*BT*.92,.12,o),inst('brass',m-12,s,d*BT*.92,.05,o);s+=d*BT});inst('bell',93,t0+48*BT,1,.15,o);inst('timp',33,t0+52*BT,0,.6,o)}catch(e){}}
- // ---- scener (tegnes i lav oppløsning: høyde 180, bredde etter skjermen) ----
+  for(let k=0;k<16;k++)inst('timp',33,t0+k*BT/2,0,.06+k*.01,o);let s=t0;mel.forEach(([m,d])=>{if(m)inst('brass',m,s,d*BT*.92,.12,o),inst('brass',m-12,s,d*BT*.92,.05,o);s+=d*BT})}catch(e){}}
+ // ---- felles: havbølger (lag bak og foran skipet) ----
  const wv=(x,T,a)=>a*(5*Math.sin(x*.045+T*1.3)+2.6*Math.sin(x*.12-T*2+1)+1.2*Math.sin(x*.29+T*3.2));
  const WL=[[90,.3,'#0a1222','#1a2a44','#121c32'],[99,.55,'#0c1a30','#22405e','#132440'],[111,.85,'#0e2038','#2c5070','#16304c'],[128,1.25,'#10243e','#3c6c92','#1a3a5a'],[152,1.7,'#12284a','#4e80a8','#1e4468']];
  // stormhavet i introen kommer fra havmotoren (HV): bakre rekker, så skipet, så de fremste rekkene foran skroget
  let HV=null;function waves(w,h,T,a,i0,i1,fl){if(i0==0)HV=havInit({x0:0,x1:w,y0:86,y1:h,t:T,st:1,wd:1,pal:'storm',sky:fl?'#5a6488':'#2a3450',px:1,step:1,lk:.7,mag:.8});havTegn(b,{...HV,rows:i0==0?[0,6]:[6,HV.N],base:i0==0?1:0})}
- function sea(w,h,T,storm,fl){const L=b.createLinearGradient(0,0,0,h);L.addColorStop(0,fl?'#3a4260':'#070914');L.addColorStop(.55,fl?'#5a6488':'#1a2440');L.addColorStop(1,'#0a0a14');b.fillStyle=L;b.fillRect(0,0,w,h);
-  // uværsskyer: øvre teppe, midtlag og lave drivskyer, hvert lag med sin fart (vinden kommer fra venstre)
-  const C=fl?[['#4a5274','#6a7498','#9aa4c8'],['#3a4264','#5a6488','#8a94b8']]:[['#0b0f1c','#141a2c','#1f2840'],['#10162a','#1a2236','#262f48']];
-  for(let i=0;i<6;i++){const s=34+hsh(i)*16,W=w+s*4,cx=((hsh(i+.4)*W+T*3)%W)-s*2;cloud(b,cx,10+hsh(i+.8)*10,s,i+1,C[0])}
-  for(let i=0;i<6;i++){const s=22+hsh(i+20)*12,W=w+s*4,cx=((hsh(i+20.4)*W+T*7)%W)-s*2;cloud(b,cx,34+hsh(i+20.8)*16,s,i+21,C[1])}
-  b.globalAlpha=.6;for(let i=0;i<4;i++){const s=14+hsh(i+40)*8,W=w+s*4,cx=((hsh(i+40.4)*W+T*14)%W)-s*2;cloud(b,cx,60+hsh(i+40.8)*14,s,i+41,C[0])}b.globalAlpha=1;
-  waves(w,h,T,1,0,3,fl)}
- function seaFront(w,h,T){waves(w,h,T,1,3,5)}
+ // ---- Scene 1: natt over Karibia. Stjerner, måne, fyrtårn med lyskjegle, palmer. Fire lag med parallakse. ----
+ function palm(x,y,s,T,col){b.save();b.translate(x,y);b.scale(s,s);b.strokeStyle=col;b.lineWidth=3;b.beginPath();b.moveTo(0,0);b.quadraticCurveTo(6,-30,2,-58);b.stroke();
+  for(let i=0;i<7;i++){const a=-2.9+i*.5+Math.sin(T*1.1+i)*.06,L=24+(i%3)*5;b.lineWidth=1.6;b.beginPath();b.moveTo(2,-58);const ex=2+Math.cos(a)*L,ey=-58+Math.sin(a)*L*.55+L*.25;b.quadraticCurveTo(2+Math.cos(a)*L*.5,-62+Math.sin(a)*L*.35,ex,ey);b.stroke();
+   for(let k=3;k<10;k++){const q=k/10,px=2+(ex-2)*q,py=-58+(ey+58)*q-Math.sin(q*3.1)*4;b.beginPath();b.moveTo(px,py);b.lineTo(px+Math.cos(a+1.4)*5*(1-q*.5),py+5*(1-q*.4));b.stroke()}}b.restore()}
+ function night(w,h,T){const L=b.createLinearGradient(0,0,0,112);L.addColorStop(0,'#03040e');L.addColorStop(.6,'#0c1430');L.addColorStop(1,'#2a2448');b.fillStyle=L;b.fillRect(0,0,w,h);
+  for(let i=0;i<120;i++){const x=hsh(i)*w,y=hsh(i+.5)*100,tw=.5+.5*Math.sin(T*(1+hsh(i+.2)*3)+i);r(`rgba(255,250,235,${(.25+.75*hsh(i+.7))*tw})`,x,y,hsh(i+.9)>.93?2:1,hsh(i+.9)>.93?2:1)}
+  const sh=(T-3.1)/0.7;if(sh>0&&sh<1){b.strokeStyle=`rgba(255,255,240,${1-sh})`;b.lineWidth=1;b.beginPath();b.moveTo(w*.2+sh*60,14+sh*20);b.lineTo(w*.2+sh*60-14,14+sh*20-5);b.stroke()}
+  const mx=w*.74-T*.6,my=30,MG=b.createRadialGradient(mx,my,4,mx,my,40);MG.addColorStop(0,'rgba(255,246,210,.45)');MG.addColorStop(1,'rgba(255,246,210,0)');b.fillStyle=MG;b.fillRect(mx-40,0,80,80);
+  b.fillStyle='#f6eccc';b.beginPath();b.arc(mx,my,10,0,7);b.fill();[[3,-2,3],[-4,3,2],[2,5,1.5],[-3,-5,1.5]].forEach(([dx,dy,rr])=>{b.fillStyle='rgba(180,170,140,.5)';b.beginPath();b.arc(mx+dx,my+dy,rr,0,7);b.fill()});
+  for(let i=0;i<4;i++){const s=18+hsh(i+80)*10,W=w+s*6;cloud(b,((hsh(i+80.4)*W+T*2)%W)-s*3,20+hsh(i+80.8)*36,s,i+81,['#141a34','#1e2646','#3a4068'],.4,1.6)}
+  // lag 1: fjern øy med vulkan (glir sakte)
+  const o1=-T*.8;pg('#141634',[[o1-20,112],[o1+w*.3,112],[o1+w*.42,86],[o1+w*.47,84],[o1+w*.52,88],[o1+w*.7,104],[o1+w*.9,112]]);for(let i=0;i<5;i++){const k=(T*.15+i*.2)%1;r(`rgba(120,110,140,${.25*(1-k)})`,o1+w*.47+Math.sin(i+T*.3)*4*k,84-k*30,3+k*6,3)}
+  // havet med månegate
+  for(let y=112;y<h;y+=2){const d=(y-112)/(h-112);r(mixC('#141c3a','#05070f',d),0,y,w,2);for(let i=0;i<w/6;i++){const x=(i*6+hsh(i+y)*8+Math.sin(T+i+y)*2)%w,near=Math.abs(x-mx)<4+d*26;if(hsh(i+y*.3+(T*2|0)*.17)<(near?.7:.08))r(near?'#f6e8b8':'#3a4a7a',x,y,1+d*5,1)}}
+  // lag 2: odde med fyrtårn og lyskjegle (middels fart)
+  const o2=w*.08-T*2.2;pg('#0a0c1c',[[o2-60,112],[o2-20,100],[o2+20,96],[o2+48,98],[o2+80,108],[o2+110,112]]);r('#0a0c1c',o2+24,72,7,26);r('#0a0c1c',o2+22,70,11,3);
+  const lb=T*1.2,lx=o2+27.5,ly=74;b.save();b.globalAlpha=.16+.08*Math.sin(lb*2);b.fillStyle='#fff2c0';b.beginPath();b.moveTo(lx,ly);b.lineTo(lx+Math.cos(lb)*220,ly-14+Math.sin(lb)*6);b.lineTo(lx+Math.cos(lb)*220,ly+10+Math.sin(lb)*6);b.fill();b.restore();r(Math.cos(lb)>0?'#fff6c8':'#d8b860',o2+25,73,5,3);
+  // lag 3: steiner og palmer i forgrunnen (raskest), blader som vaier
+  const o3=w*.9-T*5.5;pg('#05060c',[[o3-80,h],[o3-60,150],[o3-30,142],[o3+10,146],[o3+50,140],[o3+90,152],[o3+120,h]]);palm(o3-30,146,1,T,'#05060c');palm(o3+40,142,.82,T+1,'#05060c');palm(o3+150,158,1.15,T+2,'#05060c');
+  for(let i=0;i<8;i++){const x=(hsh(i+30)*w+T*3)%w,y=120+hsh(i+30.5)*40;if(Math.sin(T*3+i*2)>.4)r('#d8ff9a',x,y,1,1)}}
+ // ---- Scene 2: skipet i stormen (lyn, regn, tre bølgelag) ----
  function ship(x,y,T,a=1,sil){const hv=!sil&&HV,yy=hv?havY(HV,x,.545)+2:y+wv(x,T+1.4,a*.8),sl=hv?(havY(HV,x+14,.545)-havY(HV,x-14,.545))/28*.6:(wv(x+8,T+1.4,a*.8)-wv(x-8,T+1.4,a*.8))/16,C=k=>sil||k;
-  b.save();b.translate(x,yy-2);b.rotate(Math.atan(sl));
-  const poly=(c,P)=>{b.fillStyle=c;b.beginPath();P.forEach((p,i)=>i?b.lineTo(p[0],p[1]):b.moveTo(p[0],p[1]));b.fill()},ln=(P)=>{b.beginPath();P.forEach((p,i)=>i?b.lineTo(p[0],p[1]):b.moveTo(p[0],p[1]));b.stroke()};
+  b.save();b.translate(x,yy-2);b.rotate(Math.atan(sl));const ln=(P)=>{b.beginPath();P.forEach((p,i)=>i?b.lineTo(p[0],p[1]):b.moveTo(p[0],p[1]));b.stroke()};
   const M=[[18,50],[0,58],[-18,48]],bw=Math.sin(T*2.3)*1.2;
   b.strokeStyle=C('#3a3028');b.lineWidth=.7;ln([[50,-20],[18,-60]]);ln([[18,-60],[0,-68],[-18,-58],[-38,-12]]);ln([[42,-17],[18,-48]]);M.forEach(([mx,H])=>{ln([[mx,-10-H],[mx-7,-10]]);ln([[mx,-10-H],[mx+7,-10]])});
   M.forEach(([mx,H])=>{r(C('#2a1c10'),mx-1,-10-H,2,H)});
-  M.forEach(([mx,H],i)=>{poly(C('#ddd0ac'),[[mx-1,-14],[mx-1,-6-H+8],[mx-15,-H+2+bw],[mx-17+bw,-14]]);if(!sil){poly('#b4a682',[[mx-9,-15],[mx-10,-H+5],[mx-15,-H+2+bw],[mx-17+bw,-14]]);r('#c8bc98',mx-15,-30,13,1)}
-   poly(C('#e8dcb8'),[[mx-1,-10-H],[mx-1,-H],[mx-12,-H+1]])});
-  poly(C('#e6dab6'),[[17,-50],[48,-20],[24,-13]]);poly(C('#d8cca6'),[[17,-38],[38,-17],[20,-13]]);if(!sil)poly('#b8aa86',[[30,-30],[48,-20],[24,-13]]);
-  r(C('#2a1c10'),34,-14,16,1);
-  poly(C('#1a120e'),[[-38,-13],[-30,-12],[0,-9],[28,-11],[40,-16],[36,-8],[27,2],[-28,2],[-37,-5]]);
-  if(!sil){poly('#5a1610',[[-33,-1],[30,-1],[27,2],[-28,2]]);b.strokeStyle='#8a6a40';b.lineWidth=1;ln([[-38,-13],[-30,-12],[0,-9],[28,-11],[40,-16]]);r('#4a3020',-12,-15,14,5);r(Math.sin(T*4)>-.6?'#ffd27a':'#5a3a20',-8,-14,3,2);for(let i=0;i<6;i++)r(Math.sin(T*2.7+i*1.9)>-.3?'#ffcc66':'#3a2814',-24+i*9,-6,2,2);
-   const fl=Math.sin(T*9);poly('#a82820',[[0,-68],[7,-67+fl],[7,-64+fl],[0,-65]]);const lg=.6+.4*Math.sin(T*7);b.fillStyle=`rgba(255,200,90,${.35*lg})`;b.beginPath();b.arc(-37,-14,4,0,7);b.fill();r('#ffd890',-38,-15,2,2)}
+  M.forEach(([mx,H])=>{pg(C('#ddd0ac'),[[mx-1,-14],[mx-1,-6-H+8],[mx-15,-H+2+bw],[mx-17+bw,-14]]);if(!sil){pg('#b4a682',[[mx-9,-15],[mx-10,-H+5],[mx-15,-H+2+bw],[mx-17+bw,-14]]);r('#c8bc98',mx-15,-30,13,1)}
+   pg(C('#e8dcb8'),[[mx-1,-10-H],[mx-1,-H],[mx-12,-H+1]])});
+  pg(C('#e6dab6'),[[17,-50],[48,-20],[24,-13]]);pg(C('#d8cca6'),[[17,-38],[38,-17],[20,-13]]);if(!sil)pg('#b8aa86',[[30,-30],[48,-20],[24,-13]]);
+  r(C('#2a1c10'),34,-14,16,1);pg(C('#1a120e'),[[-38,-13],[-30,-12],[0,-9],[28,-11],[40,-16],[36,-8],[27,2],[-28,2],[-37,-5]]);
+  if(!sil){pg('#5a1610',[[-33,-1],[30,-1],[27,2],[-28,2]]);b.strokeStyle='#8a6a40';b.lineWidth=1;ln([[-38,-13],[-30,-12],[0,-9],[28,-11],[40,-16]]);r('#4a3020',-12,-15,14,5);r(Math.sin(T*4)>-.6?'#ffd27a':'#5a3a20',-8,-14,3,2);for(let i=0;i<6;i++)r(Math.sin(T*2.7+i*1.9)>-.3?'#ffcc66':'#3a2814',-24+i*9,-6,2,2);
+   const fl=Math.sin(T*9);pg('#a82820',[[0,-68],[7,-67+fl],[7,-64+fl],[0,-65]]);const lg=.6+.4*Math.sin(T*7);b.fillStyle=`rgba(255,200,90,${.35*lg})`;b.beginPath();b.arc(-37,-14,4,0,7);b.fill();r('#ffd890',-38,-15,2,2)}
   b.restore();if(!sil&&sl>.06){for(let i=0;i<14;i++){const k=(T*3+i*.37)%1;r('rgba(230,240,250,'+(1-k)+')',x+36+i%4*3+k*10,yy-8-k*14+((i*5)%7),2,1)}}}
- // Scene 2: professoren (samme pikselfigur som i spillet) står i arbeidsrommet og studerer det gamle kartet med lupe.
- // Kameraet glir sakte inn mot kartet. Det lysende sirene-tegnet på kartet åpner det hemmelige kompass-spillet.
- function study(w,h,T){const cx=w/2,k=1+Math.min(1,Math.max(0,(T-8)/8))*.14;b.save();b.translate(cx,140);b.scale(k,k);b.translate(-cx,-140);
-  const pg=(c,P)=>{b.fillStyle=c;b.beginPath();P.forEach((p,i)=>i?b.lineTo(p[0],p[1]):b.moveTo(p[0],p[1]));b.fill()};
+ function storm(w,h,T,fl){const L=b.createLinearGradient(0,0,0,h);L.addColorStop(0,fl?'#3a4260':'#070914');L.addColorStop(.55,fl?'#5a6488':'#1a2440');L.addColorStop(1,'#0a0a14');b.fillStyle=L;b.fillRect(0,0,w,h);
+  const C=fl?[['#4a5274','#6a7498','#9aa4c8'],['#3a4264','#5a6488','#8a94b8']]:[['#0b0f1c','#141a2c','#1f2840'],['#10162a','#1a2236','#262f48']];
+  for(let i=0;i<6;i++){const s=34+hsh(i)*16,W=w+s*4,cx=((hsh(i+.4)*W+T*3)%W)-s*2;cloud(b,cx,10+hsh(i+.8)*10,s,i+1,C[0])}
+  for(let i=0;i<6;i++){const s=22+hsh(i+20)*12,W=w+s*4,cx=((hsh(i+20.4)*W+T*7)%W)-s*2;cloud(b,cx,34+hsh(i+20.8)*16,s,i+21,C[1])}
+  // klippe med fyrlykt langt bak (parallakse)
+  const o=w*.86-T*1.5;pg(fl?'#2a3048':'#080a14',[[o-30,100],[o-10,70],[o+8,64],[o+30,74],[o+60,100]]);r(fl?'#2a3048':'#080a14',o+4,52,5,14);r(Math.sin(T*2.4)>0?'#fff0a0':'#5a4a20',o+4,52,5,3);
+  b.globalAlpha=.6;for(let i=0;i<4;i++){const s=14+hsh(i+40)*8,W=w+s*4,cx=((hsh(i+40.4)*W+T*14)%W)-s*2;cloud(b,cx,60+hsh(i+40.8)*14,s,i+41,C[0])}b.globalAlpha=1;waves(w,h,T,1,0,3,fl)}
+ // ---- Scene 3: arbeidsrommet. Professoren studerer kartet med lupe. Kameraet glir inn. Det lysende tegnet på kartet er hemmeligheten. ----
+ function study(w,h,T){const cx=w/2,k=1+Math.min(1,Math.max(0,(T-S[2])/(S[3]-S[2])))*.14;b.save();b.translate(cx,140);b.scale(k,k);b.translate(-cx,-140);
   r('#1c120c',-30,-30,w+60,h+60);for(let x=-30;x<w+30;x+=14)r('#22160e',x,96,1,60);
-  // bokhyller: bøker med ulik høyde, tykkelse og skinnfarge, gullbånd på ryggen, noen lener seg
   const BC=['#5a1a14','#1e3a2a','#1c2a44','#6a4a24','#2e1c14','#4a2a3a','#3a3a24','#7a5a30'];
   for(const [y0,y1] of [[6,44],[50,88]]){r('#2a180c',-30,y0-4,w+60,y1-y0+5);let x=-28,i=y0;while(x<w+28){const bw=2+(hsh(i)*3|0),bh=(y1-y0)*(.6+hsh(i+.3)*.36),c=BC[(hsh(i+.7)*8)|0];
     if(hsh(i+.9)<.06){pg(c,[[x,y1],[x+2,y1],[x+9,y1-bh+3],[x+7,y1-bh+2]]);x+=9;i++;continue}
     r(c,x,y1-bh,bw,bh);r('rgba(255,255,255,.1)',x,y1-bh,1,bh);r('rgba(0,0,0,.25)',x+bw-1,y1-bh,1,bh);if(bh>16){r('#b8903a',x,y1-bh+3,bw,1);r('#b8903a',x,y1-6,bw,1)}x+=bw;i++}
    r('#4a2c14',-30,y1,w+60,3);r('#6a4220',-30,y1,w+60,1)}
-  // globus på øverste hylle
   const gx=cx+46;r('#2a180c',gx-7,24,14,20);b.fillStyle='#3a6a8a';b.beginPath();b.arc(gx,32,6,0,7);b.fill();r('#6a8a4a',gx-3,29,3,3);r('#6a8a4a',gx+1,33,2,3);r('#b8903a',gx-1,38,2,5);r('#b8903a',gx-4,43,8,1);
-  // lampelys (grønn bankierlampe) som flakker litt
+  // vindu med regn og månelys til venstre, skipsur som tikker
+  const wx=cx-78;r('#0e1424',wx,98,26,34);r('#3a2414',wx-2,96,30,2);r('#3a2414',wx-2,132,30,3);r('#3a2414',wx+12,98,2,34);r('#3a2414',wx,114,26,2);for(let i=0;i<6;i++){const y=98+((T*40+i*13)%34);r('rgba(170,190,230,.5)',wx+3+i*4,y,1,3)}
+  const ux=cx-46;b.fillStyle='#b8903a';b.beginPath();b.arc(ux,110,6,0,7);b.fill();b.fillStyle='#f0e6c8';b.beginPath();b.arc(ux,110,4.6,0,7);b.fill();b.strokeStyle='#2a1a0a';b.lineWidth=.8;b.beginPath();b.moveTo(ux,110);b.lineTo(ux+Math.cos(T*6.28/4-1.57)*3.8,110+Math.sin(T*6.28/4-1.57)*3.8);b.moveTo(ux,110);b.lineTo(ux+2.4,108.6);b.stroke();
   const fl=.85+.15*Math.sin(T*9)*Math.sin(T*3.1),G=b.createRadialGradient(cx+30,132,2,cx+30,132,100);G.addColorStop(0,`rgba(255,205,120,${.5*fl})`);G.addColorStop(1,'rgba(0,0,0,0)');b.fillStyle=G;b.fillRect(-30,-30,w+60,h+60);
-  // professoren bak pulten (pikselfiguren fra spillet, 1,9 x)
   const X0=X;X=b;try{b.save();b.translate(cx-21,178);b.scale(1.9,1.9);profPix(0,0);b.restore()}finally{X=X0}
-  // pulten
   r('#5a3418',-30,146,w+60,2);r('#3a200e',-30,148,w+60,3);r('#2a1608',-30,151,w+60,40);for(const dx of[-40,0,40]){r('#22120a',cx+dx-16,156,32,14);r('#c8a048',cx+dx-2,162,4,2)}
-  // kartet: pergament med kyst, skraverte hav, rød rute, X og et lysende sirene-tegn
   pg('#d8c49a',[[cx-30,147],[cx-25,137],[cx+22,137],[cx+27,147]]);pg('#b8a070',[[cx-30,147],[cx+27,147],[cx+26,145],[cx-29,145]]);
   b.strokeStyle='#7a5a30';b.lineWidth=1;b.beginPath();b.moveTo(cx-22,139);[[-18,141],[-14,140],[-12,143],[-6,142],[-2,145]].forEach(([dx,y])=>b.lineTo(cx+dx,y));b.stroke();
   for(let i=0;i<6;i++)r('#a89060',cx-4+i*4,139+(i%2),2,1);for(let i=0;i<5;i++)r('#a8302a',cx-16+i*4,143-i*.6,2,1);r('#a8302a',cx+3,140,1,1);r('#a8302a',cx+4,141,1,1);r('#a8302a',cx+4,140,1,1);r('#a8302a',cx+3,141,1,1);
   r('#6a4a28',cx+18,141,1,4);r('#6a4a28',cx+16,143,5,1);
   const gl=.5+.5*Math.sin(T*5);r(`rgb(255,${200+gl*55|0},80)`,cx+10,139,3,3);if(gl>.5){b.fillStyle='rgba(255,240,150,.35)';b.beginPath();b.arc(cx+11.5,140.5,4,0,7);b.fill()}
-  // lupe i hånda, holdt over kartet
   b.strokeStyle='#5a3a1a';b.lineWidth=1.5;b.beginPath();b.moveTo(cx-19,149);b.lineTo(cx-14,144);b.stroke();b.fillStyle='rgba(200,230,255,.3)';b.beginPath();b.arc(cx-11,141,4,0,7);b.fill();b.strokeStyle='#c8a048';b.lineWidth=1;b.stroke();r('#fff',cx-13,139,1,1);
-  // lampe, blekkhus og fjærpenn
   r('#b8862a',cx+26,144,12,2);r('#a87a24',cx+31,132,2,12);pg('#1e5a3a',[[cx+22,134],[cx+26,128],[cx+38,128],[cx+42,134]]);r('#3a8a5a',cx+26,128,12,1);r('#fff0b0',cx+27,134,10,1);
   r('#1a1a2a',cx+40,141,4,4);b.strokeStyle='#e8e0d0';b.beginPath();b.moveTo(cx+42,141);b.lineTo(cx+48,132);b.stroke();
-  // støv som svever i lampelyset
   for(let i=0;i<14;i++)r(`rgba(255,232,176,${.3+.3*Math.sin(T*2+i)})`,cx+18+Math.sin(T*.3+i*1.7)*22,96+((i*13+T*3)%40),1,1);
   b.restore()}
- // Scene 3: det sunkne tempelet. Ekte fisk: en stim sardiner, to store revfisker, tang som vaier, bobler.
- function fish(x,y,s,d,c1,c2,c3,ph){const pg=(c,P)=>{b.fillStyle=c;b.beginPath();P.forEach((p,i)=>i?b.lineTo(p[0],p[1]):b.moveTo(p[0],p[1]));b.fill()};b.save();b.translate(x,y);b.scale(d*s,s);const tw=Math.sin(ph*6)*1.4;
+ // ---- Scene 4: jungeltempelet i skumringen. Fjell i dis, trekroner, tempel med sirene-relieff og fakler, lianer i forgrunnen. ----
+ function temple(w,h,T){const u=T-S[3],L=b.createLinearGradient(0,0,0,120);L.addColorStop(0,'#2a1240');L.addColorStop(.5,'#a8384a');L.addColorStop(1,'#f0904a');b.fillStyle=L;b.fillRect(0,0,w,h);
+  for(let i=0;i<5;i++){const s=16+hsh(i+90)*12,W=w+s*8;cloud(b,((hsh(i+90.4)*W+T*2)%W)-s*4,18+hsh(i+90.8)*30,s,i+91,['#f0a060','#b84a5a','#4a2050'],.35,1.8)}
+  const p1=-u*1,p2=-u*3,p3=-u*7,p4=-u*16;
+  // fjell og dis
+  b.fillStyle='#5a2a52';b.beginPath();b.moveTo(0,h);for(let x=0;x<=w+8;x+=8)b.lineTo(x,82-14*Math.sin((x-p1)*.02)-8*Math.sin((x-p1)*.051+1));b.lineTo(w,h);b.fill();r('rgba(240,150,110,.25)',0,84,w,10);
+  // fjern jungel (avrundede trekroner)
+  b.fillStyle='#2a1a30';b.beginPath();b.moveTo(0,h);for(let x=0;x<=w+6;x+=6)b.lineTo(x,104-6*Math.abs(Math.sin((x-p2)*.06))-4*Math.abs(Math.sin((x-p2)*.13)));b.lineTo(w,h);b.fill();
+  // tempelet (mellomlaget, glir sakte), skalert så det passer smal mobilskjerm
+  const k=Math.min(1,w/170),tx0=w*.56+p2*.25,ty=150;b.save();b.translate(tx0,ty);b.scale(k,k);
+  r('#3a2a34',-70,-12,140,14);for(let q=0;q<4;q++)r(q%2?'#4a3842':'#54404a',-60+q*8,-26-q*12,120-q*16,13);for(let q=0;q<4;q++)r('rgba(0,0,0,.18)',-60+q*8,-14-q*12,120-q*16,1);
+  r('#5a464e',-6,-62,12,50);for(let q=0;q<9;q++)r('#3a2a32',-6,-60+q*5.4,12,1);
+  r('#2a1c24',-18,-86,36,36);pg('#54404a',[[-26,-86],[0,-100],[26,-86]]);r('#120a10',-8,-74,16,24);
+  b.fillStyle='#6a5460';b.beginPath();b.arc(0,-92,2.4,0,7);b.fill();pg('#6a5460',[[-2,-90],[2,-90],[3,-86],[6,-84],[3,-85],[0,-87],[-3,-85],[-6,-84],[-3,-86]]);
+  const gw=.4+.3*Math.sin(T*3);b.fillStyle=`rgba(120,240,255,${gw*.5})`;b.beginPath();b.arc(0,-62,9,0,7);b.fill();
+  for(let q=0;q<14;q++){const vx=-30+((q*13)%60),vy=-96+((q*7)%70);r(q%2?'#2a5a2a':'#3a6a32',vx,vy,2,4+((q*5)%6));r('#244a24',vx+1,vy+4,1,3)}
+  for(const fx of[-24,24]){r('#2a1c14',fx-1,-50,2,12);const f=Math.sin(T*13+fx)*.8;pg('#ffb040',[[fx-2,-50],[fx+f,-57-Math.abs(f)*2],[fx+2,-50]]);r('#fff0a0',fx-.5,-52,1,2);const FG=b.createRadialGradient(fx,-52,1,fx,-52,24);FG.addColorStop(0,'rgba(255,170,70,.4)');FG.addColorStop(1,'rgba(255,120,40,0)');b.fillStyle=FG;b.fillRect(fx-24,-76,48,48);
+   for(let i=0;i<4;i++){const q=(T*1.4+i*.25+fx)%1;r(`rgba(255,200,90,${1-q})`,fx+Math.sin(i+T*4)*2,-56-q*16,1,1)}}
+  // professoren går fram mot trappa
+  const px=-78+Math.min(1,u/(S[4]-S[3]))*52,X0=X;X=b;try{b.save();b.translate(px,2);b.scale(1.15,1.15);profPix(u+.01,0);b.restore()}finally{X=X0}
+  b.restore();
+  // nær jungel: palmer og bregner i silhuett ved kantene (raskere lag)
+  for(let i=0;i<3;i++){const x=((i*83-p3)%(w+120)+w+120)%(w+120)-60;palm(x,h-8,.9+hsh(i+5)*.4,T+i,'#140a16')}
+  // flaggermus og ildfluer
+  for(let i=0;i<3;i++){const x=(hsh(i+70)*w+u*(14+i*5))%(w+20)-10,y=30+i*12+Math.sin(u*2+i)*4,f=Math.sin(T*18+i)>0;b.fillStyle='#1a0e1a';b.beginPath();b.moveTo(x-4,y-(f?3:-1));b.lineTo(x,y);b.lineTo(x+4,y-(f?3:-1));b.lineTo(x,y+1);b.fill()}
+  for(let i=0;i<16;i++){const x=(hsh(i+50)*w+Math.sin(T*.7+i)*10+w*4)%w,y=110+hsh(i+50.5)*60+Math.sin(T+i)*4;if(Math.sin(T*2.6+i*1.7)>.2)r('#e8ff7a',x,y,1,1)}
+  // lianer i forgrunnen (raskest) med små runde blad
+  for(let i=0;i<3;i++){const x=((i*131-p4)%(w+160)+w+160)%(w+160)-80,len=40+hsh(i+33)*50,sw=Math.sin(T*.8+i)*5;b.strokeStyle='#0a060a';b.lineWidth=1.6;b.beginPath();b.moveTo(x,0);b.quadraticCurveTo(x+6,len*.6,x+sw,len);b.stroke();for(let q=10;q<len;q+=9){b.fillStyle='#0c080c';b.beginPath();b.ellipse(x+sw*q/len+(q%18?3:-3),q,3,1.6,q%18?.5:-.5,0,7);b.fill()}}
+  // bregner langs bakken foran
+  b.fillStyle='#070407';b.fillRect(0,h-10,w,10);for(let i=0;i<w;i+=7){const H=8+hsh(i+7)*10,sw=Math.sin(T*1.3+i)*1.5;pg('#070407',[[i-4,h-9],[i+sw,h-9-H],[i+4,h-9]])}}
+ // ---- Scene 5: det sunkne tempelet. Stim av sardiner, revfisker, tang, bobler. ----
+ function fish(x,y,s,d,c1,c2,c3,ph){b.save();b.translate(x,y);b.scale(d*s,s);const tw=Math.sin(ph*6)*1.4;
   pg(c1,[[-9,tw*.3],[-13,-4+tw],[-11.5,tw*.3],[-13,4+tw]]);pg(c1,[[-9,0],[-6,-3.4],[0,-4.4],[5,-3.2],[8,-1],[8.6,.4],[6,2.6],[0,3.6],[-6,2.8]]);pg(c2,[[-8,.8],[0,1.4],[7,.8],[6,2.6],[0,3.6],[-6,2.8]]);
   if(c3)for(const sx of[-4,0,3.4])pg(c3,[[sx,-4],[sx+1.6,-4],[sx+1,3.2],[sx-.6,3.2]]);pg(c1,[[-3,-4.2],[0,-7],[3,-4.2]]);pg(c1,[[0,2],[-2,5+tw*.5],[1.5,3]]);
   r('#fff',5,-1.4,2,2);r('#000',6,-1,1,1);b.restore()}
- function under(w,h,T){const L=b.createLinearGradient(0,0,0,h);L.addColorStop(0,'#1a6a8a');L.addColorStop(.5,'#0a3a5a');L.addColorStop(1,'#03121e');b.fillStyle=L;b.fillRect(0,0,w,h);const cx=w/2;
-  b.globalAlpha=.13;for(let i=0;i<7;i++){b.fillStyle='#bfefff';b.beginPath();const x=cx-100+i*32+Math.sin(T*.6+i)*6;b.moveTo(x,0);b.lineTo(x+10,0);b.lineTo(x+40,h*.8);b.lineTo(x+20,h*.8);b.fill()}b.globalAlpha=1;
-  // stim av sardiner som svinger sammen
-  const scx=(((T-16)*8+20)%(w+90))-45,scy=36+Math.sin(T*.5)*8;for(let i=0;i<30;i++){const x=scx+(hsh(i)-.5)*40+Math.sin(T*1.3+i)*2,y=scy+(hsh(i+.5)-.5)*18+Math.sin(T*2+i*.7)*1.5;r('#4a6a80',x,y,5,1);r('#c8dce6',x,y+1,5,1);r('#8aa8b8',x-2,y-(i%2),2,3);if(Math.sin(T*3+i)>.92)r('#fff',x+2,y+1,1,1)}
-  // tempelruinen: søyler med riller og sprekker, en brukket søyle, tang og koraller
+ function under(w,h,T){const u=T-S[4],L=b.createLinearGradient(0,0,0,h);L.addColorStop(0,'#1a6a8a');L.addColorStop(.5,'#0a3a5a');L.addColorStop(1,'#03121e');b.fillStyle=L;b.fillRect(0,0,w,h);const cx=w/2-u*1.2;
+  b.globalAlpha=.13;for(let i=0;i<7;i++){b.fillStyle='#bfefff';b.beginPath();const x=w/2-100+i*32+Math.sin(T*.6+i)*6;b.moveTo(x,0);b.lineTo(x+10,0);b.lineTo(x+40,h*.8);b.lineTo(x+20,h*.8);b.fill()}b.globalAlpha=1;
+  // fjerne ruiner i blått (parallakse)
+  for(let i=0;i<4;i++){const x=((i*90-u*.6)%(w+80)+w+80)%(w+80)-40;r('#0e3a50',x,90,10,60);r('#0e3a50',x-3,88,16,4)}
+  const scx=((u*8+20)%(w+90))-45,scy=36+Math.sin(T*.5)*8;for(let i=0;i<30;i++){const x=scx+(hsh(i)-.5)*40+Math.sin(T*1.3+i)*2,y=scy+(hsh(i+.5)-.5)*18+Math.sin(T*2+i*.7)*1.5;r('#4a6a80',x,y,5,1);r('#c8dce6',x,y+1,5,1);r('#8aa8b8',x-2,y-(i%2),2,3);if(Math.sin(T*3+i)>.92)r('#fff',x+2,y+1,1,1)}
   r('#16302e',cx-62,96,124,60);for(let i=0;i<5;i++){const px=cx-56+i*24,top=i==3?92:70;r('#2a4a46',px,top,12,86-top+70);for(let k=2;k<12;k+=3)r('#203c38',px+k,top,1,86-top+70);r('#3a5a56',px-2,top-4,16,5);if(i==3){r('#2a4a46',px+14,148,14,6);r('#3a5a56',px+12,146,4,8)}if(i==1)r('#0e201e',px+5,96,1,20)}r('#2a4a46',cx-64,60,96,7);r('#0a1818',cx-10,106,20,50);
   const p=.6+.4*Math.sin(T*2.2),G=b.createRadialGradient(cx,94,2,cx,94,42);G.addColorStop(0,`rgba(120,240,255,${p})`);G.addColorStop(1,'rgba(0,80,120,0)');b.fillStyle=G;b.fillRect(cx-42,52,84,84);r('#bff8ff',cx-3,90,6,8);
-  // store revfisker i forgrunnen
-  fish((((T-16)*7+40)%(w+60))-30,82+Math.sin(T*.7)*4,1.1,1,'#e8742a','#ffd0a0','#f8f0e8',T);fish(w-((((T-16)*6)+10)%(w+60))+30,120+Math.sin(T*.9+1)*3,1,-1,'#2a5ab8','#f2d040',null,T+1);
-  // bobler
+  fish(((u*7+40)%(w+60))-30,82+Math.sin(T*.7)*4,1.1,1,'#e8742a','#ffd0a0','#f8f0e8',T);fish(w-((u*6+10)%(w+60))+30,120+Math.sin(T*.9+1)*3,1,-1,'#2a5ab8','#f2d040',null,T+1);
   for(let i=0;i<16;i++){const y=h-((T*18+i*29)%h),x=cx-30+(i*17)%60+Math.sin(T*3+i)*2;r('#cfffff',x,y,1,1);if(i%4==0)r('rgba(200,255,255,.5)',x+1,y-1,1,1)}
-  // havbunn med sand, koraller og tang som vaier i strømmen
   r('#1a2a24',0,h-16,w,16);for(let x=0;x<w;x+=3)r(hsh(x)>.5?'#24382e':'#1e3028',x,h-16+(hsh(x+.3)*3|0),3,2);
-  for(let i=0;i<w;i+=11){const H=26+hsh(i)*30;for(let s2=0;s2<H;s2+=2){const sw=Math.sin(T*1.2+s2*.12+i)*s2*.12;r(s2%6<2?'#2a7a4a':'#1e6a3e',i+sw,h-16-s2,2,2);if(s2%8==0)r('#2a8a52',i+sw+(s2%16?2:-2),h-16-s2,2,1)}}
+  const ox=-u*3;for(let i=-11;i<w+11;i+=11){const ii=i+((ox%11)+11)%11,H=26+hsh(Math.round((i-ox)/11))*30;for(let s2=0;s2<H;s2+=2){const sw=Math.sin(T*1.2+s2*.12+i)*s2*.12;r(s2%6<2?'#2a7a4a':'#1e6a3e',ii+sw,h-16-s2,2,2);if(s2%8==0)r('#2a8a52',ii+sw+(s2%16?2:-2),h-16-s2,2,1)}}
   for(let i=5;i<w;i+=23){r('#c8586a',i,h-22,2,6);r('#c8586a',i-2,h-20,2,3);r('#c8586a',i+2,h-21,2,3);r('#e8889a',i,h-23,2,1)}}
+ // ---- Scene 6: solnedgang og tittel ----
  function finale(w,h,T){const L=b.createLinearGradient(0,0,0,h);L.addColorStop(0,'#1a0a2a');L.addColorStop(.55,'#c8463a');L.addColorStop(.75,'#ffb060');L.addColorStop(1,'#2a1020');b.fillStyle=L;b.fillRect(0,0,w,h);const cx=w/2;for(let i=0;i<5;i++){const s=16+hsh(i+60)*14,W=w+s*8;cloud(b,((hsh(i+60.4)*W+T*2.5)%W)-s*4,26+hsh(i+60.8)*44,s,i+61,['#ffb070','#c8566a','#5a2a4e'],.35,1.8)}
   const SG=b.createRadialGradient(cx,118,10,cx,118,70);SG.addColorStop(0,'rgba(255,230,150,.55)');SG.addColorStop(1,'rgba(255,160,90,0)');b.fillStyle=SG;b.fillRect(0,40,w,90);for(let y=-22;y<=9;y++){const ww=Math.sqrt(484-y*y)|0;r(mixC('#fff0a0','#ffa850',(y+22)/31),cx-ww,118+y,ww*2,1)}
-  // havet: solgate som glitrer, rosa blink utenfor, mørkere mot forgrunnen
-  for(let y=128;y<h;y+=2){const d=(y-128)/(h-128),cw=6+d*36;r(mixC('#7a3444','#22101c',d),0,y,w,2);for(let i=0;i<w/5;i++){const dir=hsh(i+y*.1)>.5?1:-1,x=((i*9.3+hsh(y+i)*30+T*(3+d*6)*dir)%(w+20)+w+20)%(w+20)-10,len=1+hsh(i*3+y)*(3+d*8),near=Math.abs(x-cx)<cw;if(hsh(i+y*.37+(T*3|0)*.13)<(near?.75:.25))r(near?(hsh(i+y)>.5?'#ffe08a':'#ffb060'):'#a8505e',x,y,len,1)}}b.save();b.translate(Math.max(26,cx-w*.34),131);b.scale(.5,.5);ship(0,0,T,.25,'#1a0a18');b.restore();for(let i=0;i<3;i++)gull(b,(i*41+T*8)%(w+30)-15,34+i*11+Math.sin(T+i)*3,.45,T+i*1.1,1,'#2a1020')}
+  for(let y=128;y<h;y+=2){const d=(y-128)/(h-128),cw=6+d*36;r(mixC('#7a3444','#22101c',d),0,y,w,2);for(let i=0;i<w/5;i++){const dir=hsh(i+y*.1)>.5?1:-1,x=((i*9.3+hsh(y+i)*30+T*(3+d*6)*dir)%(w+20)+w+20)%(w+20)-10,len=1+hsh(i*3+y)*(3+d*8),near=Math.abs(x-cx)<cw;if(hsh(i+y*.37+(T*3|0)*.13)<(near?.75:.25))r(near?(hsh(i+y)>.5?'#ffe08a':'#ffb060'):'#a8505e',x,y,len,1)}}
+  b.save();b.translate(Math.max(26,cx-w*.34)+(T-S[5])*.8,131);b.scale(.5,.5);ship(0,0,T,.25,'#1a0a18');b.restore();for(let i=0;i<3;i++)gull(b,(i*41+T*8)%(w+30)-15,34+i*11+Math.sin(T+i)*3,.45,T+i*1.1,1,'#2a1020')}
  // ---- hemmelig minispill: tre kompassringer som skal peke mot nord ----
  function openPz(){paused=true;try{AC&&AC.suspend()}catch(e){}pz={rot:[2,1,3],won:0}}
  function drawPz(w,h){g.fillStyle='rgba(0,0,0,.82)';g.fillRect(0,0,w,h);const u=Math.min(w,h)/400,cx=w/2,cy=h/2;tx('The compass rose',cx,cy-150*u,22*u,'#ffd23f');tx('Tap the rings. All the arrows must point north ↑',cx,cy-122*u,12*u,'#f6ead0');
   [100,72,44].forEach((R,i)=>{g.strokeStyle=['#b8862a','#d8a63a','#f2c64a'][i];g.lineWidth=14*u;g.beginPath();g.arc(cx,cy,R*u,0,7);g.stroke();const a=pz.rot[i]*Math.PI/2-Math.PI/2;const ca=Math.cos(a),sa=Math.sin(a);g.fillStyle=pz.rot[i]?'#c0242a':'#2fae4a';g.beginPath();g.moveTo(cx+ca*(R+11)*u,cy+sa*(R+11)*u);g.lineTo(cx+(ca*(R-7)-sa*8)*u,cy+(sa*(R-7)+ca*8)*u);g.lineTo(cx+(ca*(R-7)+sa*8)*u,cy+(sa*(R-7)-ca*8)*u);g.fill()});
   tx('N',cx,cy-118*u+6*u,14*u,'#fff');if(!pz.won){tx(pz.rot.filter(v=>!v).length+' / 3 pointing north',cx,cy+122*u,12*u,'#9fd3ff');}if(pz.won)wrap(pz.won,cx,cy+135*u,13*u,w*.86,'#80ff90');else tx('Skip ⏭ closes',cx,cy+140*u,11*u,'rgba(255,255,255,.6)')}
- function tapPz(x,y,w,h){const u=Math.min(w,h)/400,d=Math.hypot(x-w/2,y-h/2)/u;if(pz.won){pz=null;pzSolved=1;paused=false;t=Math.max(t,16);try{AC&&AC.resume()}catch(e){}return}const i=d>86&&d<114?0:d>58&&d<86?1:d>30&&d<58?2:-1;if(i<0)return;pz.rot[i]=(pz.rot[i]+1)%4;if(i<2)pz.rot[i+1]=(pz.rot[i+1]+1)%4;try{inst('bell',76+i*4,AC.currentTime,.1,.1)}catch(e){}
+ function tapPz(x,y,w,h){const u=Math.min(w,h)/400,d=Math.hypot(x-w/2,y-h/2)/u;if(pz.won){pz=null;pzSolved=1;paused=false;try{AC&&AC.resume()}catch(e){}if(t<S[3]){t=S[3];mPlay(t)}return}const i=d>86&&d<114?0:d>58&&d<86?1:d>30&&d<58?2:-1;if(i<0)return;pz.rot[i]=(pz.rot[i]+1)%4;if(i<2)pz.rot[i+1]=(pz.rot[i+1]+1)%4;try{inst('bell',76+i*4,AC.currentTime,.1,.1)}catch(e){}
   if(pz.rot.every(v=>v==0)){pz.won='You found the secret of the intro! You start with 3 extra ⭐. Tap to continue.';try{localStorage.setItem('sirenHemmelig','1')}catch(e){}}}
  function tx(s,x,y,sz,col){g.font=`bold ${sz}px Georgia,serif`;g.textAlign='center';g.fillStyle='#000';g.fillText(s,x+2,y+2);g.fillStyle=col;g.fillText(s,x,y)}
  function wrap(s,x,y,sz,mw,col){g.font=`italic ${sz}px Georgia,serif`;const ws=s.split(' '),L=[''];ws.forEach(w=>{const tt=(L[L.length-1]+' '+w).trim();if(g.measureText(tt).width>mw)L.push(w);else L[L.length-1]=tt});L.forEach((l,i)=>{g.textAlign='center';g.fillStyle=col;g.fillText(l,x,y+i*sz*1.3)})}
+ // 90-tallslogo: gull med lys som glir over bokstavene
+ function logo(s,x,y,sz,a){g.save();g.globalAlpha=a;g.font=`bold ${sz}px Georgia,serif`;g.textAlign='center';const wd=g.measureText(s).width;g.fillStyle='#2a0a08';g.fillText(s,x+sz*.07,y+sz*.07);g.lineWidth=Math.max(2,sz*.12);g.strokeStyle='#3a1606';g.strokeText(s,x,y);
+  const G=g.createLinearGradient(0,y-sz,0,y);G.addColorStop(0,'#fff4b0');G.addColorStop(.45,'#f2b544');G.addColorStop(.55,'#b8741a');G.addColorStop(1,'#f8d070');g.fillStyle=G;g.fillText(s,x,y);
+  const sx=x-wd/2+((performance.now()/1600)%1.6)*wd,SH=g.createLinearGradient(sx-sz,0,sx+sz,0);SH.addColorStop(0,'rgba(255,255,255,0)');SH.addColorStop(.5,'rgba(255,255,255,.7)');SH.addColorStop(1,'rgba(255,255,255,0)');g.globalCompositeOperation='source-atop';g.fillStyle=SH;g.fillText(s,x,y);g.restore()}
  let secretBox=null,tapFx=null,pzSolved=0;
- function frame(ts){if(done||!c.isConnected)return;const dt=Math.min(.05,(ts-last)/1000||0);last=ts;if(t>=0&&!paused)t+=dt*(t>8&&t<16?.6:1);const d=Math.min(2,devicePixelRatio||1),w=c.clientWidth*d|0,h=c.clientHeight*d|0;if(c.width!=w||c.height!=h){c.width=w;c.height=h}
+ function frame(ts){if(done||!c.isConnected)return;const dt=Math.min(.05,(ts-last)/1000||0);last=ts;if(t>=0&&!paused)t+=dt;const d=Math.min(2,devicePixelRatio||1),w=c.clientWidth*d|0,h=c.clientHeight*d|0;if(c.width!=w||c.height!=h){c.width=w;c.height=h}
   const bar=Math.round(h*.13),vh=h-bar*2,BH=180,BW=Math.max(120,Math.round(BH*w/vh));if(B.width!=BW||B.height!=BH){B.width=BW;B.height=BH}
   g.fillStyle='#000';g.fillRect(0,0,w,h);const u=Math.min(w,h)/400;
   if(t<0){tx('Relic of the Sunken Siren',w/2,h/2-30*u,22*u,'#f2b544');const pl=`rgba(255,228,138,${.6+.4*Math.sin(ts/300)})`;if(go)tx('▶ Tap to start',w/2,h/2+10*u,16*u,pl);else{tx('Velg språk · Choose language',w/2,h/2+2*u,13*u,'#f6ead0');const lc=document.documentElement.lang||'no';[['🇳🇴 Norsk','no',w*.28],['🇬🇧 English','en',w*.72]].forEach(([s,k,x])=>{g.strokeStyle=k==lc?'#f2b544':'#8a6a3a';g.lineWidth=2*u;g.strokeRect(x-w*.2,h/2+12*u,w*.4,30*u);tx(s,x,h/2+27*u,15*u,k==lc?pl:'#d8c8a0')})}tx('Sound on 🔊',w/2,h/2+(go?40:72)*u,12*u,'#9fd3ff');requestAnimationFrame(frame);return}
-  const T=t,sc=T<8?0:T<16?1:T<24.5?2:3,fade=Math.min(1,Math.min(T-[0,8,16,24.5][sc],[8,16,24.5,DUR][sc]-T)/.8);secretBox=null;
-  if(sc==0){const fl=Math.sin(T*1.7)>.97||(T>3.2&&T<3.35);sea(BW,BH,T,1,fl);if(fl){const k=Math.floor(T*1.7/6.283)+(T<4?7:0);let x=BW*(.55+hsh(k)*.35),y=40;b.strokeStyle='#eef2ff';b.lineWidth=1;b.beginPath();b.moveTo(x,y);while(y<100){x+=(hsh(k+y)-.5)*12;y+=4+hsh(k+y*.3)*6;b.lineTo(x,y);if(hsh(k+y*.7)>.86){b.moveTo(x,y);b.lineTo(x+(hsh(y)-.5)*16,y+10);b.moveTo(x,y)}}b.stroke();b.fillStyle='rgba(200,215,255,.18)';b.fillRect(0,0,BW,BH)}ship(BW/2,124,T);seaFront(BW,BH,T);rainFx(b,BW,BH,T,70,-.3,1,fl?1:.8,118)}
-  else if(sc==1){study(BW,BH,T);secretBox=pzSolved?null:[BW/2+5,134,13,11]}else if(sc==2)under(BW,BH,T);else finale(BW,BH,T);
-  g.imageSmoothingEnabled=false;g.globalAlpha=Math.max(0,fade);g.drawImage(B,0,bar,w,vh);g.globalAlpha=1;{const u=Math.min(w,h)/400,EN=document.documentElement.lang=='en';if(tapFx){const a=1-(t-tapFx.t)/2.2;if(a<=0)tapFx=null;else{g.strokeStyle='rgba(255,255,255,'+a+')';g.lineWidth=2*u;g.beginPath();g.arc(tapFx.x,tapFx.y,(1-a)*40*u+6*u,0,7);g.stroke();g.globalAlpha=1}}if(t>=16&&!pz&&!pzSolved){g.font='bold '+(13*u)+'px Georgia,serif';g.textAlign='left';g.fillStyle='#9fd3ff';g.fillText('⏮',12*u,26*u)}}
-  // filmstriper med tekst
+  const T=t;let sc=0;while(sc<5&&T>=S[sc+1])sc++;const s0=S[sc],s1=sc==5?DUR:S[sc+1],fade=Math.min(1,Math.min(T-s0,s1-T)/.7);secretBox=null;
+  if(sc==0)night(BW,BH,T);
+  else if(sc==1){const fl=Math.sin(T*1.7)>.97||(T>S[1]+3.2&&T<S[1]+3.35);storm(BW,BH,T,fl);if(fl){const k=Math.floor(T*1.7/6.283)+7;let x=BW*(.55+hsh(k)*.35),y=40;b.strokeStyle='#eef2ff';b.lineWidth=1;b.beginPath();b.moveTo(x,y);while(y<100){x+=(hsh(k+y)-.5)*12;y+=4+hsh(k+y*.3)*6;b.lineTo(x,y);if(hsh(k+y*.7)>.86){b.moveTo(x,y);b.lineTo(x+(hsh(y)-.5)*16,y+10);b.moveTo(x,y)}}b.stroke();b.fillStyle='rgba(200,215,255,.18)';b.fillRect(0,0,BW,BH)}ship(BW/2,124,T);waves(BW,BH,T,1,3,5);rainFx(b,BW,BH,T,70,-.3,1,fl?1:.8,118)}
+  else if(sc==2){study(BW,BH,T);secretBox=pzSolved?null:[BW/2+5,134,13,11]}else if(sc==3)temple(BW,BH,T);else if(sc==4)under(BW,BH,T);else finale(BW,BH,T);
+  g.imageSmoothingEnabled=false;g.globalAlpha=Math.max(0,fade);g.drawImage(B,0,bar,w,vh);g.globalAlpha=1;
+  if(tapFx){const a=1-(t-tapFx.t)/2.2;if(a<=0)tapFx=null;else{g.strokeStyle='rgba(255,255,255,'+a+')';g.lineWidth=2*u;g.beginPath();g.arc(tapFx.x,tapFx.y,(1-a)*40*u+6*u,0,7);g.stroke()}}
+  if(t>=S[3]&&!pz&&!pzSolved){g.font='bold '+(13*u)+'px Georgia,serif';g.textAlign='left';g.fillStyle='#9fd3ff';g.fillText('⏮',12*u,26*u)}
+  // filmstriper med tekst, rulletekst-kort i 90-tallsstil
   g.fillStyle='#000';g.fillRect(0,0,w,bar);g.fillRect(0,h-bar,w,bar);const tt=TXT[sc];if(tt[2]){g.globalAlpha=Math.max(0,Math.min(1,(T-tt[0])/.8,(tt[1]-T)/.8));wrap(tt[2],w/2,h-bar+bar*.42,15*u,w*.86,'#f6ead0');g.globalAlpha=1}
-  if(sc==3){const a=Math.min(1,(T-25.5)/1.5);g.globalAlpha=Math.max(0,a);tx('RELIC OF THE',w/2,bar*.45,20*u,'#f2b544');tx('SUNKEN SIREN',w/2,bar*.45+26*u,30*u,'#f2b544');wrap('An adventure of codes, maps and knowledge',w/2,h-bar+bar*.42,14*u,w*.86,'#f6ead0');g.globalAlpha=1}
+  for(const [a0,a1,s] of CRED){const a=Math.min(1,(T-a0)/.6,(a1-T)/.6);if(a>0){g.globalAlpha=a;g.font=`italic ${15*u}px Georgia,serif`;g.textAlign='center';g.fillStyle='#000';g.fillText(s,w/2+2,bar+vh*.36+2);g.fillStyle='#f2dca0';g.fillText(s,w/2,bar+vh*.36);g.globalAlpha=1}}
+  if(sc==5){const a=Math.max(0,Math.min(1,(T-S[5]-1)/1.5)),ly=bar+vh*.1;logo('RELIC OF THE',w/2,ly,18*u,a);logo('SUNKEN SIREN',w/2,ly+30*u,32*u,a);g.globalAlpha=Math.max(0,Math.min(1,(T-S[5]-2.5)/1.2));wrap('An adventure of codes, maps and knowledge',w/2,h-bar+bar*.42,14*u,w*.86,'#f6ead0');g.globalAlpha=1}
   if(pz)drawPz(w,h);tx('Skip ⏭',w-60*u,24*u,12*u,'rgba(255,255,255,.7)');if(T>=DUR&&!pz)return end();requestAnimationFrame(frame)}
- function end(){if(done)return;done=true;try{sessionStorage.setItem('introSeen','1')}catch(e){}try{mG&&AC&&(AC.state=='suspended'&&AC.resume(),mG.gain.setTargetAtTime(0,AC.currentTime,.15),setTimeout(()=>{try{mG.gain.setTargetAtTime(mOn?.45:0,AC.currentTime,.1)}catch(e){}},900))}catch(e){}ov.style.transition='opacity .6s';ov.style.opacity=0;setTimeout(()=>ov.remove(),650)}
+ function end(){if(done)return;done=true;try{sessionStorage.setItem('introSeen','1')}catch(e){}try{mG&&AC&&(AC.state=='suspended'&&AC.resume(),mG.gain.setTargetAtTime(0,AC.currentTime,.15),setTimeout(()=>{try{if(mSrc)mSrc.stop()}catch(e){}try{mG.gain.setTargetAtTime(mOn?.45:0,AC.currentTime,.1)}catch(e){}},900))}catch(e){}ov.style.transition='opacity .6s';ov.style.opacity=0;setTimeout(()=>ov.remove(),650)}
  ov.addEventListener('click',e=>{const R=c.getBoundingClientRect(),d=Math.min(2,devicePixelRatio||1),x=(e.clientX-R.left)*d,y=(e.clientY-R.top)*d,w=c.width,h=c.height,u=Math.min(w,h)/400;
-  if(t<0){if(!go&&y>h/2+5*u&&y<h/2+50*u*1.2){const l=x<w/2?'no':'en';if(l!=(document.documentElement.lang||'no')&&document.getElementById('js-en')){try{localStorage.setItem('lang',l);sessionStorage.setItem('introGo','1')}catch(_){}if(/^https?:$/.test(location.protocol)){location.hash='lang='+l;location.reload()}else langSwap(l,null,1);return}}music();if(window.forhShow&&forhShow(()=>{t=0}))return;t=0;try{AC&&AC.state!='running'&&AC.resume()}catch(_){}return}
+  if(t<0){if(!go&&y>h/2+5*u&&y<h/2+50*u*1.2){const l=x<w/2?'no':'en';if(l!=(document.documentElement.lang||'no')&&document.getElementById('js-en')){try{localStorage.setItem('lang',l);sessionStorage.setItem('introGo','1')}catch(_){}if(/^https?:$/.test(location.protocol)){location.hash='lang='+l;location.reload()}else langSwap(l,null,1);return}}music();const st=()=>{t=0;mPlay(0)};if(window.forhShow&&forhShow(st))return;st();try{AC&&AC.state!='running'&&AC.resume()}catch(_){}return}
   if(x>w-130*u&&y<50*u)return end();if(pz)return tapPz(x,y,w,h);
-  if(t>=16&&!pzSolved&&x<60*u&&y<50*u){t=8;return}if(pzSolved)return;{const bar=Math.round(h*.13),vh=h-bar*2,k=vh/B.height,kx=w/B.width;if(secretBox){const[sx,sy,sw,sh]=secretBox;if(x>=sx*kx-28*u&&x<=(sx+sw)*kx+28*u&&y>=bar+sy*k-28*u&&y<=bar+(sy+sh)*k+28*u)return openPz()}tapFx={x,y,t}}});
+  if(t>=S[3]&&!pzSolved&&x<60*u&&y<50*u){t=S[2];mPlay(t);return}if(pzSolved)return;{const bar=Math.round(h*.13),vh=h-bar*2,k=vh/B.height,kx=w/B.width;if(secretBox){const[sx,sy,sw,sh]=secretBox;if(x>=sx*kx-28*u&&x<=(sx+sw)*kx+28*u&&y>=bar+sy*k-28*u&&y<=bar+(sy+sh)*k+28*u)return openPz()}tapFx={x,y,t}}});
  requestAnimationFrame(frame)})();
 
 $('bNew').onclick=()=>{try{localStorage.removeItem('siren')}catch(e){}start();try{if(localStorage.getItem('sirenHemmelig')=='1'){S.st=(S.st||0)+3;localStorage.setItem('sirenHemmelig','brukt');save()}}catch(e){}};
