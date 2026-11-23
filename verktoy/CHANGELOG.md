@@ -2,6 +2,10 @@
 
 Nyeste versjon øverst. Formatet er fast fordi forsiden leser det: `## <versjon> · <dato>` og så punkter som begynner med `- `.
 
+## 0.17.8 beta · 23. nov 2026
+- Norskekysten er bygd om: fra neset etter lavvoen og helt til fyret er det nå åpent hav helt inn til ei lav steinfjære med tang og snøflekker, og fjellene på øyene ligger bak havet slik Lofotveggen ser ut fra Bodø-kysten. Skogholtene står på landtunger ut i sjøen, og fyret står på en knaus der bølgene slår opp.
+- Skummet på stormbølgene er mykere og mer ekte: tett hvitt i toppen som blir luftig nedover fronten, hull i skummet og fokk som driver av toppene.
+
 ## 0.17.7 beta · 23. nov 2026
 - Havet er laget på nytt, likt overalt: i landene, i Karibia, i introen og på båt- og flyreisene. I godt vær er det lange, rolige dønninger med solglitter. Når det blåser opp kommer skumtopper, og i storm blir bølgene høye og bratte, toppene brekker, skummet blåser i striper og sprut rives av toppene. Brenningene skyller inn mot land og slår opp mot skjærene ved fyret.
 - Hvert farvann har sin egen farge etter hvordan det ser ut i virkeligheten: stålgrått og grønt langs norskekysten, safirblått og turkis i Karibia, torvbrunt i Loch Ness. Kanaler og elver får aldri store bølger.

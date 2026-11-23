@@ -35,7 +35,7 @@ button.on{background:var(--von);border-color:var(--gold)}@media(hover:hover){but
 <div class="ov" id="title"><canvas id="tc" style="position:absolute;inset:0;width:100%;height:100%;z-index:-1;touch-action:auto;background:none"></canvas><h1>Relic of the<br>Sunken Siren</h1><p>Caribbean, 1934. Professor Julian Vance is hunting the Sun Disc from the sunken temple. He is dramatically overqualified for everything except the physical stuff.</p>
 <p style="opacity:.75;font-size:14px">Tap to walk. Pick a verb, then a thing. Tap one thing in your bag and then another to combine. 👁 shows everything you can tap. Sound on!</p>
 <div id="langs" style="font-size:16px;display:flex;gap:6px;flex-wrap:wrap;justify-content:center"><button data-l="no">🇳🇴 Norsk</button><button data-l="en">🇬🇧 English</button></div>
-<div><button id="bNew">New game</button> <button id="bCont" style="display:none">Continue</button> <button id="bKode">💾 I have a code</button><div id="ver" style="font:12px sans-serif;opacity:.7;margin-top:6px">Version 0.17.7 beta · 23 Nov 2026</div><div id="cred" style="font:11px sans-serif;opacity:.55;margin-top:3px">Music made with Meta MusicGen (CC-BY-NC 4.0)</div></div></div>
+<div><button id="bNew">New game</button> <button id="bCont" style="display:none">Continue</button> <button id="bKode">💾 I have a code</button><div id="ver" style="font:12px sans-serif;opacity:.7;margin-top:6px">Version 0.17.8 beta · 23 Nov 2026</div><div id="cred" style="font:11px sans-serif;opacity:.55;margin-top:3px">Music made with Meta MusicGen (CC-BY-NC 4.0)</div></div></div>
 <div id="intro" style="position:fixed;inset:0;z-index:20;background:#000;cursor:pointer"><canvas id="ic" style="width:100%;height:100%;display:block;touch-action:none"></canvas></div>
 <div class="ov" id="code" style="display:none;z-index:8;background:rgba(8,5,12,.94)"><h2 id="cT" style="color:var(--gold);margin:0"></h2><pre id="cB" style="white-space:pre-wrap;font-size:17px;line-height:1.5;max-width:560px;text-align:left;background:#1a1222;padding:12px;border-radius:8px;border:1px solid #5a4470;margin:0;max-height:45vh;overflow:auto"></pre><button id="cP" style="display:none">▶ Play the signal</button><input id="cI" autocomplete="off" autocapitalize="characters" spellcheck="false" style="font:inherit;font-size:22px;padding:10px;width:min(320px,80vw);text-align:center;text-transform:uppercase;border-radius:8px;border:2px solid var(--gold);background:#0c0810;color:var(--ink)"><div><button id="cOK">Answer</button> <button id="cH" style="background:var(--vb)">💡 Hint</button> <button id="cS" style="background:var(--vb)">🔎 Search</button> <button id="cW" style="background:var(--vb)">📖 Wikipedia</button> <button id="cN" style="background:var(--vb)">📚 Encyclopedia</button> <button id="cX" style="background:var(--vb)">Close</button></div><p id="cM" style="min-height:22px;color:#ff9a7a"></p></div>
 <div class="ov" id="globe" style="display:none;z-index:9"><h2 style="color:var(--gold);margin:0">🌍 The journey around the world</h2><canvas id="gc" style="position:static;inset:auto;width:min(260px,62vw);height:min(260px,62vw);image-rendering:pixelated;background:none;touch-action:auto"></canvas><p id="gT" style="font-size:20px;margin:0"></p><div style="width:min(320px,80vw);height:14px;background:#2a1a30;border:1px solid #5a4470;border-radius:7px;overflow:hidden"><div id="gB" style="height:100%;width:0;background:linear-gradient(90deg,#f2b544,#ffe48a)"></div></div><p id="gL" style="white-space:pre-line;font-size:14px;opacity:.85;margin:0"></p><button id="gX">Close</button></div>
@@ -1624,12 +1624,12 @@ const norSite=()=>{const n=S.ch;return n>=26&&n<=40?(n-26)%NOR_SITES.length:0};
 R.norge={ww:NORW*2,region:1,prof:1,polar:1,walk:[[[30,440],[NORW*2-30,440],[NORW*2-30,528],[30,528]]],spawn:{start:[120,480]},
  npcs:()=>({nisse:[410,430],troll:[2*1300,250],nokk:[2*1150,400],bonde:[1530,440],hulder:[2*huX,330],brutroll:[4300,380],draug:[2*dgX(),340],sam:[5460,400]}),
  draw(){const cl=camX/2;RV=[cl,cl+VW()/2];X.save();X.scale(2,2);const gu=gustW()*.6+NB.s*1.6;
-  rsky();nAurora();nPeaks(120,70,.011,0,'#5a6478','#e8eef6',.12);nPeaks(150,60,.016,1.3,'#3e4658','#dfe8f2',.3);nFjord();nDraug();nOrn();
+  rsky();nAurora();nPeaks(120,70,.011,0,'#5a6478','#e8eef6',.12);nPeaks(150,60,.016,1.3,'#3e4658','#dfe8f2',.3);nFjord();nOrn();
   if(skyNow().night<.5)for(let i=0;i<3;i++)gull(X,RV[0]+((i*173+T*(9+i*3))%(RV[1]-RV[0]+60))-30,70+i*17+Math.sin(T*.5+i)*6,.6,T*.8+i*1.3,1,'#0e0e12');if(vis(700,140))gull(X,770+Math.cos(T*.35)*45,150+Math.sin(T*.7)*6,.55,T+2,Math.sin(T*.35)>0?-1:1);
   nTrollFjell(1246,204);nSkogtroll();
   for(let x=0;x<1300;x+=19)nSpruce(x+(x*7)%9,200,22+(x*13)%14,x,gu*.7);for(let x=1600;x<2080;x+=11)nSpruce(x+(x*7)%5,199-(x%3),26+(x*13)%18,x,gu*.5);nMist();
   big(nHouse,20,224,3.3,34,30,22,'#a8302a');big(nStabbur,150,226,3,40);big(nKirke,575,226,2.6,50);big(nHouse,720,224,3.3,32,28,20,'#c8a040');big(nHouse,826,224,3.3,34,30,22,'#f2f2ea');
-  nGround();if(vis(940,90)){Rr('#5a3a20',945,212,70,7);for(let i=0;i<7;i++)Rr('#3a2414',947+i*10,219,3,9)}nBoat(DRV&&DRV.v=='boat'?P.x/2:990,186,DRV?DRV.dir:1);
+  nGround();nKyst();if(vis(940,90)){Rr('#5a3a20',945,212,70,7);for(let i=0;i<7;i++)Rr('#3a2414',947+i*10,219,3,9)}nBoat(DRV&&DRV.v=='boat'?P.x/2:990,186,DRV?DRV.dir:1);
   nTjern(1110,228,70);nVarde(2900);nMalstrom(3820);nFyr(4510);big(nHouse,3120,224,3.3,30,30,22,'#a8302a');big(nHouse,3420,224,3.3,30,30,22,'#c8a040');nHjell(3230,230);nHjell(3330,226);for(let x=3560;x<3720;x+=13)nSpruce(x+(x*7)%5,200,22+(x*13)%14,x,gu*.6);for(let x=4600;x<4780;x+=15)nSpruce(x,200,20+(x*13)%12,x,gu*.6);nVarde(4120);nVidda(gu);nLavvo(gu);nElv();nHulder();nNisse();nSpadeDraw();[[180,238],[505,240],[960,236],[1250,238],[2330,238],[2770,236],[2985,238]].forEach(([x,y],i)=>nBirch(x,y,26+i*3,i,gu));nElg();nDrift();
   if(!DRV||DRV.v!='car')nCar(360,236,1,0);else nCar(P.x/2,236,DRV.dir,1);nPrints();
   const st=NOR_SITES[norSite()];if(st&&vis(st.x-20,40))gMark(st.x)
@@ -3578,7 +3578,7 @@ function havInit(o){if(o.N)return o;const px=o.px||1;o.mag=o.mag==null?1:o.mag;o
 //  base:0 hopper over bunnfargen (andre kall for de fremste rekkene), shallow: 0-1 turkis over sandbunn nær land, lk: bølgelengde-faktor}
 function havTegn(g,o){havInit(o);const x0=o.x0,x1=o.x1,y0=o.y0,y1=o.y1,H=y1-y0;if(x1<=x0||H<3)return;
  const t=o.t,st=(o.st||0)*o.mag,wd=Math.min(1,o.wd||0),P=HAVP[o.pal]||HAVP.nord,px=o.px||1,N=o.N,step=Math.max(1,o.step||2*px);
- const nt=o.night||0,dk=c=>mixC(mixC(c,'#151c22',st*.5),'#03050b',nt*.55),sky=o.sky||'#9ab0c0',deep=dk(P.deep),mid=dk(P.mid),glass=mixC(dk(P.glass),'#8aa4a0',st*.2),foam=mixC(P.foam,'#6a7888',nt*.45),hz=mixC(mixC(sky,'#ffffff',.08),P.mid,.3+st*.2),lite=mixC(sky,'#ffffff',.45);
+ const nt=o.night||0,dk=c=>mixC(mixC(c,'#151c22',st*.5),'#03050b',nt*.55),sky=o.sky||'#9ab0c0',deep=dk(P.deep),mid=dk(P.mid),glass=mixC(dk(P.glass),'#8aa4a0',st*.2),foam=mixC(P.foam,'#6a7888',nt*.45),fc=[1,3,5].map(i=>parseInt(foam.slice(i,i+2),16)).join(','),fa=al=>'rgba('+fc+','+al+')',hz=mixC(mixC(sky,'#ffffff',.08),P.mid,.3+st*.2),lite=mixC(sky,'#ffffff',.45);
  const r0=o.rows?o.rows[0]:0,r1=o.rows?o.rows[1]:N,B=[[],[],[]],LI=[[],[]],SU=[],sh=o.shallow&&P.sh?o.shallow:0;
  const xs=Math.floor(x0/step)*step-step,xe=x1+step;
  if(o.base!==0){const G=g.createLinearGradient(0,y0,0,y1);G.addColorStop(0,hz);G.addColorStop(.2,mixC(hz,mid,.55));G.addColorStop(1,deep);g.fillStyle=G;g.fillRect(x0,y0,x1-x0,H+1);
@@ -3605,7 +3605,14 @@ function havTegn(g,o){havInit(o);const x0=o.x0,x1=o.x1,y0=o.y0,y1=o.y1,H=y1-y0;i
   {const th=wd<.35&&st<.05?2:1.04-.28*wd-.55*st,lean=R.lean*A*.22;let i=0;while(i<Y.length){if(BR[i]<=th){i++;continue}let j=i;while(j+1<Y.length&&BR[j+1]>th)j++;
     let m=i;for(let q=i;q<=j;q++)if(Y[q]<Y[m])m=q;const top=[],bot=[];for(let q=i;q<=j;q++){const x=xs+q*step,z=Math.min(1,(BR[q]-th)/(1-th+.001)),e=q<m?.2*(q-i+1)/(m-i+1):Math.sin(Math.min(1,(q-m+.5)/(j-m+1)*1.3)*Math.PI*.5+Math.PI*.5*0)*(1-.6*(q-m)/(j-m+1));top.push(x+lean*z,Y[q]-z*A*.05-px*.5);
      bot.push(x+lean*z*.5,Y[q]+px*.8+z*e*A*(.14+.55*st)*(.55+.45*hsh(q*.7+k*3.3+Math.floor(t*.8))))}
-    if(j>i){g.globalAlpha=Math.min(.97,.6+.4*st+.2*wd);g.fillStyle=foam;g.beginPath();g.moveTo(top[0],top[1]);for(let q=2;q<top.length;q+=2)g.lineTo(top[q],top[q+1]);for(let q=bot.length-2;q>=0;q-=2)g.lineTo(bot[q],bot[q+1]);g.closePath();g.fill();
+    if(j>i){const al=Math.min(.97,.6+.4*st+.2*wd),pa=new Path2D();pa.moveTo(top[0],top[1]);for(let q=2;q<top.length;q+=2)pa.lineTo(top[q],top[q+1]);for(let q=bot.length-2;q>=0;q-=2)pa.lineTo(bot[q],bot[q+1]);pa.closePath();
+     let yt=1e9,yb2=-1e9;for(let q=1;q<top.length;q+=2)yt=Math.min(yt,top[q]);for(let q=1;q<bot.length;q+=2)yb2=Math.max(yb2,bot[q]);
+     // filmaktig skum: myk glorie rundt flaket, tett hvitt i toppen som blir luftig og gjennomsiktig nedover fronten, og fokk (vanndamp) som driver av toppen i storm
+     g.lineJoin='round';g.globalAlpha=al*.28;g.strokeStyle=foam;g.lineWidth=px*(2+2*st);g.stroke(pa);
+     const FG=g.createLinearGradient(0,yt,0,yb2+px);FG.addColorStop(0,fa(1));FG.addColorStop(.4,fa(.92));FG.addColorStop(1,fa(.12));g.globalAlpha=al;g.fillStyle=FG;g.fill(pa);
+     if(st>.35&&j-i>2){g.globalAlpha=.55;g.fillStyle=cM;for(let q=0;q<5;q++){const u=hsh(q*3.3+k+i),v=hsh(q*7.1+i+k*.3),qx=i+((j-i)*u|0),hx=xs+qx*step;g.fillRect(hx,Y[qx]+(yb2-Y[qx])*(.35+.4*v),px*(1+(q%2)),px)}}
+     if(st>.45&&d>.4){const mx=xs+m*step,dr=(t*.9+hsh(m+k))%1;g.globalAlpha=.16*st*(1-dr);g.fillStyle=foam;g.beginPath();g.ellipse(mx+dr*A*1.2+A*.2,Y[m]-A*(.08+.25*dr),Math.max(px*3,(j-i)*step*.45+A*.3*dr),Math.max(px*2,A*(.07+.1*dr)),0,0,6.3);g.fill()}
+     g.globalAlpha=1;
      if(st>.25)for(let q=0;q<bot.length;q+=2)if(hsh(q*1.9+k+i)>.55)B[2].push(bot[q]+(hsh(q+k)-.5)*step*3,bot[q+1]+px*(1+hsh(q*3+k)*4)*(1+st),step*(1+hsh(q+i)*2),px)}
     i=j+1}g.globalAlpha=1}
   // skumstriper langs vinden på baksidene (kuling og storm)
@@ -3631,10 +3638,33 @@ function havTegn(g,o){havInit(o);const x0=o.x0,x1=o.x1,y0=o.y0,y1=o.y1,H=y1-y0;i
 // Vann i landene: rWaves(y0,y1,venstre,høyre,type). Typen styrer farge og hvor store bølger vannet kan få (HAVR).
 const HAVR={hav:[null,1],loch:['loch',.6],kanal:['elva',.12],bukt:['gulf',.3],elva:['elva',.3],havn:['elva',.6]};
 function rWaves(y0,y1,l,r,kind){const[a,b]=RV;l=Math.max(l,a-2);r=Math.min(r,b+2);if(l>=r||y1-y0<4)return;const s=skyNow(),K=HAVR[kind]||HAVR.hav,rm=S.room;
- havTegn(X,{x0:l,x1:r,y0,y1,t:T,st:typeof WX=='object'?WX.storm||0:0,wd:Math.max(0,Math.min(1,(gustW()-.45)/1.1)),pal:K[0]||(rm=='dubai'?'gulf':'nord'),mag:K[1],sky:s.c[2],night:s.night,px:1,step:2,shore:K[1]>=.5,rocks:rm=='norge'&&kind=='hav'?[4432,4594]:null,ry:y1-3})}
+ havTegn(X,{x0:l,x1:r,y0,y1,t:T,st:typeof WX=='object'?WX.storm||0:0,wd:Math.max(0,Math.min(1,(gustW()-.45)/1.1)),pal:K[0]||(rm=='dubai'?'gulf':'nord'),mag:K[1],sky:s.c[2],night:s.night,px:1,step:2,shore:K[1]>=.5,rocks:rm=='norge'&&kind=='hav'&&y0<170?[4414,4616]:null,ry:y1-3})}
 // pWater tegnes nå helt av havmotoren; fargen kallet bruker forteller hva slags vann det er (innsjø, kanal, bukt)
 {const PK={'#141c22':'loch','#2a4a3a':'kanal','#1e5a6a':'bukt','#2a5a5a':'bukt'};pWater=function(y0,y1,dk,x0=-1e9,x1=1e9){rWaves(y0,y1,x0,x1,PK[dk]||'hav')}}
-nFjord=function(){rWaves(176,206,-1e9,1e9,'hav')};
+nFjord=function(){rWaves(176,206,-1e9,KYST0,'hav')};
+// Kysten i nord (Varden, tørrfiskhjellene, Malstrømmen, fyret): åpent hav helt inn til ei lav steinfjære, med fjellene på øyene bak
+// (slik Lofotveggen ser ut over Vestfjorden fra Bodø-kysten). Havet går fra horisonten (y158) til fjæra (y214). Et høyt nes med snø skjuler
+// overgangen mot innlandet, landtunger bærer skogholtene, og fyret står på en knaus som går ut i sjøen.
+const KYST0=2780;
+function nKyst(){const[a,b]=RV;if(b<KYST0-90)return;
+ rWaves(158,214,KYST0,1e9,'hav');
+ nDraug();
+ for(const[x0,x1]of[[3540,3740],[4580,4800]])nTunge(x0,x1);
+ if(vis(4400,230)){X.fillStyle='#3e3e44';X.beginPath();X.moveTo(4410,216);X.quadraticCurveTo(4420,200,4440,198);X.lineTo(4590,198);X.quadraticCurveTo(4610,202,4620,216);X.fill()}
+ nFjaere(Math.max(a-2,KYST0),b+2);nNes(KYST0)}
+// Landtunge: snødekt mark som stikker ut i sjøen, med mørk stein i vannkanten
+function nTunge(x0,x1){if(!vis(x0-40,x1-x0+80))return;X.fillStyle='#46464c';X.beginPath();X.moveTo(x0-40,215);X.quadraticCurveTo(x0-20,202,x0+8,197);X.lineTo(x1-8,197);X.quadraticCurveTo(x1+20,202,x1+40,215);X.fill();
+ X.fillStyle='#dfe8f2';X.beginPath();X.moveTo(x0-26,206);X.quadraticCurveTo(x0-10,198,x0+10,196);X.lineTo(x1-10,196);X.quadraticCurveTo(x1+10,198,x1+26,206);X.quadraticCurveTo((x0+x1)/2,203,x0-26,206);X.fill()}
+// Fjæra: rullestein og grus, våt mørk kant mot sjøen, tang og snøflekker
+function nFjaere(l,r){if(l>=r)return;for(let y=213;y<226;y++)Rr(mixC('#5a5650','#8a8478',(y-213)/13),l,y,r-l,1);Rr('#3a3834',l,213,r-l,2);
+ const S=[],W=[],G=[];for(let x=(l|0)-((l|0)%3);x<r;x+=3){const h=hsh(x*.37);if(h>.45)S.push(x,215+((h*97)|0)%9,2+(h>.8),1+(h>.7));if(hsh(x*.91)>.86)W.push(x,214+((x*7)%3),3,1);if(hsh(x*.13+5)>.9)G.push(x,219+((x*5)%5),4+((x*3)%4),2)}
+ rects('#a8a294',S);rects('#2e3a22',W);rects('#eef2f6',G)}
+// Høyt nes ved overgangen fra innlandet til kysten: bratt fjell med snø på toppen som stuper ned i sjøen
+function nNes(x){if(!vis(x-80,150))return;X.fillStyle='#4a4a52';X.beginPath();X.moveTo(x-80,214);X.lineTo(x-74,186);X.quadraticCurveTo(x-60,160,x-36,150);X.quadraticCurveTo(x-14,142,x+6,150);X.quadraticCurveTo(x+30,164,x+44,196);X.lineTo(x+56,216);X.fill();
+ X.fillStyle='#5c5c66';X.beginPath();X.moveTo(x-30,152);X.quadraticCurveTo(x-6,146,x+6,152);X.quadraticCurveTo(x+24,166,x+34,190);X.quadraticCurveTo(x+10,172,x-30,152);X.fill();
+ X.fillStyle='#e8eef6';X.beginPath();X.moveTo(x-50,160);X.quadraticCurveTo(x-30,146,x-10,144);X.quadraticCurveTo(x+8,146,x+16,156);X.quadraticCurveTo(x-4,152,x-12,158);X.quadraticCurveTo(x-30,154,x-50,160);X.fill();
+ for(let i=0;i<6;i++)Rr('#3a3a40',x-60+i*18,190+(i%3)*7,6,2)}
+
 {const _c=dCreek;dCreek=function(){_c();rWaves(183,206,1540,1e9,'bukt')}}
 {const _h=uHarbor;uHarbor=function(){_h();rWaves(184,205,-1e9,700,'havn')}}
 {const _p=uPalisades;uPalisades=function(){_p();if(RV[1]>=1950)rWaves(182,205,1950,1e9,'elva')}}

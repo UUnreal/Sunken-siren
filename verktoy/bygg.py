@@ -65,8 +65,10 @@ def bygg_spill(fil, lang):
     suf = '' if lang == 'no' else '.' + lang
     s = open(fil, encoding='utf-8').read()
     # 1) Flytt innebygd lyd ut i egne filer som lastes async (spillet tåler at de kommer sent).
-    for sid, name in (('mu', 'musikk.js'), ('vo', 'stemmer%s.js' % suf)):
+    # Intromusikken (imu) lastes med en gang i egen fil, lyd/intro.js, så den er klar når spilleren trykker start.
+    for sid, name in (('imu', 'intro.js'), ('mu', 'musikk.js'), ('vo', 'stemmer%s.js' % suf)):
         m = re.search(r'<script id="%s">(.*?)</script>' % sid, s, re.S)
+        if not m and sid == 'imu': continue
         if not m: sys.exit('FEIL: fant ikke <script id="%s"> i %s' % (sid, fil))
         if sid == 'vo' or lang == 'no':
             body = m.group(1)
