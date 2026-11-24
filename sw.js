@@ -2,7 +2,7 @@
 // Lages av bygg.py, som fyller inn versjon og fillister (plassholderne under) ved bygging.
 // Ingen data sendes noe sted. Den lagrer bare nettstedets egne filer i nettleserens cache.
 'use strict';
-const VERSION = 'c76aac6e92c8';
+const VERSION = '9e1b4fd60b42';
 const CACHE = 'siren-' + VERSION;
 // Lastes ned med en gang (norsk spill, forside, musikk, bilder, alle språkversjonene av siden).
 const PRECACHE = ["./", "CHANGELOG.md", "bilder/bibliotek.jpg", "bilder/port.jpg", "bilder/speilsal.jpg", "bilder/taverna.jpg", "bilder/tempel.jpg", "bilder/yacht.jpg", "ikoner/apple-touch-icon.png", "ikoner/ikon-192.png", "ikoner/ikon-512.png", "ikoner/ikon-maskable-512.png", "index.html", "manifest.webmanifest", "spill/index.en.html", "spill/index.html", "spill/lyd/intro.js", "spill/lyd/musikk.js", "spill/lyd/stemmer-japan.js", "spill/lyd/stemmer-karibia.js", "spill/lyd/stemmer-kina.js", "spill/lyd/stemmer-norge.js", "spill/lyd/stemmer-resten.js", "spill/lyd/stemmer-sahara.js", "spill/lyd/stemmer-skott.js", "spill/"];

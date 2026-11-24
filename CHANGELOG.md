@@ -2,6 +2,10 @@
 
 Nyeste versjon øverst. Formatet er fast fordi forsiden leser det: `## <versjon> · <dato>` og så punkter som begynner med `- `.
 
+## 0.17.14 beta · 24. nov 2026
+- Alle stemmer i spillet har nå samme kvalitet: professoren og alle figurene snakker med den samme nordnorske stemmen som fortelleren (969 nye opptak).
+- Troll og andre skapninger har bare et svakt ekko, ingen kunstig tonehøyde.
+
 ## 0.17.13 beta · 23. nov 2026
 - ⏮-knappen i introen er synlig igjen (den lå under den svarte filmstripa).
 - Forhistorien har musikk: den rolige harpedelen fra intromusikken spiller svakt mens du leser.
