@@ -52,7 +52,9 @@ def del_stemmer(body):
     vo = json.loads(body[body.index('=') + 1:].strip().rstrip(';'))
     kart = json.load(open(os.path.join(here, 'stemme-deler.json'), encoding='utf-8'))
     deler = {d: {} for d in DELER + ['resten']}
-    for k, v in vo.items(): deler[kart.get(k, 'resten')][k] = v
+    for k, v in vo.items():  # en replikk kan ligge i flere land (liste), f.eks. felles råd- og sporreplikker
+        d = kart.get(k, 'resten')
+        for x in (d if isinstance(d, list) else [d]): deler[x][k] = v
     for d, inn in deler.items():
         open(os.path.join(g, 'lyd', 'stemmer-%s.js' % d), 'w', encoding='utf-8').write(
             'Object.assign(window.VO=window.VO||{},%s);' % json.dumps(inn, separators=(',', ':')))
